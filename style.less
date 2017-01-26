@@ -261,6 +261,8 @@ footer{
     margin-bottom: 2rem;
 }
 
+
+
 @keyframes circle-1 {
     0%   { right:-70rem; top:-67rem; }
     100% { right:-35rem; top:-32rem; }
@@ -348,16 +350,20 @@ footer{
     display : flex;
     position : absolute;
     z-index : -1;  
+    top : 2rem;
+    right : -1rem;
     
     &.transparent{
         opacity : 0.2;
     }
     &.gray{
-        border-color : @clr-text;
+        border-color : #5d5e63;
     }
     &.small{
         width : 1.5rem;
         height : 1.5rem;
+        top : 2.25rem;
+        right : -0.75rem;
     }
     &.large{
         width : 3rem;

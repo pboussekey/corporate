@@ -11,11 +11,6 @@
     </head>
     <body>
        
-        <div class="circle first"></div>
-        <div class="circle second"></div>
-        <div class="circle third"></div>
-        <div class="circle fourth"></div>
-        <div class="circle fifth"></div>
         <?php require("templates/header.html"); ?> 
       
         <h1>The Social Learning Environment<span class="blue"><b>*</b></span> for B-Schools</h1>
