@@ -6,7 +6,6 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
-        <link rel="icon" href="assets/images/logo2.png" />
         <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="particles.js"></script>
     </head>
