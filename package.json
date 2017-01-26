@@ -12,5 +12,8 @@
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
     "gulp-uglify": "latest"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
   }
 }

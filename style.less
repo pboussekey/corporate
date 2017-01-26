@@ -262,27 +262,27 @@ footer{
 }
 
 @keyframes circle-1 {
-    0%   { right:-70rem; top:-70rem; }
+    0%   { right:-70rem; top:-67rem; }
     100% { right:-35rem; top:-32rem; }
 }
 
 @keyframes circle-2 {
-    0%   { right:-56rem; top:-56rem; }
+    0%   { right:-56rem; top:-53rem; }
     100% { right:-28rem; top:-25rem; }
 }
 
 @keyframes circle-3 {
-    0%   { right:-42rem; top:-42rem; }
+    0%   { right:-42rem; top:-39rem; }
     100% { right:-21rem; top:-18rem; }
 }
 
 @keyframes circle-4 {
-    0%   { right:-30rem; top:-30rem; }
+    0%   { right:-30rem; top:-27rem; }
     100% { right:-15rem; top:-12rem; }
 }
 
 @keyframes circle-5 {
-    0%   { right:-20rem; top:-20rem; }
+    0%   { right:-20rem; top:-17rem; }
     100% { right:-10rem; top:-7rem; }
 }
 
@@ -294,6 +294,7 @@ footer{
     opacity : 0.3;
     top : -100%;
     right : -100%;
+    z-index : -1;
     &.first{
         width : 70rem;
         height : 70rem;   
@@ -332,6 +333,13 @@ footer{
     }
 }
 
+@keyframes particule {
+    0%   { border-width : 1px }
+    25% { border-width : 0.5rem }
+    50% { border-width : 0.5rem }
+    100%   { border-width : 1px }
+}
+
 .particle{
     border-radius: 50%;
     border : solid 1px @clr-blue;
@@ -339,6 +347,8 @@ footer{
     height : 2rem;
     display : flex;
     position : absolute;
+    z-index : -1;  
+    
     &.transparent{
         opacity : 0.2;
     }
@@ -364,53 +374,4 @@ footer{
         margin : auto;
         position : initial;
     }
-}
-
-#particle-1{
-    top : 0;
-    right : 0;    
-    opacity : 0; 
-    transform: translateX(-12.5rem) translateY(6.5rem);
-    animation-fill-mode: forwards;
-    animation-name:  particle-1;   
-    animation-duration: 4s;
-    animation-delay: 2s;
-}
-#particle-2{
-    top : 0;
-    right : 0;    
-    opacity : 0; 
-    transform: translateX(-1rem) translateY(12rem);
-    animation-fill-mode: forwards;
-    animation-name:  particle-2;   
-    animation-duration: 5s;
-    animation-delay: 2s;
-}
-#particle-3{
-    top : 22rem;
-    right : 3rem;    
-}
-#particle-4{
-    top : 8rem;
-    right : 41rem;    
-}
-#particle-5{
-    top : 22rem;
-    right : 34rem;    
-}
-#particle-6{
-    top : 10rem;
-    right : 58rem;    
-}
-#particle-7{
-    top : 12rem;
-    right : 80rem;    
-}
-#particle-8{
-    top : 10rem;
-    right : 100rem;    
-}
-#particle-8{
-    top : 22rem;
-    right : 95rem;    
 }

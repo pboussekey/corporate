@@ -7,6 +7,8 @@
         <link href="http://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
         <link rel="icon" href="assets/images/logo2.png" />
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="particles.js"></script>
     </head>
     <body>
        
@@ -16,21 +18,7 @@
         <div class="circle fourth"></div>
         <div class="circle fifth"></div>
         <?php require("templates/header.html"); ?> 
-        <div class="particle large transparent" id="particle-1">
-            <div class="particle large-border small"></div>
-        </div>
-        <div class="particle large-border small" id="particle-2"></div>
-        <div class="particle large" id="particle-3">
-            <div class="particle large-border small"></div>
-        </div>
-        <div class="particle gray large transparent" id="particle-4">
-            <div class="particle gray large-border small"></div>
-        </div>
-        <div class="particle large-border small" id="particle-5"></div>
-        <div class="particle large-border small transparent" id="particle-6"></div>
-        <div class="particle large-border gray transparent" id="particle-7"></div>
-        <div class="particle small" id="particle-8"></div>
-        <div class="particle small transparent" id="particle-9"></div>
+      
         <h1>The Social Learning Environment<span class="blue"><b>*</b></span> for B-Schools</h1>
         <div class="content">
             <p class="center">
