@@ -1,0 +1,258 @@
+html{
+    height : 100%;
+    width : 100%;
+    font-size: 10px;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    display : flex;
+    flex-direction : column;
+    * {
+        box-sizing: inherit;
+    }
+    color: #3C3F48;    
+    text-rendering: optimizeLegibility;
+    text-rendering: geometricPrecision;
+    font-smooth: always;
+
+    font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
+    box-sizing: border-box;
+}
+html *{
+    box-sizing: inherit;
+}
+
+body{
+    height : 100%;
+    width : 100%;
+    font-size: 1.3rem;
+    margin : 0;
+}
+
+.content{
+    display : flex;
+    flex-direction : column;
+    & > p{
+        font-size: 2rem;
+        text-align: center;
+        line-height: 3rem;
+        width : 100%;
+        max-width : 80rem;
+        margin-top : 1rem;
+        margin-bottom : 4rem;
+        color: #3C3F48;
+    }
+}
+
+.blue{
+    color : #0DAFAC;
+}
+
+.gray{
+    color : #3C3F48;
+}
+
+.center{    
+    margin-left : auto;
+    margin-right : auto;
+}
+
+h1{
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 5rem;
+    color: #3C3F48;
+    width : 100%;
+}
+
+
+button{    
+    background-color: #0DAFAC;
+    border-radius: 2px;
+    height: 4rem;
+    line-height: 4rem;
+    padding:0 2rem;
+    border:0;
+    outline:0;
+    color : #FFF;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+    cursor : pointer;
+    margin-top : 1rem;
+    margin-bottom : 1rem;
+    .arrow{
+        display: inline-block;
+        margin-left: 2rem;
+        font-size: 1rem;
+        float : right;
+    }
+}
+
+header{
+    display : flex;
+    padding : 2rem 20rem;   
+}
+
+.header-logo{
+    margin-right: auto;
+}
+
+
+
+
+.header-menu > li{
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    color: #3C3F48;
+    list-style: none;
+    display : inline-block;
+    width : 10rem;
+    cursor : pointer;
+}
+
+.block{
+    display : flex;
+    position : relative;
+    max-width: 120rem;
+    margin : 8rem auto;
+}
+
+.portrait{
+    background-image: url("assets/images/maxresdefault.jpg");
+    background-position: 80% 50%;
+    background-size: cover;
+    height : 55rem;
+    width : 55rem;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.citation-block{
+    margin-top : 6rem;
+    background: linear-gradient(203.37deg, #EEEEEE 0%, #FFFFFF 60%);
+    border-radius: 4px;
+    flex : 1;
+    padding : 8rem 2rem 2rem 6rem;
+    color: #3B3E48;
+    p {
+        font-size: 1.8rem;
+        line-height: 3rem;
+        margin : 4rem 0;
+        font-weight: 300;
+        position : relative;
+
+    }
+}
+
+.citation{
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 6rem;
+    text-align: left;
+    letter-spacing: 0.5rem;
+    
+}
+
+.poets{
+    display : inline-block;
+    height : 3.5rem;
+    position : absolute;
+    top : 2.6rem;
+}
+
+.quote{
+    font-family: Merriweather;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 101px;
+    opacity : 0.5;
+    position : absolute;
+    left : 58rem;
+    top : 4rem;
+}
+
+.schools{
+    display: flex;
+    width : 100%;
+    max-width: 120rem;
+    margin-bottom: 4rem;
+    
+    .school{
+        max-width : 20%;
+        height : 8rem;
+        margin : 1rem auto;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        opacity: 0.5;
+    }
+    
+}
+
+footer{
+    width : 100%;
+    background-color: #3B3E48;
+    color : #FFF;
+    padding : 4rem 8rem; 
+    display : flex;
+    font-size: 1.4rem;
+}
+.footer-column{
+    padding : 0 2rem;
+    min-width: 15rem;
+    &:first-of-type{
+        border-right : solid 1px #585D6E;
+        width : 60rem;
+        padding : 0 10rem;
+        margin-right: 4rem;
+    }
+    
+    p {
+        font-weight: 300;
+        line-height: 3rem;
+    }
+    ul{
+        margin : 0;
+        padding : 0;
+        li{
+            list-style: none;
+            cursor : pointer;
+            font-weight: 300;  
+            line-height: 4rem;
+        }
+    }
+}
+
+.footer-logo{
+    filter: contrast(0) brightness(100);
+    -webkit-filter: contrast(0) brightness(100);
+}
+
+.social-media{
+    width : 2rem;
+    height : 2rem;
+    cursor : pointer;
+    float : left;
+    filter: contrast(0) brightness(100);
+    -webkit-filter: contrast(0) brightness(100);
+    margin-right: 2rem;
+}
+
+.facebook{
+    margin-top: -0.5rem;
+    width : 3rem;
+    height : 3rem;
+    margin-right: 1rem;
+    
+}
+
+.footer-title{
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}

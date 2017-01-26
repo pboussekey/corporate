@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TWIC</title>
@@ -12,18 +6,11 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="http://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
+        <link rel="icon" href="assets/images/logo2.png" />
     </head>
     <body>
-        <header>
-            <img class="header-logo" src="assets/images/Logo.svg"/>
-            <ul class="header-menu">
-                <li>Product</li>
-                <li>Pricing</li>
-                <li>Support</li>
-                <li>About</li>
-            </ul>
-            
-        </header>
+       
+        <?php require("templates/header.html"); ?> 
         <h1>The Social Learning Environment<span class="blue"><b>*</b></span> for B-Schools</h1>
         <div class="content">
             <p class="center">
@@ -64,54 +51,7 @@ and open the template in the editor.
                 
             </div>
         </div>
-        <footer>
-            <div class="footer-column">
-                <img class="footer-logo" src="assets/images/Logo.svg"/>
-                <p>
-                    Marketers/advertisers usually focus their efforts on the people responsible for making the purchase. 
-                    Copyright © 2017, Shipped from Monaco, FRA.
-                </p>
-            </div>
-            <div class="footer-column">
-                <div class="footer-title">Using Twic</div>
-                <ul>
-                    <li>Product</li>
-                    <li>Pricing</li>
-                    <li>Support</li>
-                    <li>Guides</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <div class="footer-title">Twic</div> 
-                <ul>
-                    <li>About</li>
-                    <li>Partners</li>
-                    <li>Blog</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <div class="footer-title">Legal</div>
-                <ul>
-                    <li>Privacy</li>
-                    <li>Security</li>
-                    <li>Terms of service</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <div class="footer-title">Handy links</div>
-                <ul>
-                    <li>Download App</li>
-                    <li>Status</li>
-                    <li>FERPA and WCAG</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <div class="footer-title">Contact us</div>
-                <img src="assets/images/facebook.png" class="social-media facebook"/>
-                <img src="assets/images/twitter.png" class="social-media"/>
-                <img src="assets/images/linkedin.png" class="social-media"/>
-            </div>
-            
-        </footer>
+       
+        <?php require("templates/footer.html"); ?> 
     </body>
 </html>
