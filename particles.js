@@ -2,6 +2,21 @@
 var h = 400;
 var w = $(window).width() - 50;
 
+var center = [$(window).width(), 30];
+
+var radius = [
+    350,
+    280,
+    210,
+    150,
+    100
+];
+
+function isOnCircle(top, left){
+    var distance = Math.floor(Math.sqrt(Math.pow(left - center[0],2) + Math.pow(top, center[1], 2)));
+    return radius.indexOf(distance);
+};
+
 function makeNewPosition(){
 
     // Get viewport dimensions (remove the dimension of the div)
