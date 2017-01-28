@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    var h = 400;
+    var h = 800;
     var w =  $("#header").outerWidth();
     var center = [0, 0];
 
@@ -14,16 +14,16 @@ $(document).ready(function(){
     
     var positions = {
         up : function(){
-            return [-50, w * Math.random()];            
+            return [-100, w * Math.random()];            
         },
         right : function(){
-            return [h * Math.random(), w + 50];
+            return [h * Math.random(), -100];
         },
         bottom : function(){
-            return [h + 50, w * Math.random()]
+            return [h + 100, w * Math.random()]
         },
         left : function(){
-            return [h * Math.random(), -50]
+            return [h * Math.random(), w + 100]
         }
     };
     
@@ -47,11 +47,11 @@ $(document).ready(function(){
     function animateParticle(particle, destination){
         if(!particle.orbit){
             particle.rotation = (Math.random() - 0.5) * 720;
-            particle.currentRotation = particle.rotation * 2;
-            particle.duration = Math.max(3000, Math.random() * 15000);
+            particle.currentRotation = Math.max(-360, Math.min(360,particle.rotation * 10));
+            particle.duration = Math.max(10000, Math.random() * 20000);
             var distance = distanceToCenter(destination[0], destination[1]);
             radius.forEach(function(r){
-               if(r >= distance && Math.random() >= 0.5){
+               if(r >= distance && Math.random() >= 0.90){
                    particle.orbit = r;
                } 
             });
@@ -89,7 +89,7 @@ $(document).ready(function(){
                     subparticle.addClass("large-border");
                     particle.append(subparticle);
                     
-                    particle.lifespan = setTimeout(function(){ destroyParticle(particle);},30000);
+                    particle.lifespan = setTimeout(function(){ destroyParticle(particle);},15000);
                 }
                 animateParticle(particle);
             }
@@ -107,21 +107,21 @@ $(document).ready(function(){
         var particle = $(document.createElement( "div" ));
         particle.addClass("particle");
         particle.addClass(Math.random() >= 0.5 ? "gray" : "");
-        particle.addClass(Math.random() >= 0.5 ? "transparent" : "");
+        //particle.addClass(Math.random() >= 0.5 ? "transparent" : "");
         particle.addClass(Math.random() >= 0.5 ? "large-border" : "");
         particle.addClass(Math.random() >= 0.5 ? "small" : "");
         var source=  Object.keys(positions)[Math.floor(Math.random() * 4)];
         var destination = Object.keys(positions).filter(function(p){ return p !== source; })[Math.floor(Math.random() * 3)];
         source = positions[source]();
         destination = positions[destination]();
-        particle.css({ transform: "translate(-" + source[1] + "px, " + source[0] + "px)", opacity : 0 });
+        particle.css({ transform: "translate(-" + source[1] + "px, " + source[0] + "px)", opacity : 1 });
         particle.x = source[1];
         particle.y = source[0];
         $( "#animation-layout" ).append(particle);
         animateParticle(particle, destination); 
     };
 
-    for(var i = 0; i < 15; i++){
+    for(var i = 0; i < 100; i++){
        setTimeout(generateParticle, Math.random() * 5000);
     }
     

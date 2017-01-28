@@ -103,16 +103,24 @@ header{
 
 #header-animation{
     position : absolute;
-    top : 3rem;
+    top : 0rem;
     right : 0;
     left : 0;
-    height : 40rem;
+    padding-top: 3rem;
+    overflow : hidden;
+    height : 80rem;
     z-index: -1;
+ 
+
 }
 #animation-layout{
     position : relative;
-    width : 100%;
-    height : 100%;
+    top : -3rem;
+    left : 0;
+    right : 0;
+    height : 83rem;
+    background-image: radial-gradient(circle farthest-side at 100% 0 , rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.6) 450px, rgba(255, 255, 255, 0.8) 100%);
+    
 }
 
 .header-logo{
@@ -349,7 +357,7 @@ footer{
     }
 }
 
-@keyframes particule {
+@keyframes particle {
     0%   { border-width : 1px }
     25% { border-width : 0.5rem }
     50% { border-width : 0.5rem }
@@ -363,7 +371,7 @@ footer{
     height : 2rem;
     display : flex;
     position : absolute;
-    z-index : -1;  
+    z-index : -2;  
     top : -1rem;
     right : -1rem;
     
