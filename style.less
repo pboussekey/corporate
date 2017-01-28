@@ -101,6 +101,20 @@ header{
     padding : 2rem 10rem 5rem 20rem;   
 }
 
+#header-animation{
+    position : absolute;
+    top : 3rem;
+    right : 0;
+    left : 0;
+    height : 40rem;
+    z-index: -1;
+}
+#animation-layout{
+    position : relative;
+    width : 100%;
+    height : 100%;
+}
+
 .header-logo{
     margin-right: auto;
 }
@@ -264,28 +278,28 @@ footer{
 
 
 @keyframes circle-1 {
-    0%   { right:-70rem; top:-67rem; }
-    100% { right:-35rem; top:-32rem; }
+    0%   { right:-70rem; top:-70rem; }
+    100% { right:-35rem; top:-35rem; }
 }
 
 @keyframes circle-2 {
-    0%   { right:-56rem; top:-53rem; }
-    100% { right:-28rem; top:-25rem; }
+    0%   { right:-56rem; top:-56rem; }
+    100% { right:-28rem; top:-28rem; }
 }
 
 @keyframes circle-3 {
-    0%   { right:-42rem; top:-39rem; }
-    100% { right:-21rem; top:-18rem; }
+    0%   { right:-42rem; top:-42rem; }
+    100% { right:-21rem; top:-21rem; }
 }
 
 @keyframes circle-4 {
-    0%   { right:-30rem; top:-27rem; }
-    100% { right:-15rem; top:-12rem; }
+    0%   { right:-30rem; top:-30rem; }
+    100% { right:-15rem; top:-15rem; }
 }
 
 @keyframes circle-5 {
-    0%   { right:-20rem; top:-17rem; }
-    100% { right:-10rem; top:-7rem; }
+    0%   { right:-20rem; top:-20rem; }
+    100% { right:-10rem; top:-10rem; }
 }
 
 .circle{
@@ -350,7 +364,7 @@ footer{
     display : flex;
     position : absolute;
     z-index : -1;  
-    top : 2rem;
+    top : -1rem;
     right : -1rem;
     
     &.transparent{
@@ -360,21 +374,23 @@ footer{
         border-color : #5d5e63;
     }
     &.small{
-        width : 1.5rem;
-        height : 1.5rem;
-        top : 2.25rem;
-        right : -0.75rem;
+        width : 1.2rem;
+        height : 1.2rem;
+        top : -0.6rem;
+        right : -0.6rem;
     }
     &.large{
         width : 3rem;
         height : 3rem;
+        top : -1.5rem;
+        right : -1.5rem;
     }
     &.larger{
         width : 4rem;
         height : 4rem;
     }
     &.large-border{
-        border-width: 4px;
+        border-width: 6px;
     }
     & > .particle{
         margin : auto;
