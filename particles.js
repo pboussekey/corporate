@@ -27,7 +27,9 @@ $(document).ready(function(){
         }
     };
     
-    
+    function step(){
+        
+    }
 
     function distanceToCenter(top, left){
         var distance = Math.floor(Math.sqrt(Math.pow(left - center[1],2) + Math.pow(top - center[0], 2)));
@@ -48,10 +50,10 @@ $(document).ready(function(){
         if(!particle.orbit){
             particle.rotation = Math.floor((Math.random() - 0.5) * 720);
             particle.currentRotation = Math.max(-360, Math.min(360,particle.rotation * 10));
-            particle.duration = Math.max(10000, Math.random() * 20000);
+            particle.duration = Math.floor(Math.max(15000, Math.random() * 20000));
             var distance = distanceToCenter(destination[0], destination[1]);
             radius.forEach(function(r){
-               if(r >= distance && Math.random() >= 0.90){
+               if(r >= distance && Math.random() >= 0.20){
                    particle.orbit = r;
                } 
             });
@@ -65,12 +67,12 @@ $(document).ready(function(){
             particle.currentRotation = particle.currentRotation + particle.rotation;
         }
         
-        particle.animate({  opacity : 1 }, {
+        particle.animate({ opacity : particle.opacity  }, {
         step : function(){
-            $(particle).css(
+            $(particle).css( 
                 { transform: (particle.currentRotation ? "rotate(" + particle.currentRotation + "deg)" : "") 
                     + "translate(" + (-particle.x) + "px, " + particle.y + "px) " , 
-                 transition : "transform " + particle.duration + "ms", "transition-timing-function" : particle.currentRotation ? "linear" : "easeIn" })
+                 transition : "transform linear " + particle.duration + "ms" })
         },
         duration: particle.duration,
         complete:function(){
@@ -79,16 +81,37 @@ $(document).ready(function(){
             }
             else{
                 if(!particle.lifespan){
-                    particle.removeClass("small");
-                    particle.removeClass("large-border");
+                    particle.size = Math.floor(particle.size * 1.5);
+                    particle.animate(
+                        { 
+                            height : particle.size, 
+                            width : particle.size, 
+                            top : -Math.floor(particle.size * 0.5 + particle.borderSize),
+                            right : -Math.floor(particle.size * 0.5 + particle.borderSize),
+                    }, { 
+                        duration : 500, 
+                        easing : "easeOutElastic",
+                        step : function(){
+                            $(particle).css( 
+                                { transform: (particle.currentRotation ? "rotate(" + particle.currentRotation + "deg)" : "") 
+                                    + "translate(" + (-particle.x) + "px, " + particle.y + "px) " , 
+                                 transition : "transform linear " + particle.duration + "ms" })
+                        }
+                    });
                     var subparticle = $(document.createElement( "div" ));
                     subparticle.addClass("particle");
-                    subparticle.addClass("small");
                     subparticle.addClass(particle.hasClass("gray") ? "gray" : "");
-                    subparticle.addClass("large-border");
+                    subparticle.borderSize = Math.max(1,Math.floor(Math.random() * particle.size * 0.5));
                     particle.append(subparticle);
+                    subparticle.animate(
+                        { 
+                            "border-width" : subparticle.borderSize
+                    }, { 
+                        duration : 500, 
+                        easing : "easeOutElastic"
+                    });
                     
-                    particle.lifespan = setTimeout(function(){ destroyParticle(particle);},15000);
+                    particle.lifespan = setTimeout(function(){ destroyParticle(particle);},30000);
                 }
                 animateParticle(particle);
             }
@@ -106,20 +129,31 @@ $(document).ready(function(){
         var particle = $(document.createElement( "div" ));
         particle.addClass("particle");
         particle.addClass(Math.random() >= 0.5 ? "gray" : "");
-        particle.addClass(Math.random() >= 0.5 ? "large-border" : "");
-        particle.addClass(Math.random() >= 0.5 ? "small" : "");
         var source=  Object.keys(positions)[Math.floor(Math.random() * 4)];
         var destination = Object.keys(positions).filter(function(p){ return p !== source; })[Math.floor(Math.random() * 3)];
         source = positions[source]();
         destination = positions[destination]();
         particle.x = source[1];
         particle.y = source[0];
+        particle.opacity = Math.random() * 0.8 + 0.2;
+        particle.size = Math.floor(Math.random() * 6 + 10);
+        particle.size -= particle.size % 2;
+        particle.borderSize = Math.min(16 - particle.size, particle.size / 2,Math.floor(Math.random() * 6 + 1));
         $( "#animation-layout" ).append(particle);
-        particle.css({ transform: "translate(" + (-source[1]) + "px, " + source[0] + "px)", opacity : 1 });
+        particle.css(
+            { 
+                transform: "translate(" + (-source[1]) + "px, " + source[0] + "px)", 
+                height : particle.size, 
+                width : particle.size, 
+                top : -Math.floor(particle.size * 0.5 + particle.borderSize),
+                right : -Math.floor(particle.size * 0.5 + particle.borderSize),
+                "border-width" : particle.borderSize,
+                opacity : particle.opacity
+            });
         animateParticle(particle, destination); 
     };
 
-    for(var i = 0; i < 50; i++){
+    for(var i = 0; i < 20; i++){
        setTimeout(generateParticle, Math.random() * 5000);
     }
     
