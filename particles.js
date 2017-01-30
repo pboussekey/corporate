@@ -84,6 +84,7 @@ $(document).ready(function(){
                     particle.size = Math.floor(particle.size * 1.5);
                     particle.animate(
                         { 
+                            "border-width" : 1,
                             height : particle.size, 
                             width : particle.size, 
                             top : -Math.floor(particle.size * 0.5 + particle.borderSize),
@@ -153,7 +154,7 @@ $(document).ready(function(){
         animateParticle(particle, destination); 
     };
 
-    for(var i = 0; i < 20; i++){
+    for(var i = 0; i < 10; i++){
        setTimeout(generateParticle, Math.random() * 5000);
     }
     
