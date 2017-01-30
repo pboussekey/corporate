@@ -14,16 +14,16 @@ $(document).ready(function(){
     
     var positions = {
         up : function(){
-            return [-100, w * Math.random()];            
+            return [-100, Math.floor(w * Math.random())];            
         },
         right : function(){
-            return [h * Math.random(), -100];
+            return [Math.floor(h * Math.random()), -100];
         },
         bottom : function(){
-            return [h + 100, w * Math.random()]
+            return [h + 100, Math.floor(w * Math.random())]
         },
         left : function(){
-            return [h * Math.random(), w + 100]
+            return [Math.floor(h * Math.random()), w + 100]
         }
     };
     
@@ -46,7 +46,7 @@ $(document).ready(function(){
 
     function animateParticle(particle, destination){
         if(!particle.orbit){
-            particle.rotation = (Math.random() - 0.5) * 720;
+            particle.rotation = Math.floor((Math.random() - 0.5) * 720);
             particle.currentRotation = Math.max(-360, Math.min(360,particle.rotation * 10));
             particle.duration = Math.max(10000, Math.random() * 20000);
             var distance = distanceToCenter(destination[0], destination[1]);
@@ -68,9 +68,8 @@ $(document).ready(function(){
         particle.animate({  opacity : 1 }, {
         step : function(){
             $(particle).css(
-                { transform: (particle.currentRotation ? "rotate(" + (-particle.currentRotation) + "deg)" : "") 
-                    + "translate(-" + particle.x + "px, " + particle.y + "px) " 
-                    + (particle.currentRotation ? "rotate(" + particle.currentRotation + "deg)" : ""), 
+                { transform: (particle.currentRotation ? "rotate(" + particle.currentRotation + "deg)" : "") 
+                    + "translate(" + (-particle.x) + "px, " + particle.y + "px) " , 
                  transition : "transform " + particle.duration + "ms", "transition-timing-function" : particle.currentRotation ? "linear" : "easeIn" })
         },
         duration: particle.duration,
@@ -107,21 +106,20 @@ $(document).ready(function(){
         var particle = $(document.createElement( "div" ));
         particle.addClass("particle");
         particle.addClass(Math.random() >= 0.5 ? "gray" : "");
-        //particle.addClass(Math.random() >= 0.5 ? "transparent" : "");
         particle.addClass(Math.random() >= 0.5 ? "large-border" : "");
         particle.addClass(Math.random() >= 0.5 ? "small" : "");
         var source=  Object.keys(positions)[Math.floor(Math.random() * 4)];
         var destination = Object.keys(positions).filter(function(p){ return p !== source; })[Math.floor(Math.random() * 3)];
         source = positions[source]();
         destination = positions[destination]();
-        particle.css({ transform: "translate(-" + source[1] + "px, " + source[0] + "px)", opacity : 1 });
         particle.x = source[1];
         particle.y = source[0];
         $( "#animation-layout" ).append(particle);
+        particle.css({ transform: "translate(" + (-source[1]) + "px, " + source[0] + "px)", opacity : 1 });
         animateParticle(particle, destination); 
     };
 
-    for(var i = 0; i < 100; i++){
+    for(var i = 0; i < 50; i++){
        setTimeout(generateParticle, Math.random() * 5000);
     }
     
