@@ -5,8 +5,8 @@ $(document).ready(function(){
     var center = [0, 0];
 
     var radius = [
-        350,
-        280,
+        370,
+        290,
         210,
         150,
         100
@@ -14,16 +14,16 @@ $(document).ready(function(){
     
     var positions = {
         up : function(){
-            return [-100, Math.floor(w * Math.random())];            
+            return [-100, Math.floor( $("#header").outerWidth() * Math.random())];            
         },
         right : function(){
             return [Math.floor(h * Math.random()), -100];
         },
         bottom : function(){
-            return [h + 100, Math.floor(w * Math.random())]
+            return [h + 100, Math.floor( $("#header").outerWidth() * Math.random())]
         },
         left : function(){
-            return [Math.floor(h * Math.random()), w + 100]
+            return [Math.floor(h * Math.random()),  $("#header").outerWidth() + 100]
         }
     };
     

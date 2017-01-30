@@ -24,7 +24,8 @@ html *{
 body{
     height : 100%;
     width : 100%;
-    font-size: 1.3rem;
+    font-size: 1.8rem; 
+    line-height: 3.4rem;
     margin : 0;
     overflow-x: hidden;
 }
@@ -32,16 +33,24 @@ body{
 .content{
     display : flex;
     flex-direction : column;
-    & > p{
-        font-size: 2rem;
+    max-width: 144rem;
+    margin : 0 auto;
+     p{
         text-align: center;
-        line-height: 3rem;
+        display : block;
         width : 100%;
         max-width : 80rem;
-        margin-top : 1rem;
-        margin-bottom : 4rem;
+        margin-bottom: 5rem;
         color: @clr-text;
     }
+}
+
+
+.small-text{
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 3.4rem;
+    letter-spacing: 5;
 }
 
 .blue{
@@ -52,16 +61,12 @@ body{
     color : @clr-text;
 }
 
-.center{    
-    margin-left : auto;
-    margin-right : auto;
-}
 
 h1{
     font-size: 4rem;
     font-weight: bold;
     text-align: center;
-    line-height: 5rem;
+    line-height: 6.2rem;
     color: @clr-text;
     width : 100%;
 }
@@ -80,19 +85,20 @@ button{
     font-size: 1.4rem;
     text-align: center;
     cursor : pointer;
-    margin-top : 1rem;
-    margin-bottom : 1rem;
     .arrow{
-        display: inline-block;
-        margin-left: 2rem;
-        font-size: 1rem;
+        margin: -1px 0 0 2rem;
         float : right;
+        font-family: cursive;
+        font-size: 1.5rem;
+        
     }
 }
 
 header{
     display : flex;
-    padding : 2rem 10rem 5rem 20rem;   
+    padding : 2.9rem 13rem;   
+    max-width: 144rem;
+    margin : 0 auto;
 }
 
 #header-animation{
@@ -100,8 +106,7 @@ header{
     top : 0rem;
     right : 0;
     left : 0;
-    padding-top: 3rem;
-    overflow : hidden;
+    margin-top: 5rem;
     height : 80rem;
     z-index: -1;
  
@@ -109,10 +114,10 @@ header{
 }
 #animation-layout{
     position : relative;
-    top : -3rem;
+    top : 0rem;
     left : 0;
     right : 0;
-    height : 83rem;
+    height : 85rem;
     background-image: radial-gradient(circle farthest-side at 100% 0 , rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 100%);
     
 }
@@ -124,22 +129,38 @@ header{
 
 
 
-.header-menu > li{
-    font-size: 1.6rem;
-    font-weight: 600;
-    text-align: center;
-    color: @clr-text;
-    list-style: none;
-    display : inline-block;
-    width : 10rem;
-    cursor : pointer;
-}
+.header-menu{
+    margin : 0;
+    li{
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        font-weight: 600;
+        text-align: center;
+        color: @clr-text;
+        list-style: none;
+        display : inline-block;
+        margin : 0 1.5rem;
+        cursor : pointer;
+    }
+} 
 
 .block{
-    display : flex;
     position : relative;
+    text-align: center;
     max-width: 120rem;
-    margin : 8rem auto;
+    margin-left : auto;
+    margin-right : auto;
+    & > *{
+        margin-left : auto;
+        margin-right : auto;
+    }
+    &.flex{
+        display : flex;
+    }
+    &.marged{
+        margin-top: 15rem;
+        margin-bottom: 15rem;
+    }
 }
 
 .portrait{
@@ -162,9 +183,10 @@ header{
     color: @clr-text;
     p {
         font-size: 1.8rem;
-        line-height: 3rem;
+        line-height: 3.4rem;
         margin : 4rem 0;
         font-weight: 300;
+        text-align: left;
         position : relative;
 
     }
@@ -176,14 +198,13 @@ header{
     line-height: 6rem;
     text-align: left;
     letter-spacing: 0.5rem;
-    
 }
 
 .poets{
     display : inline-block;
     height : 3.5rem;
     position : absolute;
-    top : 2.6rem;
+    top : 3.3rem;
 }
 
 .quote{
@@ -201,17 +222,39 @@ header{
     display: flex;
     width : 100%;
     max-width: 120rem;
-    margin-bottom: 4rem;
+    margin: 4rem auto;
     
     .school{
-        max-width : 20%;
-        height : 8rem;
-        margin : 1rem auto;
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(100%);
-        opacity: 0.5;
+        width : 20%;
+        display : flex;
+        img{
+            height : 6rem;
+            margin : 0 auto;
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+            opacity: 0.5;
+        }
     }
     
+}
+
+.slider{
+    display : flex;
+    margin : 4rem auto 15rem auto;
+    .slider-point{
+        width : 0.9rem;
+        height : 0.9rem;
+        border-radius: 50%;
+        background : #D7D7E2;
+        margin-right: 3rem;
+        cursor : pointer;
+        &:last-of-type{
+            margin-right: 0;
+        }
+        &.selected{
+            background : @clr-blue;
+        }
+    }
 }
 
 footer{
@@ -280,13 +323,13 @@ footer{
 
 
 @keyframes circle-1 {
-    0%   { right:-70rem; top:-70rem; }
-    100% { right:-35rem; top:-35rem; }
+    0%   { right:-74rem; top:-74rem; }
+    100% { right:-37rem; top:-37rem; }
 }
 
 @keyframes circle-2 {
-    0%   { right:-56rem; top:-56rem; }
-    100% { right:-28rem; top:-28rem; }
+    0%   { right:-58rem; top:-58rem; }
+    100% { right:-29rem; top:-29rem; }
 }
 
 @keyframes circle-3 {
@@ -314,16 +357,16 @@ footer{
     right : -100%;
     z-index : -3;
     &.first{
-        width : 70rem;
-        height : 70rem;   
+        width : 74rem;
+        height : 74rem;   
         animation-name: circle-1;
         animation-duration: 2s;
         animation-fill-mode: forwards;
         box-shadow : none;
     }
     &.second{
-        width : 56rem;
-        height : 56rem;   
+        width : 58rem;
+        height : 58rem;   
         animation-fill-mode: forwards;
         animation-name: circle-2;   
         animation-duration: 2s; 
@@ -376,8 +419,7 @@ footer{
         position : relative;
         animation: none;
         opacity : 1;
-        border-color: transparent; 
-        border-style: none;
+        border-color: white; 
         background : @clr-blue;
         &.gray{
             background : #5d5e63;
