@@ -359,8 +359,9 @@ footer{
 
 @keyframes particle {
     0%   { border-width : 1px }
+    15%   { border-width : 1px }
     25% { border-width : 6px }
-    50% { border-width : 1px; }
+    35% { border-width : 1px; }
     100%   { border-width : 1px }
 }
 
@@ -374,7 +375,7 @@ footer{
     z-index : -2;  
     top : -1rem;
     right : -1rem;
-    animation: particle 5s infinite;   
+    animation: particle ease-in-out 5s infinite;   
     
     &.transparent{
         opacity : 0.2;
