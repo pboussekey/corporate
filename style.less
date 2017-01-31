@@ -33,7 +33,8 @@ body{
 .content{
     display : flex;
     flex-direction : column;
-    max-width: 144rem;
+    width : 100%;
+    max-width : 110rem;
     margin : 0 auto;
      p{
         text-align: center;
@@ -69,6 +70,7 @@ h1{
     line-height: 6.2rem;
     color: @clr-text;
     width : 100%;
+    margin-top : 8rem;
 }
 
 
@@ -96,8 +98,8 @@ button{
 
 header{
     display : flex;
-    padding : 2.9rem 13rem;   
-    max-width: 144rem;
+    margin-top : 3rem;   
+    max-width: 110rem;
     margin : 0 auto;
 }
 
@@ -147,7 +149,6 @@ header{
 .block{
     position : relative;
     text-align: center;
-    max-width: 120rem;
     margin-left : auto;
     margin-right : auto;
     & > *{
@@ -262,14 +263,18 @@ footer{
     background-color: #3B3E48;
     color : #FFF;
     padding : 4rem 8rem; 
-    display : flex;
     font-size: 1.4rem;
     font-weight: 300;
     line-height: 3rem;
+    .footer-content{
+        width : 100%;
+        max-width : 110rem;
+        display : flex;
+        margin : 0 auto;
+    }
 }
 .footer-column{
-    padding : 0 1.5rem;
-    min-width: 15rem;
+    padding : 0 2rem;
     &:first-of-type{
         border-right : solid 1px #585D6E;
         width : 60rem;
@@ -406,6 +411,7 @@ footer{
     &.gray{
         border-color : #5d5e63;
     }
+   
    
     & > .particle{
         margin : auto;
