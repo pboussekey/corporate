@@ -1,0 +1,118 @@
+@import "./assets/less/rules.less";
+
+
+
+html{
+    height : 100%;
+    width : 100%;
+    font-size: 10px;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    display : flex;
+    flex-direction : column;
+    * {
+        box-sizing: inherit;
+    }
+    color: @clr-text;    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+html *{
+    box-sizing: inherit;
+}
+
+body{
+    height : 100%;
+    width : 100%;
+    font-size: 1.8rem; 
+    line-height: 3.4rem;
+    margin : 0;
+    overflow-x: hidden;
+}
+
+
+
+.content {
+    display : flex;
+    flex-direction : column;
+    width : 100%;
+    max-width : 110rem;
+    margin : 0 auto;
+     p{
+        text-align: center;
+        display : block;
+        width : 100%;
+        max-width : 80rem;
+        margin-bottom: 5rem;
+        color: @clr-text;
+    }
+}
+
+
+.small-text{
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 3.4rem;
+    letter-spacing: 5;
+}
+
+.blue{
+    color : @clr-blue;
+}
+
+.gray{
+    color : @clr-text;
+}
+
+
+h1{
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 6.2rem;
+    color: @clr-text;
+    width : 100%;
+    margin-top : 8rem;
+}
+
+
+button{    
+    background-color: @clr-blue;
+    border-radius: 2px;
+    height: 4rem;
+    line-height: 4rem;
+    padding:0 2rem;
+    border:0;
+    outline:0;
+    color : #FFF;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+    cursor : pointer;
+    .arrow{
+        margin: -1px 0 0 2rem;
+        float : right;
+        font-family: cursive;
+        font-size: 1.5rem;
+        
+    }
+}
+
+.block{
+    position : relative;
+    text-align: center;
+    margin-left : auto;
+    margin-right : auto;
+    & > *{
+        margin-left : auto;
+        margin-right : auto;
+    }
+    &.flex{
+        display : flex;
+    }
+    &.marged{
+        margin-top: 15rem;
+        margin-bottom: 15rem;
+    }
+}

@@ -1,0 +1,93 @@
+@import "../../assets/less/rules.less";
+
+.portrait{
+    background-image: url("assets/images/maxresdefault.jpg");
+    background-position: 80% 50%;
+    background-size: cover;
+    height : 55rem;
+    width : 55rem;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+#animation-layout{
+    height : 85rem;
+    background-image: radial-gradient(circle farthest-side at 100% 0 , rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 100%);
+}
+
+[app-planetarium]{
+    height : 85rem;
+}
+
+.citation-block{
+    margin-top : 6rem;
+    background: linear-gradient(203.37deg, #EEEEEE 0%, #FFFFFF 60%);
+    border-radius: 4px;
+    flex : 1;
+    padding : 8rem 2rem 2rem 6rem;
+    color: @clr-text;
+    p {
+        font-size: 1.8rem;
+        line-height: 3.4rem;
+        margin : 4rem 0;
+        font-weight: 300;
+        text-align: left;
+        position : relative;
+
+    }
+}
+
+.citation{
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 6rem;
+    text-align: left;
+    letter-spacing: 0.5rem;
+}
+
+.poets{
+    display : inline-block;
+    height : 3.5rem;
+    position : absolute;
+    top : 3.3rem;
+}
+
+.quote{
+    font-family: Merriweather;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 101px;
+    opacity : 0.5;
+    position : absolute;
+    left : 58rem;
+    top : 4rem;
+}
+
+.schools{
+    display: flex;
+    width : 100%;
+    max-width: 120rem;
+    margin: 4rem auto;
+    
+    .school{
+        width : 20%;
+        display : flex;
+        img{
+            height : 6rem;
+            margin : 0 auto;
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+            opacity: 0.5;
+        }
+    }
+    
+}
+
+[app-planetarium]{
+    top : 0rem;
+    right : 0;
+    left : 0;
+    margin-top: 5rem;
+    height : 80rem;
+}
