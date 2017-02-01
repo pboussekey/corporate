@@ -11,9 +11,10 @@
     z-index: 1;
 }
 
-#animation-layout{
-    height : 85rem;
-    background-image: radial-gradient(circle farthest-side at 100% 0 , rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 100%);
+
+
+:host /deep/ [app-planetarium] > #animation-layout{
+    background-image: radial-gradient(circle farthest-side at 100% 0 , rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 95%, rgba(255, 255, 255, 1) 100%);
 }
 
 [app-planetarium]{
@@ -64,7 +65,7 @@
     top : 4rem;
 }
 
-.schools{
+:host /deep/ .schools{
     display: flex;
     width : 100%;
     max-width: 120rem;
@@ -84,10 +85,13 @@
     
 }
 
+:host /deep/ .carousel-pagination{
+    margin : 7.5rem auto 13rem !important;
+}
+
 [app-planetarium]{
     top : 0rem;
     right : 0;
     left : 0;
-    margin-top: 5rem;
-    height : 80rem;
+    height : 85rem;
 }

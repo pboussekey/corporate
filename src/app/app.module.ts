@@ -10,6 +10,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PlanetariumComponent } from './shared/planetarium/planetarium.component';
 import { TestComponent } from './test/test.component';
+import { CarouselComponent, CarouselPage } from './shared/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { TestComponent } from './test/test.component';
     FooterComponent,
     HomeComponent,
     PlanetariumComponent,
-    TestComponent
+    TestComponent,
+    CarouselComponent,
+    CarouselPage
   ],
   imports: [
     BrowserModule,

@@ -1,28 +1,42 @@
-<div id="animation-layout">
-    <div class="circle-center" *ngFor="let circle of radius" [ngStyle]="{ top : -circle, right : -circle }">
+<div id="animation-layout" [ngStyle]="{ width : size[0], height : size[1] }">
+    <div class="circle-center" *ngFor="let circle of radius" [ngStyle]="{ top : -circle + center[1], right : -circle  + center[0] }">
          <div class="circle" [@circle]="normal" [ngStyle]="{ width : circle * 2, height : circle * 2 }">
              
         </div>
     </div>
     <div class="particle" 
+          [@particle]="normal"
          *ngFor="let particle of particles" 
          [ngClass]="{ gray : particle.color === 'gray' }"
          [ngStyle]="
             { 
-                'margin-right' : particle.source[0],
-                'margin-top' : particle.source[1], 
                 opacity : particle.opacity,
-                width : particle.size,
-                height : particle.size,
-                top : -particle.size * 0.5,
-                right : -particle.size * 0.5,
-                'border-width' : particle.borderSize,
-                transform : 'rotate(' + particle.currentRotation + 'deg)',
+                width : particle.width,
+                height : particle.width,
+                top : -particle.width * 0.5 - particle.borderWidth[0] + center[1],
+                right : -particle.width * 0.5 - particle.borderWidth[0] + center[0],
+                'border-width' : particle.borderWidth[0],
+                transform : 'rotate(' + particle.rotation + 'deg) translate('+(-particle.source[0])+'px,'+particle.source[1]+'px)',
                 'transition' : 
-                'margin-right ' + particle.duration + 'ms linear, 
-                margin-top ' + particle.duration + 'ms linear, 
-                transform  ' + particle.duration + 'ms linear'
+                'opacity 0.5s linear, transform  ' + particle.duration + 'ms cubic-bezier(0.6, 0.4, 0.6, 0.9), 
+                width 300ms cubic-bezier(0, 1.5, 1, 1.5), 
+                height 300ms cubic-bezier(0, 1.5, 1, 1.5),  
+                top 300ms cubic-bezier(0, 1.5, 1, 1.5),  
+                right 300ms cubic-bezier(0, 1.5, 1, 1.5), 
+                border-width 300ms cubic-bezier(0, 1.5, 1, 1.5)'
             }"
         >
+        <div class="particle" 
+         *ngIf="particle.borderWidth[1]" 
+         [ngStyle]="{ 
+            'border-width' : particle.borderWidth[1]
+         }">
+            <div class="particle white" 
+            *ngIf="particle.borderWidth[2]" 
+            [ngStyle]="{ 
+               'border-width' : particle.borderWidth[2]
+            }">
+        </div>
+        </div>
     </div>
 </div>
