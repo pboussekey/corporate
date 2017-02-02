@@ -53,7 +53,7 @@ export class HomeComponent implements AfterViewInit {
     }
     
     getPartners(){
-        var pageSize = window.innerWidth > 800 ? 10 : 4;
+        var pageSize = window.innerWidth > 1024 ? 10 : (window.innerWidth > 768 ? 6 : 4);
         var partners = JSON.parse(JSON.stringify(this.partners));
         this.pages = [];
         while(partners.length){
