@@ -1,0 +1,14 @@
+<div class="carousel">
+    <div  class="carousel-content" 
+        [ngStyle]="{ 'margin-left' : (-currentPage * 100) + '%' }">
+        <ng-content></ng-content>
+        
+    </div> 
+</div>
+<div class="carousel-pagination"  *ngIf="pages.length > 1">
+    <div class="pagination-point" 
+         *ngFor="let page of pages;let i = index; " 
+         (click)="changePage(i)"
+         [ngClass]="{ selected : i === currentPage }"
+         ></div>
+</div>

@@ -1,0 +1,42 @@
+@import "../../../assets/less/rules.less";
+
+:host{
+    display : flex;
+    flex-direction: column;
+}
+:host /deep/ .carousel{
+    width : 100%;
+    overflow : hidden;
+    flex-shrink: 0;
+    .carousel-content{
+        width : 100%;
+        display : flex;
+        transition : margin-left 500ms ease-in;
+    }
+    [carousel-page]{
+        width : 100%;
+        flex-shrink: 0;
+        position : relative;
+    }
+    
+}
+
+.carousel-pagination{
+    margin : 4rem auto;
+    display : flex;
+    .pagination-point{
+        width : 0.9rem;
+        height : 0.9rem;
+        border-radius: 50%;
+        background : #D7D7E2;
+        margin-right: 3rem;
+        cursor : pointer;
+        &:last-of-type{
+            margin-right: 0;
+        }
+        &.selected{
+            background : @clr-blue;
+        }
+    }
+}
+
