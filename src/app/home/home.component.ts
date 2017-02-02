@@ -44,11 +44,11 @@ export class HomeComponent implements AfterViewInit {
     ];
     
     circles : Circle[] = [
-        { opacity: 0.8, radius: 100, shadow : "-5px 5px 15px 0px rgba(0,0,0,0.45)"  },
-        { opacity: 0.7, radius: 150, shadow : "-5px 5px 15px 0px rgba(0,0,0,0.40)"  },
-        { opacity: 0.6, radius: 210, shadow : "-5px 5px 15px 0px rgba(0,0,0,0.35)"  },
-        { opacity: 0.4, radius: 280, shadow : "-5px 5px 15px 0px rgba(0,0,0,0.25)"  },
-        { opacity: 0.3, radius: 360, shadow : "-5px 5px 15px 0px rgba(0,0,0,0.10)"  }
+        { opacity: 0.8, radius: 120, shadow : "-5px 5px 40px 0px rgba(0,0,0,0.06)"  },
+        { opacity: 0.7, radius: 180, shadow : "-5px 5px 40px 0px rgba(0,0,0,0.06)"  },
+        { opacity: 0.6, radius: 240, shadow : "-5px 5px 40px 0px rgba(0,0,0,0.06)"  },
+        { opacity: 0.4, radius: 310, shadow : "-5px 5px 40px 0px rgba(0,0,0,0.06)"  },
+        { opacity: 0.3, radius: 400, shadow : "-5px 5px 40px 0px rgba(0,0,0,0.06)"  }
     ];
         
         

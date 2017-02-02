@@ -51,11 +51,11 @@ var HomeComponent = (function () {
             "assets/images/Indonesia logo.png",
         ];
         this.circles = [
-            { opacity: 0.8, radius: 100, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.45)" },
-            { opacity: 0.7, radius: 150, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.40)" },
-            { opacity: 0.6, radius: 210, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.35)" },
-            { opacity: 0.4, radius: 280, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.25)" },
-            { opacity: 0.3, radius: 360, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.10)" }
+            { opacity: 0.8, radius: 120, shadow: "-5px 5px 40px 0px rgba(0,0,0,0.06)" },
+            { opacity: 0.7, radius: 180, shadow: "-5px 5px 40px 0px rgba(0,0,0,0.06)" },
+            { opacity: 0.6, radius: 240, shadow: "-5px 5px 40px 0px rgba(0,0,0,0.06)" },
+            { opacity: 0.4, radius: 310, shadow: "-5px 5px 40px 0px rgba(0,0,0,0.06)" },
+            { opacity: 0.3, radius: 400, shadow: "-5px 5px 40px 0px rgba(0,0,0,0.06)" }
         ];
     }
     HomeComponent.prototype.ngAfterViewInit = function () {
@@ -689,14 +689,14 @@ module.exports = ":host {\n  width: 100%;\n  background-color: #3B3E48;\n  color
 /***/ 669:
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  max-width: 110rem;\n  margin: 3rem 1.5rem 0;\n}\n:host .header-logo {\n  margin-right: auto;\n  margin-left: 1rem;\n}\n:host .header-menu {\n  margin: 0;\n}\n:host .header-menu li {\n  font-size: 1.4rem;\n  line-height: 1.9rem;\n  font-weight: 600;\n  text-align: center;\n  color: #3C3F48;\n  list-style: none;\n  display: inline-block;\n  margin: 0 1.5rem;\n  cursor: pointer;\n}\n"
+module.exports = ":host {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  max-width: 110rem;\n  margin: 3rem auto 0 auto;\n  padding: 0 1rem;\n}\n:host .header-logo {\n  margin-right: auto;\n  margin-left: 1rem;\n}\n:host .header-menu {\n  margin: 0;\n}\n:host .header-menu li {\n  font-size: 1.4rem;\n  line-height: 1.9rem;\n  font-weight: 600;\n  text-align: center;\n  color: #3C3F48;\n  list-style: none;\n  display: inline-block;\n  margin-right: 2.5rem;\n  cursor: pointer;\n}\n"
 
 /***/ }),
 
 /***/ 670:
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: absolute;\n  z-index: -1;\n}\n#animation-layout {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.circle {\n  border-radius: 50%;\n  border: solid 1px #e2e2e2;\n  position: absolute;\n  opacity: 1;\n  z-index: -3;\n  -webkit-transition: top 2s, right 2s;\n  transition: top 2s, right 2s;\n}\n.particle {\n  border-radius: 50%;\n  border-style: solid;\n  border-color: #0DAFAC;\n  width: 0;\n  right: 0;\n  top: 0;\n  height: 0;\n  opacity: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  z-index: -2;\n  overflow: visible;\n  box-sizing: content-box;\n}\n.particle > .particle {\n  margin: auto;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 1;\n  border-color: white;\n  box-sizing: border-box;\n}\n.particle .white {\n  border-color: #0DAFAC;\n  background: #FFF;\n}\n.particle.gray {\n  border-color: #5d5e63;\n}\n.particle.gray .white {\n  border-color: #5d5e63;\n  background: #FFF;\n}\n"
+module.exports = ":host {\n  position: absolute;\n  z-index: -1;\n}\n#animation-layout {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.circle {\n  border-radius: 50%;\n  border: solid 1px #e2e2e2;\n  box-shadow: -5px 5px 30px 0px rgba(0, 0, 0, 0.1);\n  position: absolute;\n  opacity: 1;\n  z-index: -3;\n  -webkit-transition: top 2s, right 2s;\n  transition: top 2s, right 2s;\n}\n.particle {\n  border-radius: 50%;\n  border-style: solid;\n  border-color: #0DAFAC;\n  width: 0;\n  right: 0;\n  top: 0;\n  height: 0;\n  opacity: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  z-index: -2;\n  overflow: visible;\n  box-sizing: content-box;\n}\n.particle > .particle {\n  margin: auto;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 1;\n  border-color: white;\n  box-sizing: border-box;\n}\n.particle .white {\n  border-color: #0DAFAC;\n  background: #FFF;\n}\n.particle.gray {\n  border-color: #5d5e63;\n}\n.particle.gray .white {\n  border-color: #5d5e63;\n  background: #FFF;\n}\n"
 
 /***/ }),
 
