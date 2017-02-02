@@ -1,6 +1,6 @@
 <div app-planetarium 
      [radius]="[370, 290, 210, 150, 100]" 
-     [center]="[50, 50]" [nbParticles]="15" 
+     [center]="[0, 50]" [nbParticles]="15" 
      [size]="[0,800]"
      ></div>
 <h1>The Social Learning Environment<span class="blue"><b>*</b></span> for B-Schools.</h1>
@@ -27,81 +27,10 @@
 <div class="block small-text">
     THEY TRUST US
 </div>
-<div app-carousel >
-    <div carousel-page>
-        <div class="schools">
-            <div class="school">
-                <img src="assets/images/yale.svg"/>                    
-            </div>
-            <div class="school">
-                <img src="assets/images/insead.png"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/nus.png"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/ie.gif"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/imd.png"/>                   
-            </div>
-
-        </div>
-        <div class="schools"> 
-            <div class="school">
-                <img src="assets/images/berkeley.svg"/>                    
-            </div>
-            <div class="school">
-                <img src="assets/images/university-of-oxford-said.gif"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/HEC.png"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/lsoe.jpg"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/hkust.png"/>                   
-            </div>
-
-        </div>
-    </div>
-    <div carousel-page>
-        <div class="schools">
-            <div class="school">
-                <img src="assets/images/yale.svg"/>                    
-            </div>
-            <div class="school">
-                <img src="assets/images/insead.png"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/nus.png"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/ie.gif"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/imd.png"/>                   
-            </div>
-
-        </div>
-        <div class="schools"> 
-            <div class="school">
-                <img src="assets/images/berkeley.svg"/>                    
-            </div>
-            <div class="school">
-                <img src="assets/images/university-of-oxford-said.gif"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/HEC.png"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/lsoe.jpg"/>                   
-            </div>
-            <div class="school">
-                <img src="assets/images/hkust.png"/>                   
-            </div>
-
+<div app-carousel  (window:resize)="onResize($event)" >
+    <div carousel-page *ngFor="let page of pages" class="schools">
+        <div class="school" *ngFor="let school of page">
+            <img src="{{ school }}"/>                    
         </div>
     </div>
 </div>

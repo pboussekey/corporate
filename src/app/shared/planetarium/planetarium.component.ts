@@ -35,6 +35,7 @@ export class PlanetariumComponent implements AfterViewInit  {
     @Input() public size : number[];
     public particles : any[] = [];
     public positions : any;
+    public autoResize: boolean;
    
     top(){
          return [ Math.floor(this.size[0] * Math.random()), -100];
@@ -62,6 +63,12 @@ export class PlanetariumComponent implements AfterViewInit  {
         this.particles.push(this.generateParticle(0));
     }
     
+    onResize(){
+        if (this.autoResize){
+            this.size[0] = window.innerWidth;
+        }
+    }
+    
     generateParticle(delay : number){
         delay = delay || 0;
         var keys = Object.keys(this.positions);
@@ -76,7 +83,7 @@ export class PlanetariumComponent implements AfterViewInit  {
             source: this.positions[source](), 
             destination : this.positions[destination](), 
             color : Math.random() > 0.5 ? "blue" : "gray" ,
-            opacity : Math.random() * 0.8 + 0.2,
+            opacity : Math.random() * 0.75 + 0.2,
             width : size,
             borderWidth : [borderWidth,0 , 0],
             duration : Math.floor(Math.random() * 5000 + 20000),
@@ -112,7 +119,8 @@ export class PlanetariumComponent implements AfterViewInit  {
    
     
     ngAfterViewInit() {
-        this.size[0] = window.innerWidth;
+        this.autoResize = !this.size[0];
+        this.size[0] |= window.innerWidth;
         this.positions = {
             top : this.top.bind(this),
             right : this.right.bind(this),

@@ -67,19 +67,24 @@
 
 :host /deep/ .schools{
     display: flex;
-    width : 100%;
-    max-width: 120rem;
-    margin: 4rem auto;
-    
+    flex-wrap : wrap;
     .school{
         width : 20%;
+        @media(max-width: 800px){
+            width : 50%;
+        }
+        @media(max-width: 800px){
+            width : 50%;
+        }
         display : flex;
+        flex-shrink : 0;
+        margin: 4rem auto;
         img{
             height : 6rem;
             margin : 0 auto;
             -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
             filter: grayscale(100%);
-            opacity: 0.5;
+            opacity: 0.55;
         }
     }
     

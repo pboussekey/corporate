@@ -1,4 +1,4 @@
-<div id="animation-layout" [ngStyle]="{ width : size[0], height : size[1] }">
+<div id="animation-layout" [ngStyle]="{ width : size[0], height : size[1] }" (window:resize)="onResize($event)">
     <div class="circle-center" *ngFor="let circle of radius" [ngStyle]="{ top : -circle + center[1], right : -circle  + center[0] }">
          <div class="circle" [@circle]="normal" [ngStyle]="{ width : circle * 2, height : circle * 2 }">
              
