@@ -1796,6 +1796,9 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+.no-break {
+  white-space: nowrap;
+}
 .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1821,6 +1824,11 @@ body {
   margin-bottom: 5rem;
   color: #3C3F48;
 }
+@media (max-width: 1023px) {
+  .content p {
+    margin-top: 0rem;
+  }
+}
 .small-text {
   font-weight: 300;
   font-size: 1.6rem;
@@ -1834,18 +1842,23 @@ body {
   color: #3C3F48;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 3.8rem;
   font-weight: bold;
   text-align: center;
-  line-height: 6.2rem;
+  line-height: 5.2rem;
   color: #3C3F48;
   width: 100%;
   margin-top: 8rem;
 }
+@media (max-width: 1023px) {
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
 button {
   background-color: #0DAFAC;
   border-radius: 2px;
-  height: 5rem;
+  height: 5.2rem;
   line-height: 5rem;
   padding: 0 2rem;
   border: 0;
@@ -1871,6 +1884,11 @@ button:hover {
 button:hover .arrow {
   margin: -1px 0.3rem 0 1.7rem;
 }
+@media (max-width: 1023px) {
+  button {
+    width: 100%;
+  }
+}
 .block {
   position: relative;
   text-align: center;
@@ -1881,14 +1899,10 @@ button:hover .arrow {
   margin-left: auto;
   margin-right: auto;
 }
-.block.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.block.marged {
-  margin-top: 15rem;
-  margin-bottom: 15rem;
+@media (max-width: 1023px) {
+  .desktop {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.bundle.map*/
