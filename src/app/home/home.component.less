@@ -58,13 +58,8 @@
             text-align: left;
             position : relative;
             margin : 2rem 0 1rem;
-            &:first-of-type{
-                @media(max-width : 1023px){
-                    text-align : center;
-                }
-            }
-            &.poets-paragraph{
-                padding-left: 4rem;
+            @media(max-width : 1023px){
+                text-align : center;
             }
            
 
@@ -89,8 +84,10 @@
 
 .poets{
     display : inline-block;
-    height : 3.5rem;
-    position : absolute;
+    height : 3.5rem;    
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
 }
 
 .quote{
