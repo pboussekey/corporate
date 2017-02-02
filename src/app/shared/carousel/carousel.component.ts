@@ -2,7 +2,6 @@ import { Component, Input, ContentChildren, QueryList, Directive, AfterContentIn
 
 @Directive({selector: '[carousel-page]'})
 export class CarouselPage {
-  @Input() id: string;
 }
 
 @Component({

@@ -50,6 +50,13 @@ var HomeComponent = (function () {
             "assets/images/Technion_logo.jpg",
             "assets/images/Indonesia logo.png",
         ];
+        this.circles = [
+            { opacity: 0.8, radius: 100, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.45)" },
+            { opacity: 0.7, radius: 150, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.40)" },
+            { opacity: 0.6, radius: 210, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.35)" },
+            { opacity: 0.4, radius: 280, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.25)" },
+            { opacity: 0.3, radius: 360, shadow: "-5px 5px 15px 0px rgba(0,0,0,0.10)" }
+        ];
     }
     HomeComponent.prototype.ngAfterViewInit = function () {
         this.getPartners();
@@ -265,10 +272,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var CarouselPage = (function () {
     function CarouselPage() {
     }
-    __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(), 
-        __metadata('design:type', String)
-    ], CarouselPage.prototype, "id", void 0);
     CarouselPage = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Directive */])({ selector: '[carousel-page]' }), 
         __metadata('design:paramtypes', [])
@@ -399,6 +402,7 @@ var HeaderComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* unused harmony export Circle */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlanetariumComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -410,6 +414,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+var Circle = (function () {
+    function Circle() {
+    }
+    return Circle;
+}());
 var PlanetariumComponent = (function () {
     function PlanetariumComponent() {
         this.particles = [];
@@ -491,6 +500,8 @@ var PlanetariumComponent = (function () {
     PlanetariumComponent.prototype.ngAfterViewInit = function () {
         this.autoResize = !this.size[0];
         this.size[0] |= window.innerWidth;
+        console.log(this.circles);
+        this.radius = this.circles.map(function (circle) { return circle.radius; });
         this.positions = {
             top: this.top.bind(this),
             right: this.right.bind(this),
@@ -505,7 +516,7 @@ var PlanetariumComponent = (function () {
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(), 
         __metadata('design:type', Array)
-    ], PlanetariumComponent.prototype, "radius", void 0);
+    ], PlanetariumComponent.prototype, "circles", void 0);
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(), 
         __metadata('design:type', Number)
@@ -520,7 +531,7 @@ var PlanetariumComponent = (function () {
     ], PlanetariumComponent.prototype, "size", void 0);
     PlanetariumComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-            inputs: ['radius', 'center', 'size', 'nbParticles'],
+            inputs: ['circles', 'center', 'size', 'nbParticles'],
             selector: '[app-planetarium]',
             template: __webpack_require__(677),
             styles: [__webpack_require__(670)],
@@ -532,7 +543,7 @@ var PlanetariumComponent = (function () {
                 ]),
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* trigger */])("circle", [
                     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* state */])("normal", __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* style */])({ opacity: 1 })),
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* transition */])("void => *", __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* animate */])(2000))
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* transition */])("void => *", [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* style */])({ width: 0, height: 0 }), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* animate */])(2000)])
                 ])
             ]
         }), 
@@ -657,7 +668,7 @@ module.exports = ""
 /***/ 666:
 /***/ (function(module, exports) {
 
-module.exports = ".portrait {\n  background-image: url(\"assets/images/maxresdefault.jpg\");\n  background-position: 80% 50%;\n  background-size: cover;\n  height: 55rem;\n  width: 55rem;\n  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);\n  border-radius: 4px;\n  z-index: 1;\n}\n:host /deep/ [app-planetarium] > #animation-layout {\n  background-image: -webkit-radial-gradient(circle farthest-side at 100% 0, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 95%, #ffffff 100%);\n  background-image: radial-gradient(circle farthest-side at 100% 0, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 95%, #ffffff 100%);\n}\n[app-planetarium] {\n  height: 85rem;\n}\n.citation-block {\n  margin-top: 6rem;\n  background: -webkit-linear-gradient(246.63deg, #EEEEEE 0%, #FFFFFF 60%);\n  background: linear-gradient(203.37deg, #EEEEEE 0%, #FFFFFF 60%);\n  border-radius: 4px;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding: 8rem 2rem 2rem 6rem;\n  color: #3C3F48;\n}\n.citation-block p {\n  font-size: 1.8rem;\n  line-height: 3.4rem;\n  margin: 4rem 0;\n  font-weight: 300;\n  text-align: left;\n  position: relative;\n}\n.citation {\n  font-size: 4.5rem;\n  font-weight: 300;\n  line-height: 6rem;\n  text-align: left;\n  letter-spacing: 0.5rem;\n}\n.poets {\n  display: inline-block;\n  height: 3.5rem;\n  position: absolute;\n  top: 3.3rem;\n}\n.quote {\n  font-family: Merriweather;\n  font-size: 80px;\n  font-weight: 900;\n  line-height: 101px;\n  opacity: 0.5;\n  position: absolute;\n  left: 58rem;\n  top: 4rem;\n}\n:host /deep/ .schools {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n:host /deep/ .schools .school {\n  width: 20%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n  margin: 4rem auto;\n}\n@media (max-width: 1024px) {\n  :host /deep/ .schools .school {\n    width: 33%;\n  }\n}\n@media (max-width: 768px) {\n  :host /deep/ .schools .school {\n    width: 50%;\n  }\n}\n:host /deep/ .schools .school img {\n  height: 6rem;\n  margin: 0 auto;\n  -webkit-filter: grayscale(100%);\n  /* Safari 6.0 - 9.0 */\n  filter: grayscale(100%);\n  opacity: 0.55;\n}\n:host /deep/ .carousel-pagination {\n  margin: 7.5rem auto 13rem !important;\n}\n[app-planetarium] {\n  top: 0rem;\n  right: 0;\n  left: 0;\n  height: 85rem;\n}\n"
+module.exports = ".portrait {\n  background-image: url(\"assets/images/maxresdefault.jpg\");\n  background-position: 80% 50%;\n  background-size: cover;\n  height: 55rem;\n  width: 55rem;\n  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);\n  border-radius: 4px;\n  z-index: 1;\n}\n:host /deep/ [app-planetarium] > #animation-layout {\n  background-image: -webkit-radial-gradient(circle farthest-side at 100% 0, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 95%, #ffffff 100%);\n  background-image: radial-gradient(circle farthest-side at 100% 0, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 95%, #ffffff 100%);\n}\n[app-planetarium] {\n  height: 85rem;\n}\n.citation-block {\n  margin-top: 6rem;\n  background: -webkit-linear-gradient(246.63deg, #EEEEEE 0%, #FFFFFF 60%);\n  background: linear-gradient(203.37deg, #EEEEEE 0%, #FFFFFF 60%);\n  border-radius: 4px;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding: 8rem 2rem 2rem 6rem;\n  color: #3C3F48;\n}\n.citation-block p {\n  font-size: 1.8rem;\n  line-height: 3.4rem;\n  margin: 4rem 0;\n  font-weight: 300;\n  text-align: left;\n  position: relative;\n}\n.citation {\n  font-size: 4.5rem;\n  font-weight: 300;\n  line-height: 6rem;\n  text-align: left;\n  letter-spacing: 0.5rem;\n}\n.poets {\n  display: inline-block;\n  height: 3.5rem;\n  position: absolute;\n}\n.quote {\n  font-family: Merriweather;\n  font-size: 80px;\n  font-weight: 900;\n  line-height: 101px;\n  opacity: 0.5;\n  position: absolute;\n  left: 58rem;\n  top: 4rem;\n}\n:host /deep/ .schools {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n:host /deep/ .schools .school {\n  width: 20%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n  margin: 4rem auto;\n}\n@media (max-width: 1024px) {\n  :host /deep/ .schools .school {\n    width: 33%;\n  }\n}\n@media (max-width: 768px) {\n  :host /deep/ .schools .school {\n    width: 50%;\n  }\n}\n:host /deep/ .schools .school img {\n  height: 6rem;\n  margin: 0 auto;\n  -webkit-filter: grayscale(100%);\n  /* Safari 6.0 - 9.0 */\n  filter: grayscale(100%);\n  opacity: 0.55;\n}\n:host /deep/ .carousel-pagination {\n  margin: 7.5rem auto 13rem !important;\n}\n[app-planetarium] {\n  top: 0rem;\n  right: 0;\n  left: 0;\n  height: 85rem;\n}\n"
 
 /***/ }),
 
@@ -671,21 +682,21 @@ module.exports = ":host {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  d
 /***/ 668:
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  width: 100%;\n  background-color: #3B3E48;\n  color: #FFF;\n  padding: 4rem 8rem;\n  font-size: 1.4rem;\n  font-weight: 300;\n  line-height: 3rem;\n}\n:host .footer-content {\n  width: 100%;\n  max-width: 110rem;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin: 0 auto;\n}\n.footer-column {\n  padding: 0 1rem;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 auto;\n          flex: 1 0 auto;\n}\n.footer-column:first-of-type {\n  border-right: solid 1px #585D6E;\n  width: 46rem;\n  margin-right: 2rem;\n}\n.footer-column .footer-title {\n  font-size: 1.6rem;\n  line-height: 2.2rem;\n  font-weight: bold;\n  margin-bottom: 2rem;\n}\n.footer-column ul {\n  margin: 0;\n  padding: 0;\n}\n.footer-column ul li {\n  list-style: none;\n  cursor: pointer;\n  font-weight: 300;\n  line-height: 4rem;\n}\n.footer-logo {\n  filter: contrast(0) brightness(100);\n  -webkit-filter: contrast(0) brightness(100);\n}\n.social-media {\n  font-size: 1.6rem;\n  cursor: pointer;\n  float: left;\n  filter: contrast(0) brightness(100);\n  -webkit-filter: contrast(0) brightness(100);\n  margin-right: 2rem;\n}\n"
+module.exports = ":host {\n  width: 100%;\n  background-color: #3B3E48;\n  color: #FFF;\n  padding: 5rem 8rem;\n  font-size: 1.4rem;\n  font-weight: 300;\n  line-height: 3rem;\n}\n@media (max-width: 1100px) {\n  :host {\n    padding: 5rem 1rem;\n  }\n}\n:host .footer-content {\n  width: 100%;\n  max-width: 110rem;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin: 0 auto;\n}\n.footer-column {\n  padding: 0 1rem;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 auto;\n          flex: 1 0 auto;\n}\n.footer-column:first-of-type {\n  border-right: solid 1px #585D6E;\n  width: 46rem;\n  margin-right: 2rem;\n}\n@media (max-width: 1100px) {\n  .footer-column:first-of-type {\n    width: 26rem;\n    padding-right: 4rem;\n  }\n}\n.footer-column .footer-title {\n  font-size: 1.6rem;\n  line-height: 2.2rem;\n  font-weight: bold;\n  margin-bottom: 2rem;\n}\n.footer-column ul {\n  margin: 0;\n  padding: 0;\n}\n.footer-column ul li {\n  list-style: none;\n  cursor: pointer;\n  font-weight: 300;\n  line-height: 4rem;\n}\n.footer-logo {\n  filter: contrast(0) brightness(100);\n  -webkit-filter: contrast(0) brightness(100);\n}\n.social-media {\n  font-size: 1.6rem;\n  cursor: pointer;\n  float: left;\n  filter: contrast(0) brightness(100);\n  -webkit-filter: contrast(0) brightness(100);\n  margin-right: 2rem;\n}\n"
 
 /***/ }),
 
 /***/ 669:
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  max-width: 110rem;\n  margin: 3rem auto 0 auto;\n}\n:host .header-logo {\n  margin-right: auto;\n}\n:host .header-menu {\n  margin: 0;\n}\n:host .header-menu li {\n  font-size: 1.4rem;\n  line-height: 1.9rem;\n  font-weight: 600;\n  text-align: center;\n  color: #3C3F48;\n  list-style: none;\n  display: inline-block;\n  margin: 0 1.5rem;\n  cursor: pointer;\n}\n"
+module.exports = ":host {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  max-width: 110rem;\n  margin: 3rem 1.5rem 0;\n}\n:host .header-logo {\n  margin-right: auto;\n  margin-left: 1rem;\n}\n:host .header-menu {\n  margin: 0;\n}\n:host .header-menu li {\n  font-size: 1.4rem;\n  line-height: 1.9rem;\n  font-weight: 600;\n  text-align: center;\n  color: #3C3F48;\n  list-style: none;\n  display: inline-block;\n  margin: 0 1.5rem;\n  cursor: pointer;\n}\n"
 
 /***/ }),
 
 /***/ 670:
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: absolute;\n  z-index: -1;\n}\n#animation-layout {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.circle-center {\n  border-radius: 50%;\n  border: solid 1px #9a9ba0;\n  box-shadow: 0 1px 4rem 0 rgba(0, 0, 0, 0.4);\n  position: absolute;\n  opacity: 0.3;\n  z-index: -3;\n  -webkit-transition: top 2s, right 2s;\n  transition: top 2s, right 2s;\n}\n.particle {\n  border-radius: 50%;\n  border-style: solid;\n  border-color: #0DAFAC;\n  width: 0;\n  right: 0;\n  top: 0;\n  height: 0;\n  opacity: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  z-index: -2;\n  overflow: visible;\n  box-sizing: content-box;\n}\n.particle > .particle {\n  margin: auto;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 1;\n  border-color: white;\n  box-sizing: border-box;\n}\n.particle .white {\n  border-color: #0DAFAC;\n  background: #FFF;\n}\n.particle.gray {\n  border-color: #5d5e63;\n}\n.particle.gray .white {\n  border-color: #5d5e63;\n  background: #FFF;\n}\n"
+module.exports = ":host {\n  position: absolute;\n  z-index: -1;\n}\n#animation-layout {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.circle {\n  border-radius: 50%;\n  border: solid 1px #e2e2e2;\n  position: absolute;\n  opacity: 1;\n  z-index: -3;\n  -webkit-transition: top 2s, right 2s;\n  transition: top 2s, right 2s;\n}\n.particle {\n  border-radius: 50%;\n  border-style: solid;\n  border-color: #0DAFAC;\n  width: 0;\n  right: 0;\n  top: 0;\n  height: 0;\n  opacity: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  z-index: -2;\n  overflow: visible;\n  box-sizing: content-box;\n}\n.particle > .particle {\n  margin: auto;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 1;\n  border-color: white;\n  box-sizing: border-box;\n}\n.particle .white {\n  border-color: #0DAFAC;\n  background: #FFF;\n}\n.particle.gray {\n  border-color: #5d5e63;\n}\n.particle.gray .white {\n  border-color: #5d5e63;\n  background: #FFF;\n}\n"
 
 /***/ }),
 
@@ -706,7 +717,7 @@ module.exports = "<header app-header></header>\n<router-outlet></router-outlet>\
 /***/ 673:
 /***/ (function(module, exports) {
 
-module.exports = "<div app-planetarium \n     [radius]=\"[370, 290, 210, 150, 100]\" \n     [center]=\"[0, 50]\" [nbParticles]=\"15\" \n     [size]=\"[0,800]\"\n     ></div>\n<h1>The Social Learning Environment<span class=\"blue\"><b>*</b></span> for B-Schools.</h1>\n<div class=\"block\">\n    <p>\n        <span class=\"blue\"><b>*</b></span><b>Engagement</b> online is at <u>the heart of our product design</u>.<br/> \n        This is why we have developped a technology combining a state-of-the-art <br/>\n        Learning Management System with 21st-Century social networking tools.\n    </p>\n    <button class=\"button\">See Our Product<span class=\"arrow\">></span></button>\n</div>\n<div class=\"block flex marged\">\n    <div class=\"quote\">“</div>\n    <div class=\"portrait\"></div>\n    <div class=\"citation-block\">\n        <div class=\"citation\">THE POWER OF NETWORKED EDUCATION</div>\n        <p>\n            <b>Edward Snyder</b>, Dean of Yale School of Management<br/>\n            ‘Dean of the year 2015’ by <img class=\"poets\" src=\"assets/images/Poets-Quants-logo.jpg\" />\n        </p>\n\n    </div>\n</div>\n<div class=\"block small-text\">\n    THEY TRUST US\n</div>\n<div app-carousel  (window:resize)=\"onResize($event)\" >\n    <div carousel-page *ngFor=\"let page of pages\" class=\"schools\">\n        <div class=\"school\" *ngFor=\"let school of page\">\n            <img src=\"{{ school }}\"/>                    \n        </div>\n    </div>\n</div>\n\n<div class=\"slider\">\n    <div class=\"slider-point selected\"></div>\n    <div class=\"slider-point\"></div>\n    <div class=\"slider-point\"></div>\n</div>\n       "
+module.exports = "<div app-planetarium \n     [circles]=\"circles\" \n     [center]=\"[0, 50]\" [nbParticles]=\"15\" \n     [size]=\"[0,800]\"\n     ></div>\n<h1>The Social Learning Environment<span class=\"blue\"><b>*</b></span> for B-Schools.</h1>\n<div class=\"block\">\n    <p>\n        <span class=\"blue\"><b>*</b></span><b>Engagement</b> online is at <u>the heart of our product design</u>.<br/> \n        This is why we have developped a technology combining a state-of-the-art <br/>\n        Learning Management System with 21st-Century social networking tools.\n    </p>\n    <button class=\"button\">See Our Product<span class=\"arrow\">></span></button>\n</div>\n<div class=\"block flex marged\">\n    <div class=\"quote\">“</div>\n    <div class=\"portrait\"></div>\n    <div class=\"citation-block\">\n        <div class=\"citation\">THE POWER OF NETWORKED EDUCATION</div>\n        <p>\n            <b>Edward Snyder</b>, Dean of Yale School of Management<br/>\n            ‘Dean of the year 2015’ by <img class=\"poets\" src=\"assets/images/Poets-Quants-logo.jpg\" />\n        </p>\n\n    </div>\n</div>\n<div class=\"block small-text\">\n    THEY TRUST US\n</div>\n<div app-carousel  (window:resize)=\"onResize($event)\" >\n    <div carousel-page *ngFor=\"let page of pages\" class=\"schools\">\n        <div class=\"school\" *ngFor=\"let school of page\">\n            <img src=\"{{ school }}\"/>                    \n        </div>\n    </div>\n</div>\n\n<div class=\"slider\">\n    <div class=\"slider-point selected\"></div>\n    <div class=\"slider-point\"></div>\n    <div class=\"slider-point\"></div>\n</div>\n       "
 
 /***/ }),
 
@@ -734,7 +745,7 @@ module.exports = "\n\n<img class=\"header-logo\" src=\"assets/images/Logo.svg\"/
 /***/ 677:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"animation-layout\" [ngStyle]=\"{ width : size[0], height : size[1] }\" (window:resize)=\"onResize($event)\">\n    <div class=\"circle-center\" *ngFor=\"let circle of radius\" [ngStyle]=\"{ top : -circle + center[1], right : -circle  + center[0] }\">\n         <div class=\"circle\" [@circle]=\"normal\" [ngStyle]=\"{ width : circle * 2, height : circle * 2 }\">\n             \n        </div>\n    </div>\n    <div class=\"particle\" \n          [@particle]=\"normal\"\n         *ngFor=\"let particle of particles\" \n         [ngClass]=\"{ gray : particle.color === 'gray' }\"\n         [ngStyle]=\"\n            { \n                opacity : particle.opacity,\n                width : particle.width,\n                height : particle.width,\n                top : -particle.width * 0.5 - particle.borderWidth[0] + center[1],\n                right : -particle.width * 0.5 - particle.borderWidth[0] + center[0],\n                'border-width' : particle.borderWidth[0],\n                transform : 'rotate(' + particle.rotation + 'deg) translate('+(-particle.source[0])+'px,'+particle.source[1]+'px)',\n                'transition' : \n                'opacity 0.5s linear, transform  ' + particle.duration + 'ms cubic-bezier(0.6, 0.4, 0.6, 0.9), \n                width 300ms cubic-bezier(0, 1.5, 1, 1.5), \n                height 300ms cubic-bezier(0, 1.5, 1, 1.5),  \n                top 300ms cubic-bezier(0, 1.5, 1, 1.5),  \n                right 300ms cubic-bezier(0, 1.5, 1, 1.5), \n                border-width 300ms cubic-bezier(0, 1.5, 1, 1.5)'\n            }\"\n        >\n        <div class=\"particle\" \n         *ngIf=\"particle.borderWidth[1]\" \n         [ngStyle]=\"{ \n            'border-width' : particle.borderWidth[1]\n         }\">\n            <div class=\"particle white\" \n            *ngIf=\"particle.borderWidth[2]\" \n            [ngStyle]=\"{ \n               'border-width' : particle.borderWidth[2]\n            }\">\n        </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div id=\"animation-layout\" [ngStyle]=\"{ width : size[0], height : size[1] }\" (window:resize)=\"onResize($event)\">\n    <div class=\"circle\" \n         *ngFor=\"let circle of circles\" \n         [ngStyle]=\"{ \n            top : -circle.radius + center[1], \n            right : -circle.radius  + center[0],   \n            'box-shadow' : circle.shadow,\n            'opacity' :  circle.opacity ,\n            width : circle.radius * 2, \n            height : circle.radius * 2\n        }\" \n         [@circle]=\"normal\" >\n        \n             \n    </div>\n    <div class=\"particle\" \n          [@particle]=\"normal\"\n         *ngFor=\"let particle of particles\" \n         [ngClass]=\"{ gray : particle.color === 'gray' }\"\n         [ngStyle]=\"\n            { \n                opacity : particle.opacity,\n                width : particle.width,\n                height : particle.width,\n                top : -particle.width * 0.5 - particle.borderWidth[0] + center[1],\n                right : -particle.width * 0.5 - particle.borderWidth[0] + center[0],\n                'border-width' : particle.borderWidth[0],\n                transform : 'rotate(' + particle.rotation + 'deg) translate('+(-particle.source[0])+'px,'+particle.source[1]+'px)',\n                'transition' : \n                'opacity 0.5s linear, transform  ' + particle.duration + 'ms cubic-bezier(0.6, 0.4, 0.6, 0.9), \n                width 300ms cubic-bezier(0, 1.5, 1, 1.5), \n                height 300ms cubic-bezier(0, 1.5, 1, 1.5),  \n                top 300ms cubic-bezier(0, 1.5, 1, 1.5),  \n                right 300ms cubic-bezier(0, 1.5, 1, 1.5), \n                border-width 300ms cubic-bezier(0, 1.5, 1, 1.5)'\n            }\"\n        >\n        <div class=\"particle\" \n         *ngIf=\"particle.borderWidth[1]\" \n         [ngStyle]=\"{ \n            'border-width' : particle.borderWidth[1]\n         }\">\n            <div class=\"particle white\" \n                *ngIf=\"particle.borderWidth[2]\" \n                [ngStyle]=\"{ \n                   'border-width' : particle.borderWidth[2]\n                }\">\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 

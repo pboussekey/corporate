@@ -1,8 +1,17 @@
 <div id="animation-layout" [ngStyle]="{ width : size[0], height : size[1] }" (window:resize)="onResize($event)">
-    <div class="circle-center" *ngFor="let circle of radius" [ngStyle]="{ top : -circle + center[1], right : -circle  + center[0] }">
-         <div class="circle" [@circle]="normal" [ngStyle]="{ width : circle * 2, height : circle * 2 }">
+    <div class="circle" 
+         *ngFor="let circle of circles" 
+         [ngStyle]="{ 
+            top : -circle.radius + center[1], 
+            right : -circle.radius  + center[0],   
+            'box-shadow' : circle.shadow,
+            'opacity' :  circle.opacity ,
+            width : circle.radius * 2, 
+            height : circle.radius * 2
+        }" 
+         [@circle]="normal" >
+        
              
-        </div>
     </div>
     <div class="particle" 
           [@particle]="normal"
@@ -32,11 +41,11 @@
             'border-width' : particle.borderWidth[1]
          }">
             <div class="particle white" 
-            *ngIf="particle.borderWidth[2]" 
-            [ngStyle]="{ 
-               'border-width' : particle.borderWidth[2]
-            }">
-        </div>
+                *ngIf="particle.borderWidth[2]" 
+                [ngStyle]="{ 
+                   'border-width' : particle.borderWidth[2]
+                }">
+            </div>
         </div>
     </div>
 </div>

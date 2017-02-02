@@ -1808,6 +1808,11 @@ body {
   max-width: 110rem;
   margin: 0 auto;
 }
+@media (max-width: 1100px) {
+  .content {
+    padding: 0 1rem;
+  }
+}
 .content p {
   text-align: center;
   display: block;

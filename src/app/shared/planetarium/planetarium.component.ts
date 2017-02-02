@@ -10,9 +10,16 @@ import {
 } from '@angular/core';
 
 
+export class Circle {
+    radius : number;
+    opacity : number;
+    shadow : string;
+}
+
+
 @Component({
   moduleId : module.id,
-  inputs : ['radius', 'center', 'size', 'nbParticles'],
+  inputs : ['circles', 'center', 'size', 'nbParticles'],
   selector: '[app-planetarium]',
   templateUrl: './planetarium.component.html',
   styleUrls: ['./planetarium.component.less'],
@@ -24,18 +31,19 @@ import {
     ]),
     trigger("circle", [
         state("normal", style({ opacity : 1 })),
-        transition("void => *", animate(2000))
+        transition("void => *", [style({ width : 0, height : 0 }), animate(2000)])
     ])
   ]
 })
 export class PlanetariumComponent implements AfterViewInit  {
-    @Input() public radius : number[];
+    @Input() public circles : Circle[];
     @Input() public nbParticles : number; 
     @Input() public center : number[];
     @Input() public size : number[];
     public particles : any[] = [];
     public positions : any;
     public autoResize: boolean;
+    public radius : number[];
    
     top(){
          return [ Math.floor(this.size[0] * Math.random()), -100];
@@ -121,6 +129,8 @@ export class PlanetariumComponent implements AfterViewInit  {
     ngAfterViewInit() {
         this.autoResize = !this.size[0];
         this.size[0] |= window.innerWidth;
+        console.log(this.circles);
+        this.radius = this.circles.map(function(circle){ return circle.radius; });
         this.positions = {
             top : this.top.bind(this),
             right : this.right.bind(this),
