@@ -54,6 +54,7 @@ body{
         color: @clr-text;
         @media(max-width : 1023px){
             margin-top : 0rem;
+            margin-bottom: 3.3rem;
         }
     }
 }
@@ -84,7 +85,8 @@ h1{
     width : 100%;
     margin-top : 8rem;
     @media(max-width : 1023px){
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
+        margin-top : 5rem;
     }
 }
 
@@ -134,9 +136,15 @@ button{
   
 }
 
+.mobile{
+    display : none;
+}
 
 @media(max-width : 1023px){
     .desktop{
         display : none;
+    }
+    .mobile{
+        display : block;
     }
 }

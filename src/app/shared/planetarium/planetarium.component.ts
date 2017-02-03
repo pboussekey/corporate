@@ -9,13 +9,11 @@ import {
   AfterViewInit,
 } from '@angular/core';
 
-
 export class Circle {
     radius : number;
     opacity : number;
     shadow : string;
 }
-
 
 @Component({
   moduleId : module.id,
@@ -124,12 +122,9 @@ export class PlanetariumComponent implements AfterViewInit  {
         return particle;
     }
     
-   
-    
     ngAfterViewInit() {
         this.autoResize = !this.size[0];
         this.size[0] |= window.innerWidth;
-        console.log(this.circles);
         this.radius = this.circles.map(function(circle){ return circle.radius; });
         this.positions = {
             top : this.top.bind(this),

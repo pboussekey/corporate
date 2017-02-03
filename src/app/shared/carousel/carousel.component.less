@@ -1,5 +1,15 @@
 @import "../../../assets/less/rules.less";
 
+@keyframes fade-in {
+    0% { left : 100% }
+    100% { left : 0}
+}
+
+@keyframes fade-out {
+    0% { left : 0;  }
+    100% { left : -100%; }
+}
+
 :host{
     display : flex;
     flex-direction: column;
@@ -11,14 +21,28 @@
     .carousel-content{
         width : 100%;
         display : flex;
-        transition : margin-left 500ms ease-in;
     }
-    [carousel-page]{
-        width : 100%;
-        flex-shrink: 0;
+    .carousel-content{
         position : relative;
     }
     
+    [carousel-page]{
+        width : 100%;
+        flex-shrink: 0;
+        &.shown{
+            left : 0;
+            position : relative; 
+            animation : fade-in 2000ms ease-in-out;
+        }
+        &.previous{
+            animation : fade-out 2000ms ease-in-out;
+            
+        }
+        &.hide{
+            left : 100%;
+            position : absolute;
+        }
+    }
 }
 
 .carousel-pagination{

@@ -9,8 +9,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PlanetariumComponent } from './shared/planetarium/planetarium.component';
-import { TestComponent } from './test/test.component';
 import { CarouselComponent, CarouselPage } from './shared/carousel/carousel.component';
+import {DropdownDirective } from './shared/dropdown/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,9 @@ import { CarouselComponent, CarouselPage } from './shared/carousel/carousel.comp
     FooterComponent,
     HomeComponent,
     PlanetariumComponent,
-    TestComponent,
     CarouselComponent,
-    CarouselPage
+    CarouselPage,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,30 @@
 
-
+<div class="header-menu mobile dropdown" app-dropdown>
+    <div class="dropdown-toggle menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="dropdown-content">
+        <div>
+             <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <img class="menu-logo" src="assets/images/Logo.svg"/>
+        </div>
+        <div>Product</div>
+        <div>Pricing</div>
+        <div>Support</div>
+        <div>About</div>
+    </div>
+</div>
+<div class="header-menu-content" *ngIf="menuOpen">
+    
+</div>
 <img class="header-logo" src="assets/images/Logo.svg"/>
-<ul class="header-menu">
+<ul class="header-menu desktop">
     <li>Product</li>
     <li>Pricing</li>
     <li>Support</li>

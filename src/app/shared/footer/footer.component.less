@@ -21,7 +21,8 @@
 
 .footer-column{
     padding : 0 1rem;
-    flex : 1 0 auto;
+    flex : 1 0 auto; 
+    
     &:first-of-type{
         border-right : solid 1px #585D6E;
         width : 46rem;
@@ -30,7 +31,16 @@
             width : 26rem;
             padding-right: 4rem;
         }
+        @media(max-width : 1023px){
+            text-align : center;
+            border-width : 0;
+            padding-right : 0;
+            width : 100%;
+        }
     }
+  
+    
+      
     
     
     .footer-title{
@@ -53,6 +63,7 @@
 }
 
 .footer-logo{
+    height : 2rem;
     filter: contrast(0) brightness(100);
     -webkit-filter: contrast(0) brightness(100);
 }

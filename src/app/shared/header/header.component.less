@@ -8,10 +8,47 @@
     .header-logo{
         margin-right: auto;
         margin-left : 1rem;
+        @media(max-width:1024px){
+            margin-left : auto;
+        }
     }
-
+    
     .header-menu{
         margin : 0;
+        .menu-icon{
+            position : absolute;
+            top : 3rem;
+            left : 2.5rem;
+            cursor : pointer;
+        }
+        .dropdown-toggle{
+            flex-direction: column;
+        }
+        .dropdown-content{
+            & > div:first-of-type{
+                padding : 1rem 0;
+                height : 8.5rem;
+            }
+            .menu-logo{
+                filter: contrast(0) brightness(100);
+                -webkit-filter: contrast(0) brightness(100);
+            }
+            .bar{
+                background : #FFF;
+            }
+            position : fixed;
+            top : 0;
+            right : 0;
+            left : 0;
+        }
+        .bar{
+            height : 0.2rem;
+            width : 4rem;
+            background : #000;
+            &:not(:last-of-type){
+                margin-bottom: 1rem;
+            } 
+        }
         li{
             font-size: 1.4rem;
             line-height: 1.9rem;

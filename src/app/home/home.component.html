@@ -29,10 +29,12 @@
 <div class="block small-text">
     THEY TRUST US
 </div>
-<div app-carousel  (window:resize)="onResize($event)" >
-    <div carousel-page *ngFor="let page of pages" class="schools">
-        <div class="school" *ngFor="let school of page">
-            <img src="{{ school }}"/>                    
+<div app-carousel  (window:resize)="onResize($event)" [time]="10000" >
+    <div carousel-page *ngFor="let page of pages">
+         <div class="schools">
+            <div class="school" *ngFor="let school of page">
+                <img src="{{ school }}"/>                    
+            </div>
         </div>
     </div>
 </div>

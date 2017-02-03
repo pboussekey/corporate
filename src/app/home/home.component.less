@@ -1,9 +1,5 @@
 @import "../../assets/less/rules.less";
 
-
-
-
-
 :host /deep/ [app-planetarium] > #animation-layout{
     background-image: radial-gradient(circle farthest-side at 100% 0 , rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 95%, rgba(255, 255, 255, 1) 100%);
 }
@@ -19,6 +15,7 @@
     @media(max-width : 1023px){
         flex-direction : column;
         margin-top: 8.5rem;
+        margin-bottom: 6.5rem;
     }
     
     .portrait{
@@ -133,7 +130,7 @@
 :host /deep/ .carousel-pagination{
     margin : 7.5rem auto 13rem !important;
     @media(max-width: 1023px){
-        margin : 7.5rem auto 7rem !important;
+        margin : 7.5rem auto !important;
     }
 }
 
