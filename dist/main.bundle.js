@@ -880,7 +880,7 @@ module.exports = ":host {\n  position: absolute;\n  z-index: -1;\n}\n#animation-
 /***/ 677:
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  background: #f4ffff;\n  height: 50rem;\n  z-index: -3;\n  top: -8rem;\n  right: 0;\n  left: 0;\n  position: absolute;\n}\n.waves {\n  position: relative;\n  height: 100%;\n  width: 100%;\n}\n#white-block {\n  background: #FFF;\n  height: 12rem;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  position: absolute;\n  -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);\n          clip-path: polygon(0 0, 100% 100%, 0 100%);\n}\n#wave-1 {\n  height: 12rem;\n  background: #eafbfb;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  -webkit-clip-path: polygon(0 0, 100% 100%, 90% 100%, 50% 80%, 0 100%);\n          clip-path: polygon(0 0, 100% 100%, 90% 100%, 50% 80%, 0 100%);\n}\n#wave-2 {\n  height: 12rem;\n  background: #e0f8f8;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  -webkit-clip-path: polygon(0 0, 100% 100%, 90% 100%, 50% 80%, 0 60%);\n          clip-path: polygon(0 0, 100% 100%, 90% 100%, 50% 80%, 0 60%);\n}\n#wave-3 {\n  height: 12rem;\n  background: #d1f2f2;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  -webkit-clip-path: polygon(0 0, 50% 50%, 0 25%);\n          clip-path: polygon(0 0, 50% 50%, 0 25%);\n}\n"
+module.exports = ":host {\n  background: #f4ffff;\n  height: 50rem;\n  z-index: -3;\n  top: -8rem;\n  right: 0;\n  left: 0;\n  position: absolute;\n}\n.waves {\n  position: relative;\n  height: 100%;\n  width: 100%;\n}\nsvg {\n  height: 12rem;\n  bottom: 0;\n  width: 100%;\n  position: absolute;\n}\n#white-block {\n  fill: #FFF;\n}\n#wave-1 {\n  fill: #eafbfb;\n}\n#wave-2 {\n  fill: #e0f8f8;\n}\n#wave-3 {\n  fill: #d1f2f2;\n}\n"
 
 /***/ }),
 
@@ -943,7 +943,7 @@ module.exports = "<div id=\"animation-layout\" [ngStyle]=\"{ width : size[0], he
 /***/ 686:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"waves\">\n    <div id=\"white-block\"></div>\n    <div id=\"wave-1\"></div>\n    <div id=\"wave-2\"></div>\n    <div id=\"wave-3\"></div>\n</div>\n    "
+module.exports = "<div class=\"waves\">\n    <svg viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" id=\"white-block\">\n        <polygon  points=\"0,0 100,100 0,100\"/>\n    </svg>\n    <svg viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" id=\"wave-1\">\n        <polygon points=\"0,0 100,100, 90,100 50,80 0,100\"/>\n    </svg>\n    <svg viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" id=\"wave-2\">\n        <polygon points=\"0,0 100,100 90,100 50,80 0,60\"/>\n    </svg>\n    <svg viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" id=\"wave-3\">\n        <polygon points=\"0,0 50,50 0,25\"/>\n    </svg>\n</div>\n    "
 
 /***/ }),
 
