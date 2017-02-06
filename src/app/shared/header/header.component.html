@@ -15,7 +15,7 @@
             <img class="menu-logo" src="assets/images/Logo-white.png"/>
         </div>
         <div>Product</div>
-        <div>Pricing</div>
+        <div [routerLink]="['/pricing']">Pricing</div>
         <div>Support</div>
         <div>About</div>
     </div>
@@ -23,10 +23,10 @@
 <div class="header-menu-content" *ngIf="menuOpen">
     
 </div>
-<img class="header-logo" src="assets/images/Logo.svg"/>
+<img class="header-logo"  [routerLink]="['']" src="assets/images/Logo.svg"/>
 <ul class="header-menu desktop">
     <li>Product</li>
-    <li>Pricing</li>
+    <li  [routerLink]="['/pricing']" routerLinkActive="current">Pricing</li>
     <li>Support</li>
     <li>About</li>
 </ul>

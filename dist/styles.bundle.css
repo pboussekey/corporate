@@ -1939,6 +1939,7 @@ button:hover .arrow {
 }
 .block {
   text-align: center;
+  max-width: 110rem;
   margin-left: auto;
   margin-right: auto;
 }

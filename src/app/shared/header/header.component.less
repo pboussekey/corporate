@@ -8,6 +8,7 @@
     .header-logo{
         margin-right: auto;
         margin-left : 1rem;
+        cursor : pointer;
         @media(max-width:1024px){
             margin-left : auto;
         }
@@ -59,6 +60,9 @@
             display : inline-block;
             margin-right : 2.5rem;
             cursor : pointer;
+            &.current{
+                color : @clr-blue;
+            }
         }
     } 
 }
