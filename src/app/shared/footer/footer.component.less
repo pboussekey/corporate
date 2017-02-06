@@ -16,6 +16,34 @@
         max-width : 110rem;
         display : flex;
         margin : 0 auto;
+        .dropdown-toggle{
+            height : 5rem;
+            line-height: 5rem;
+            flex : 1;
+            margin : 0 1rem;
+            border : solid 1px #FFF;
+            border-radius : 2px;
+            padding : 0 1rem;
+            font-size : 1.6rem;
+            .text{
+                flex:  1;
+            }
+            .arrow{
+                font-family: cursive;
+                font-size: 1.5rem;
+                transform : rotate(90deg);
+
+            }
+        }
+       .dropdown-content{
+            position : fixed;
+            bottom : 0;
+            right : 0;
+            left : 0;
+        }
+        @media(max-width : 1023px){
+            flex-direction : column;
+        }
     }
 }
 
@@ -40,7 +68,7 @@
     }
   
     
-      
+  
     
     
     .footer-title{
