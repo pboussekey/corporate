@@ -18,7 +18,7 @@
         margin : 0;
         .menu-icon{
             position : absolute;
-            top : 3rem;
+            top : 0;
             left : 2.5rem;
             cursor : pointer;
         }
@@ -26,6 +26,9 @@
             flex-direction: column;
         }
         .dropdown-content{
+            .menu-icon{
+                top : 3rem;
+            }
             & > div:first-of-type{
                 padding : 1rem 0;
                 height : 8.5rem;

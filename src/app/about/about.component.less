@@ -1,0 +1,70 @@
+@import "../../assets/less/rules.less";
+
+@media(max-width : 1023px){
+    :host{
+        padding : 0 1rem;
+    }
+}
+
+#first-block{
+    animation:  title-in 250ms linear;
+    animation-delay: 1500ms;
+    animation-fill-mode: forwards;
+    opacity : 0;
+    position : relative;
+    top : -4rem;
+}
+
+#first-paragraph{
+    margin-top : 22rem;
+    p{
+        margin : 3rem 0;
+    }
+    @media(max-width : 1023px){ 
+        margin-top : 14rem;
+    }
+}
+
+#adress{
+    font-size: 1.6rem;
+    .twic-logo{
+        margin-top: 4rem;
+    } 
+    .by{
+        margin : 2rem 0;
+        font-weight: 300;
+        line-height: 3.2rem;
+    }
+    div:not(.by){
+        line-height: 2.6rem;
+    }
+    .studnet-logo{
+        margin-bottom : 0.5rem;
+    }
+    .monaco-logo{
+        margin : 3rem 0 0;
+    }
+    .monaco-sentence{
+        margin-bottom: 12rem;
+        font-weight: 300;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+}
+
+#monaco-background{
+    position : absolute;
+    bottom : 32rem;
+    left : 0;
+    right : 0;
+    height : 60rem;
+    background-image: url("assets/images/monaco-ville.jpg");
+    background-position: 50% 0%;
+    background-size: cover;
+    width : 100%;
+    z-index: -2;
+    
+    @media(max-width : 1023px){ 
+        bottom : 22rem;
+    }
+}

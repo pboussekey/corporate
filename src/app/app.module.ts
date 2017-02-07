@@ -14,6 +14,7 @@ import {DropdownDirective } from './shared/dropdown/dropdown.directive';
 import { PricingComponent } from './pricing/pricing.component';
 import { H2Component } from './shared/h2/h2.component';
 import { WaveComponent } from './shared/wave/wave.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { WaveComponent } from './shared/wave/wave.component';
     DropdownDirective,
     PricingComponent,
     H2Component,
-    WaveComponent
+    WaveComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

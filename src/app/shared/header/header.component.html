@@ -17,7 +17,7 @@
         <div>Product</div>
         <div [routerLink]="['/pricing']">Pricing</div>
         <div>Support</div>
-        <div>About</div>
+        <div [routerLink]="['/about']">About</div>
     </div>
 </div>
 <div class="header-menu-content" *ngIf="menuOpen">
@@ -28,5 +28,5 @@
     <li>Product</li>
     <li  [routerLink]="['/pricing']" routerLinkActive="current">Pricing</li>
     <li>Support</li>
-    <li>About</li>
+    <li  [routerLink]="['/about']" routerLinkActive="current">About</li>
 </ul>
