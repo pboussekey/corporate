@@ -6,7 +6,7 @@
 }
 
 #first-block{
-    animation:  title-in 2s;
+    animation:  title-in 2s linear;
     animation-delay: 2000ms;
     animation-fill-mode: forwards;
     opacity : 0;
@@ -15,32 +15,31 @@
 }
 
 #choose-you-plan{
-    padding-top : 18rem;
+    padding-top : 13rem;
 }
 
-h1{
-    animation: title-in 2s;
-    animation-delay: 2000ms;
-    animation-fill-mode: forwards;
-    opacity : 0;
-    position : relative;
-    top : -4rem;
-}
 
 .table-block{
     display : flex;
 }
 .table{
     display : flex;
-    margin : 4rem auto 1rem;
+    flex-wrap: wrap;
+    margin : 1rem auto;
+    @media(max-width: 1023px){
+        padding : 0 1rem;
+    }
     .column{
         width : 30rem;
         height : 34rem;
+        @media(max-width: 1023px){
+            width : 50%;
+        }
         display: flex;
         flex-direction: column;
-        border-radius: 2px;
         box-shadow: 0 1px 12px 0 rgba(222,222,222,0.5);
         color : @clr-text;
+        border-radius: 0 2px 2px 0;
         .title{
             font-size: 1.8rem;
             line-height: 2.6rem;
@@ -51,11 +50,12 @@ h1{
             border: 1px solid #DEDEDE;
             &:first-of-type{
                 border-right : none;
+                border-radius: 2px 0 0 2px;
             }
         }
         &.gray{
             margin-top : 1.5rem;
-            height : 32.5rem;
+            height : 32rem;
             background : @clr-darkgray;
             color : #FFF;
             .title{
@@ -63,6 +63,14 @@ h1{
             }
             .price{                
                 background : @clr-darkgray2;
+            }
+            @media(max-width: 1023px){
+                box-shadow: inset 0px 8px 5px 0px rgba(217,217,217,0.15);
+                width : 100%;
+                margin-top : 0;
+                .title{
+                    margin : 2.25rem 0;
+                }
             }
         }
         
@@ -114,7 +122,9 @@ h1{
 }
 
 #our-pricing{
-    margin-bottom: 6rem;
+    margin-bottom: 7rem;
+    font-weight: 300;
+    font-size: 1.6rem;
 }
 
 #try-our-product{
@@ -128,6 +138,14 @@ h1{
     text-align: left;
     display : flex;
     padding : 0 4rem;
+    margin-bottom : 8rem;
+    @media(max-width: 1023px){
+        flex-direction : column;
+        text-align : center;
+        padding : 4rem 2rem;
+        height : 21rem;
+        line-height : 2.6rem;
+    }
     p{
         flex : 1;
         margin : auto 0;
@@ -158,9 +176,17 @@ h1{
             font-weight: bold;
             line-height: 2.4rem;
             margin-bottom: 4rem;
+            @media(max-width: 1023px){
+                text-align : center;
+                width: calc(~"50% - 4rem");
+            }
         }
         .icon{
             margin-right: 1rem;
+            
+            @media(max-width: 1023px){
+                display : block;
+            }
         }
     }
     margin-bottom : 6rem;
