@@ -50,13 +50,7 @@ export class HomeComponent implements AfterViewInit {
         { opacity: 0.4, radius: 310, shadow : "-5px 5px 40px 0px rgba(0,0,0,0.06)"  },
         { opacity: 0.3, radius: 400, shadow : "-5px 5px 40px 0px rgba(0,0,0,0.06)"  }
     ];
-        
-        
-    
     public pages : string[][];
-    
-  
-    
     ngAfterViewInit(){
         this.getPartners();
     }
@@ -66,7 +60,8 @@ export class HomeComponent implements AfterViewInit {
     }
     
     getPartners(){
-        var pageSize = window.innerWidth > 1024 ? 10 : (window.innerWidth > 768 ? 6 : 4);
+        var width = document.querySelector('[app-root]').clientWidth;
+        var pageSize = width> 1024 ? 10 : (width > 768 ? 6 : 4);
         var partners = JSON.parse(JSON.stringify(this.partners));
         this.pages = [];
         while(partners.length){

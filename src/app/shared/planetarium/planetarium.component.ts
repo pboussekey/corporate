@@ -26,10 +26,6 @@ export class Circle {
         state("normal", style({ opacity : 1 })),
         transition("void => *", [style({ width : 0, height : 0 }), animate(500)]),
         transition("* => void", animate(500, style({ opacity : 0 })))
-    ]),
-    trigger("circle", [
-        state("normal", style({ opacity : 1 })),
-        transition("void => *", [style({ width : 0, height : 0 }), animate(2000)])
     ])
   ]
 })
@@ -71,7 +67,7 @@ export class PlanetariumComponent implements AfterViewInit  {
     
     onResize(){
         if (this.autoResize){
-            this.size[0] = window.innerWidth;
+            this.size[0] = document.querySelector('[app-root]').clientWidth;
         }
     }
     
@@ -124,7 +120,7 @@ export class PlanetariumComponent implements AfterViewInit  {
     
     ngAfterViewInit() {
         this.autoResize = !this.size[0];
-        this.size[0] |= window.innerWidth;
+        this.size[0] |= document.querySelector('[app-root]').clientWidth;
         this.radius = this.circles.map(function(circle){ return circle.radius; });
         this.positions = {
             top : this.top.bind(this),

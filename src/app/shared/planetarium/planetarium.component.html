@@ -1,6 +1,6 @@
 <div id="animation-layout" [ngStyle]="{ width : size[0], height : size[1] }" (window:resize)="onResize($event)">
     <div class="circle" 
-         *ngFor="let circle of circles" 
+         *ngFor="let circle of circles; let i = index" 
          [ngStyle]="{ 
             top : -circle.radius + center[1], 
             right : -circle.radius  + center[0],   
@@ -8,8 +8,7 @@
             'opacity' :  circle.opacity ,
             width : circle.radius * 2, 
             height : circle.radius * 2
-        }" 
-         [@circle]="normal" >
+        }" id="circle-{{ i }}" >
         
              
     </div>

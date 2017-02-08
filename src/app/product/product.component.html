@@ -7,13 +7,89 @@
     </p>
     
 </div>
-<div class="columns">
+<div class="columns" id="all-in-one">
     <div class="column">
-        <div app-h2 id="all-in-one">All-in-one platform</div>
-        
+        <div app-h2>All-in-one platform</div>
+        <div  class="column-block gray">
+            <b>Learning Management System</b>
+            <p>
+                We are committed to being on the cutting edge of
+                innovation in higher education. Our state-of-the-art
+                L.M.S enables to distribute online, blended courses over the internet as well as 
+                to augment on-campus teaching in a brick and mortar environment.</p>
+        </div>
+        <div  class="column-block">
+            <b>Social networking tools</b>
+            <p>
+                Our disruptive technology allows to create a connected, engaged and 
+                collaborative learning experience for students and faculty across the world.
+            </p>
+        </div>
+        <div  class="column-block">
+            <b>Videoconferencing system</b>
+            <p>
+               Our all-in-one platform make it easy to launch one-on- one, group calls or live classes without 
+               needing to open another app or share invite links.
+            </p>
+        </div>
+        <div  class="column-block">
+            <b>Data collection</b>
+            <p>
+               We use the latest forward-looking algorithms in human-technology 
+               tracking to measure Assurance of Learning and online engagement.
+            </p>
+        </div>
+    </div>
+    <div class="column">
+        <img src="assets/images/product.png" id="product" />
     </div>
 </div>
+<div id="planetarium"  (window:resize)="onResize($event)">
+    <div app-planetarium 
+         
+        [circles]="circles" 
+        [nbParticles]="15" 
+        [size]="[0,800]"
+        [center]="center">
+        
+    </div>
+    <div class="planetarium-block" id="share-collaborate">
+        <b>Share & Collaborate</b>
+        <p>
+            Our collaborative learning environment based on community of practice, group projects, 
+            peer evaluation and class discussions enables the proven best 
+            practices for student and faculty engagement.
+        </p>
+    </div>
+    <div class="planetarium-block" id="network">
+        <b>Network</b>
+        <p>
+            Whether B-schools have a single, multi-campus, joint degree or alliance model strategy, 
+            we believe that networking-based education allows for resources to be 
+            distributed more efficiently.
+        </p>
+    </div>
+</div>
+<div class="columns">
+    <div class="column">
+        <div app-h2 >Everywhere. Anytime.</div>
+        <div  class="column-block">
+            <b><span class="icon icon-loop2"></span> Responsiveness & Sync</b>
+            <p>
+              Whether Twic is used on a mobile, tablet or desktop, and whatever content 
+              is created, all connected devices will stay in synchronization.
+            </p>
+        </div>
+        <div  class="column-block">
+            <b><span class="icon icon-bullhorn"></span>Notifications</b>
+            <p>
+                Students and faculty can have customized notifications pop up on their devices to keep them up- to-date.
+            </p>
+        </div>
+    </div>
+    <div class="column">
+        <div app-devices>
 
-<div app-devices>
-    
+        </div>
+    </div>
 </div>

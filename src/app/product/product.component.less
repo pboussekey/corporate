@@ -1,6 +1,27 @@
 @import "../../assets/less/rules.less";
 
 
+@keyframes circle-0 {
+    0% { margin-right : 2rem; margin-top : 2rem; height : 12rem; width : 12rem; }
+    100% { margin-right : 0; margin-top : 0; height : 16rem; width : 16rem; }
+}
+@keyframes circle-1 {
+    0% {  margin-right : 3.5rem; margin-top : 3.5rem;  height : 22rem; width : 22rem; }
+    100% {  margin-right : 0; margin-top : 0; height : 29rem; width : 29rem; }
+}
+@keyframes circle-2 {
+    0% { margin-right : 5rem; margin-top : 5rem;  height : 32rem; width : 32rem; }
+    100% { margin-right : 0; margin-top : 0; height : 42rem; width : 42rem; }
+}
+@keyframes circle-3 {
+    0% { margin-right : 7rem; margin-top : 7rem; height : 41rem; width : 41rem; }
+    100% { margin-right : 0; margin-top : 0;  height : 55rem; width : 55rem; }
+}
+@keyframes circle-4 {
+    0% { margin-right : 9rem; margin-top : 9rem; height : 52rem; width : 52rem; }
+    100% {  margin-right : 0; margin-top : 0; height : 70rem; width : 70rem; }
+}
+
 #first-block{
     animation:  title-in 250ms linear;
     animation-delay: 1500ms;
@@ -13,10 +34,99 @@
 .columns{
     display : flex;
     .column{
-        width : 50%;
+        flex : 1;
+        &:first-of-type{
+            padding-right: 4rem;
+        }
     }
 }
 
 #all-in-one{
-    text-align: left;
+    margin-top : 17rem; 
+    [app-h2]  {
+        /deep/ h2{
+            margin : 0 ;
+        }
+        text-align: left;
+    }
+}
+
+#product{
+    width : 100%;
+    margin-top: 7rem;
+    box-shadow: 0 1px 12px 0 rgba(222,222,222,0.5);
+    border: 1px solid #DEDEDE;
+    border-radius: 4px;
+    
+}
+
+.column-block{
+    padding : 2rem 2rem 0 2rem;
+    &.gray{
+        padding : 2.5rem;
+        background : @clr-gray;
+    }
+    b{
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        .icon{
+            display : inline-block;
+            margin-right: 1rem;
+        }
+    }
+    p{
+        font-size: 1.4rem;
+        line-height: 2.6rem;
+    }
+}
+
+#planetarium{
+    height : 75rem;
+    width : 100%;
+    max-width: 110rem;
+    display : flex;
+    margin-top  : 8rem;
+    
+    & /deep/ [app-planetarium]{
+        #circle-0{
+            animation : circle-0 1s 2s  cubic-bezier(0.6, 0.4, 0.6, 1.3);
+        }
+        #circle-1{
+            animation : circle-1 1.1s 2s  cubic-bezier(0.6, 0.4, 0.6, 1.35);
+        }
+        #circle-2{
+            animation : circle-2 1.2s 2s  cubic-bezier(0.6, 0.4, 0.6, 1.4);
+        }
+        #circle-3{
+            animation : circle-3 1.3s 2s  cubic-bezier(0.6, 0.4, 0.6, 1.45);
+        }
+        #circle-4{
+            animation : circle-4 1.4s 2s  cubic-bezier(0.6, 0.4, 0.6, 1.5);
+        }
+    }
+    
+    .planetarium-block{
+        width: 40rem;
+        height: 20rem;
+        padding : 2rem;
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.11) 100%);
+        box-shadow: 0 1px 12px 0 rgba(222,222,222,0.5);
+        border: 1px solid #DEDEDE;
+        border-radius: 2px;
+        margin : auto;
+        &#share-collaborate{
+            margin-right : 4rem;
+        }
+        &#network{
+            margin-left : 4rem;
+        }
+        b{
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+        }
+        p{
+            font-size: 1.5rem;
+            line-height: 2.6rem;
+        }
+    }
 }
