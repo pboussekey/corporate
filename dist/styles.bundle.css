@@ -1922,20 +1922,6 @@ body {
     padding: 0 1rem;
   }
 }
-.content p {
-  text-align: center;
-  display: block;
-  width: 100%;
-  max-width: 80rem;
-  margin-bottom: 5rem;
-  color: #3C3F48;
-}
-@media (max-width: 1023px) {
-  .content p {
-    margin-top: 0rem;
-    margin-bottom: 3.3rem;
-  }
-}
 .small-text {
   font-weight: 300;
   font-size: 1.6rem;

@@ -15,6 +15,8 @@ import { PricingComponent } from './pricing/pricing.component';
 import { H2Component } from './shared/h2/h2.component';
 import { WaveComponent } from './shared/wave/wave.component';
 import { AboutComponent } from './about/about.component';
+import { DevicesComponent, WindowComponent } from './shared/devices/devices.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { AboutComponent } from './about/about.component';
     PricingComponent,
     H2Component,
     WaveComponent,
-    AboutComponent
+    AboutComponent,
+    DevicesComponent,
+    ProductComponent,
+    WindowComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@
             </div>
             <img class="menu-logo" src="assets/images/Logo-white.png"/>
         </div>
-        <div>Product</div>
+        <div [routerLink]="['/product']">Product</div>
         <div [routerLink]="['/pricing']">Pricing</div>
         <div>Support</div>
         <div [routerLink]="['/about']">About</div>
@@ -25,7 +25,7 @@
 </div>
 <img class="header-logo"  [routerLink]="['']" src="assets/images/Logo.svg"/>
 <ul class="header-menu desktop">
-    <li>Product</li>
+    <li  [routerLink]="['/product']" routerLinkActive="current">Product</li>
     <li  [routerLink]="['/pricing']" routerLinkActive="current">Pricing</li>
     <li>Support</li>
     <li  [routerLink]="['/about']" routerLinkActive="current">About</li>

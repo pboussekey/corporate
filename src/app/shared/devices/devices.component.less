@@ -1,0 +1,103 @@
+
+@keyframes computer-in {
+    0% { bottom : -2rem; opacity : 0; }
+    100% { bottom : 0; opacity : 1}
+}
+
+@keyframes browser-in {
+    0% { bottom : 3.5rem; opacity : 0; }
+    100% { bottom : 5.5rem; opacity : 1}
+}
+
+@keyframes tablet-in {
+    0% { top : 2rem; opacity : 0; }
+    100% { top : 0; opacity : 1}
+}
+
+@keyframes mobile-in {
+    0% { bottom : 10rem; opacity : 0; }
+    100% { bottom : 12rem; opacity : 1}
+}
+
+:host{
+    position : relative;
+    height : 45rem;
+    width : 70rem;
+}
+
+.computer{
+    position :absolute;
+    width : 56rem;
+    height : 35rem;
+    left : calc(~"50% - 28rem");
+    bottom : 0;
+    z-index: 0;
+    opacity : 0;
+    animation: computer-in 250ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards; 
+}
+
+.window-computer{
+    position :absolute;
+    z-index: 2;   
+    width: 20rem;
+    height: 14rem; 
+    bottom : 9rem;
+    right : calc(~"50% - 10rem");
+}
+
+.browser{
+    position :absolute;
+    width : 35rem;
+    height : 24rem;
+    z-index: 1;    
+    left : calc(~"50% - 17.5rem");    
+    bottom: 5.5rem;
+    opacity : 0;
+    animation: browser-in 250ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards; 
+}
+
+.tablet{
+    position :absolute;
+    z-index: 3;    
+    width : 27rem;
+    height : 37rem;
+    z-index: 2;    
+    right : calc(~"25% - 13.5rem");
+    top : 0;
+    transform: rotate(5deg);
+    opacity : 0;
+    animation: tablet-in 250ms 1s cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards; 
+}
+
+.window-tablet{
+    position :absolute;
+    z-index: 4;   
+    width: 16rem;
+    height: 14rem; 
+    top : 11.5rem;
+    right : calc(~"25% - 8rem");
+    transform: rotate(5deg);
+}
+
+.mobile-phone{
+    position :absolute;
+    z-index: 3;   
+    width : 15rem;
+    height : 29rem;
+    z-index: 2;    
+    left : calc(~"30% - 7.5rem");
+    bottom : 10rem;
+    transform: rotate(-5deg); 
+    opacity : 0;
+    animation: mobile-in 250ms 500ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards; 
+}
+
+.window-mobile{
+    position :absolute;
+    z-index: 4;   
+    width: 10rem;
+    height: 13rem; 
+    top : 11.5rem;
+    left : calc(~"30% - 5rem");
+    transform: rotate(-5deg);
+}
