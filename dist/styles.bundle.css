@@ -1830,6 +1830,32 @@
 .icon-uniA9:before {
   content: "\A9";
 }
+.chevron::before {
+  border-style: solid;
+  border-width: 0.2rem 0.2rem 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.3rem;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  vertical-align: middle;
+  width: 0.3rem;
+}
+.chevron.right:before {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.chevron.bottom:before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.chevron.left:before {
+  left: 0.25em;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
 @-webkit-keyframes title-in {
   0% {
     opacity: 0;
@@ -1967,7 +1993,7 @@ button:hover {
   background: #1EBAB7;
   box-shadow: inset 0px 1px 2px 0px #d9d9d9;
 }
-button:hover .arrow {
+button:hover .chevron {
   margin: -1px 0.3rem 0 1.7rem;
 }
 button.white {
@@ -1981,13 +2007,8 @@ button.white:hover {
 button.white:hover .arrow {
   margin: -1px 0.3rem 0 1.7rem;
 }
-button .arrow {
+button .chevron {
   margin: -1px 0 0 2rem;
-  float: right;
-  font-family: cursive;
-  font-size: 1.5rem;
-  -webkit-transition: margin 50ms ease-in;
-  transition: margin 50ms ease-in;
 }
 @media (max-width: 1023px) {
   button {
