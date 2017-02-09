@@ -37,7 +37,7 @@
         flex-direction : column;
         [app-devices]{
             width : 100%;
-            max-width: 55rem;
+            max-width:48rem;
             margin: 3rem auto 0;
         }
     }
@@ -60,6 +60,12 @@
         margin-top : 8rem;
         p{
             height : 15rem;
+        }
+    }
+    @media(max-width : 479px){
+        margin-top : 0rem;
+        p{
+            height : 18rem;
         }
     }
     [app-h2]  {
@@ -160,8 +166,9 @@
          }
     }
     .planetarium-block{
-        width: 40rem;
-        height: 20rem;
+        width : 100%;
+        max-width: 40rem;
+        min-height: 20rem;
         padding : 2rem;
         background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.5) 100%);
         box-shadow: 0 1px 12px 0 rgba(222,222,222,0.5);
@@ -199,6 +206,11 @@
       #everywhere{
           margin-top: 0;            
       }   
+}
+ @media(max-width: 479px){
+    #everywhere{
+          margin: 4rem 0 2rem;            
+    }  
 }
 
 #ready{

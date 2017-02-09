@@ -13,6 +13,9 @@
 
 #choose-you-plan{
     padding-top : 13rem;
+    @media(max-width: 479px){
+        margin : 0;
+    }
 }
 
 
@@ -28,6 +31,12 @@
         height : 34rem;
         @media(max-width: 1023px){
             width : 50%;
+            .lines{
+                padding : 0 0.5rem;
+            }
+        }
+        @media(max-width: 479px){
+            height : auto;
         }
         display: flex;
         flex-direction: column;
@@ -111,7 +120,6 @@
             }
         }
        
-        
     }
 }
 
@@ -119,6 +127,9 @@
     margin-bottom: 7rem;
     font-weight: 300;
     font-size: 1.6rem;
+    @media(max-width:479px){
+        margin-bottom : 4rem;
+    }
 }
 
 #try-our-product{
@@ -133,12 +144,20 @@
     margin-bottom : 8rem;
     width : 100%;
     background-image: url("assets/images/try-our-product.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     @media(max-width: 1023px){
         flex-direction : column;
         text-align : center;
         padding : 4rem 2rem;
         height : 21rem;
         line-height : 2.6rem;
+    }
+    
+    
+    @media(max-width: 479px){
+        margin-bottom: 0;
+        height : 23rem;
     }
     p{
         flex : 1;
@@ -162,6 +181,9 @@
         flex-wrap: wrap;
         list-style: none;
         padding : 0 2.6rem;
+        @media(max-width: 479px){
+            padding : 0;
+        }
         ul{
             width: calc(~"33% - 4rem");
             margin : 0 2rem;
@@ -174,6 +196,10 @@
             @media(max-width: 1023px){
                 text-align : center;
                 width: calc(~"50% - 4rem");
+            }
+            @media(max-width: 479px){
+                width: calc(~"50% - 1rem");
+                margin : 0 0.5rem 4rem;
             }
         }
         .icon{
