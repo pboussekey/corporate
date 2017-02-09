@@ -7,11 +7,10 @@
     </div>
     <div class="footer-menu mobile dropdown" app-dropdown>
         <div class="dropdown-content">
-            <div>See our Product</div>
-            <div>Pricing</div>
+            <div [routerLink]="['/product']">See our Product</div>
+            <div [routerLink]="['/pricing']">Pricing</div>
             <div>Support</div>
-            <div>About</div>
-            <div>About</div>
+            <div [routerLink]="['/about']">About</div>
             <div>Download App IOS</div>
             <div>Download App Android</div>
             <div>Status</div>
@@ -30,15 +29,15 @@
     <div class="footer-column desktop">
         <div class="footer-title">Using Twic</div>
         <ul>
-            <li>Product</li>
-            <li>Pricing</li>
+            <li [routerLink]="['/product']">Product</li>
+            <li [routerLink]="['/pricing']">Pricing</li>
             <li>Support</li>
         </ul>
     </div>
     <div class="footer-column desktop">
         <div class="footer-title">Twic</div> 
         <ul>
-            <li>About</li>
+            <li [routerLink]="['/about']">About</li>
             <li>Download App IOS</li>
             <li>Download App Android</li>
             <li>Status</li>
