@@ -33,35 +33,69 @@
 
 .columns{
     display : flex;
+    @media(max-width: 1023px){
+        flex-direction : column;
+        [app-devices]{
+            width : 100%;
+            max-width: 55rem;
+            margin-top: 3rem;
+        }
+    }
     .column{
         flex : 1;
-        &:first-of-type{
-            padding-right: 4rem;
+        @media(min-width: 1024px){
+            &:first-of-type{
+                padding-right: 4rem;
+            }
+        }
+        &:last-of-type{
+            position : relative;
         }
     }
 }
 
 #all-in-one{
     margin-top : 17rem; 
+    @media(max-width : 1023px){
+        margin-top : 8rem;
+        p{
+            height : 15rem;
+        }
+    }
     [app-h2]  {
         /deep/ h2{
             margin : 0 ;
+            @media(max-width : 1023px){
+                margin : 0 auto;
+            }
         }
         text-align: left;
     }
 }
 
 #product{
-    width : 100%;
-    margin-top: 7rem;
+    position : absolute;
+    top: 7rem;
+    left : 0;
+    right : 0;
+    bottom : 0;
     box-shadow: 0 1px 12px 0 rgba(222,222,222,0.5);
     border: 1px solid #DEDEDE;
     border-radius: 4px;
-    
+    background : url("assets/images/product.png");
+    @media(max-width: 1023px){
+       position : initial;
+       width : 100%;
+       height : 40rem;
+       background-position : 100% -40rem;
+    }
 }
 
 .column-block{
     padding : 2rem 2rem 0 2rem;
+    @media(max-width: 1023px){
+        text-align : center;       
+    }
     &.gray{
         padding : 2.5rem;
         background : @clr-gray;
@@ -72,6 +106,11 @@
         .icon{
             display : inline-block;
             margin-right: 1rem;
+            @media(max-width: 1023px){
+                display : block;
+                margin-right : 0;
+                margin-bottom : 1rem;
+            }
         }
     }
     p{
@@ -84,9 +123,19 @@
     height : 75rem;
     width : 100%;
     max-width: 110rem;
-    display : flex;
     margin-top  : 8rem;
-    
+    @media(min-width : 1024px){
+        [app-h2]{
+            margin : 17rem 0 7rem;
+        }
+    }
+    @media(max-width : 1023px){
+        height : 60rem;
+        margin-top : 0;
+        [app-h2]{
+            margin : 2rem 0 4rem;
+        }
+    }
     & /deep/ [app-planetarium]{
         #circle-0{
             animation : circle-0 1s 2s  cubic-bezier(0.6, 0.4, 0.6, 1.3);
@@ -104,22 +153,38 @@
             animation : circle-4 1.4s 2s  cubic-bezier(0.6, 0.4, 0.6, 1.5);
         }
     }
-    
+    .planetarium-blocks{
+         display : flex;
+         @media(max-width : 1023px){
+            flex-direction : column;
+         }
+    }
     .planetarium-block{
         width: 40rem;
         height: 20rem;
         padding : 2rem;
-        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.11) 100%);
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.5) 100%);
         box-shadow: 0 1px 12px 0 rgba(222,222,222,0.5);
         border: 1px solid #DEDEDE;
         border-radius: 2px;
         margin : auto;
-        &#share-collaborate{
-            margin-right : 4rem;
+         @media(min-width : 1024px){
+            &#share-collaborate{
+                margin-right : 4rem;
+            }
+            &#network{
+                margin-left : 4rem;
+
+            }
         }
-        &#network{
-            margin-left : 4rem;
+        @media(max-width : 1023px){
+            text-align : center;
+            &#share-collaborate{
+                margin-bottom : 2rem;
+            }
+           
         }
+      
         b{
             font-size: 1.8rem;
             line-height: 2.4rem;
@@ -128,5 +193,44 @@
             font-size: 1.5rem;
             line-height: 2.6rem;
         }
+    }
+}
+
+@media(max-width: 1023px){
+      #everywhere{
+          margin-top: 0;            
+      }   
+}
+
+#ready{
+    [app-h2]{
+        margin : 12rem 0 2rem;
+        @media(max-width: 1023px){
+           margin-top: 2rem;
+       }
+    }
+    p{        
+        font-size: 1.6rem;
+        margin-bottom : 4rem;
+    }
+    .button{
+        font-size : 1.4rem;
+        &:first-of-type{
+            margin-right : 4rem;
+        }
+    }
+    margin-bottom : 12rem;
+    @media(max-width: 1023px){
+       margin-bottom : 8rem;
+
+    }
+}
+
+button{
+    padding : 0 4rem;
+    @media(max-width: 1023px){
+        &#create-account{
+            margin-bottom: 2rem;            
+        }   
     }
 }

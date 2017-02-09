@@ -61,7 +61,7 @@
 }
 .dropdown.open .dropdown-content {
   height: auto;
-  max-height: 600px;
+  max-height: 1000px;
 }
 @font-face {
   font-family: 'IcoMoon';
@@ -1963,6 +1963,24 @@ button {
   text-align: center;
   cursor: pointer;
 }
+button:hover {
+  background: #1EBAB7;
+  box-shadow: inset 0px 1px 2px 0px #d9d9d9;
+}
+button:hover .arrow {
+  margin: -1px 0.3rem 0 1.7rem;
+}
+button.white {
+  background-color: #FFF;
+  color: #0DAFAC;
+  border: 1px solid #0DAFAC;
+}
+button.white:hover {
+  box-shadow: inset 0px 1px 2px 0px #0DAFAC;
+}
+button.white:hover .arrow {
+  margin: -1px 0.3rem 0 1.7rem;
+}
 button .arrow {
   margin: -1px 0 0 2rem;
   float: right;
@@ -1970,13 +1988,6 @@ button .arrow {
   font-size: 1.5rem;
   -webkit-transition: margin 50ms ease-in;
   transition: margin 50ms ease-in;
-}
-button:hover {
-  background: #1EBAB7;
-  box-shadow: inset 0px 1px 2px 0px #d9d9d9;
-}
-button:hover .arrow {
-  margin: -1px 0.3rem 0 1.7rem;
 }
 @media (max-width: 1023px) {
   button {
@@ -1994,14 +2005,14 @@ button:hover .arrow {
   margin-right: auto;
 }
 .mobile {
-  display: none;
+  display: none !important;
 }
 @media (max-width: 1023px) {
   .desktop {
-    display: none;
+    display: none !important;
   }
   .mobile {
-    display: block;
+    display: block !important;
   }
 }
 

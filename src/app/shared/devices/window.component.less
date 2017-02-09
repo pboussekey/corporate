@@ -9,6 +9,12 @@
     0% { width : 0; height : 0; top : 0; opacity : 0; left : 50%; }
     100% { width : 2.5rem; height : 2.5rem; top : -1.25rem; left : calc(~"50% - 1.25rem"); opacity : 1; }
 }
+
+@keyframes circle-in-mobile {
+    0% { width : 0; height : 0; top : 0; opacity : 0; left : 50%; }
+    100% { width : 1.5rem; height : 1.5rem; top : -0.75rem; left : calc(~"50% - 0.75rem"); opacity : 1; }
+}
+
 @keyframes gray-line-in {
     0% { width : 0;  opacity : 0; margin-left : 50%;  }
     100% { width : 100%;  opacity : 1; margin-left : 0; }
@@ -50,6 +56,13 @@
     position : absolute;
     animation: circle-in 500ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards; 
     opacity : 0;
+    @media(max-width: 1023px){
+        height : 1.5rem;
+        width : 1.5rem;
+        left : calc(~"50% - 0.75rem");
+        top : -0.75rem;
+        animation: circle-in-mobile 500ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards; 
+    }
 }
 
 .gray-line{
@@ -59,9 +72,16 @@
     background-color: #E8E8E8;
     margin-bottom: 1rem;
     animation: gray-line-in 500ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards; 
-    opacity : 0;
+    opacity : 0;  
+    @media(max-width: 1023px){
+        height : 0.4rem; 
+        margin-bottom: 0.5rem;
+    }
     &.first{
         margin-bottom: 2rem;
+        @media(max-width: 1023px){
+            margin-bottom : 1rem;
+        }
     }
     &.small{
         margin-right: 4rem;
@@ -96,4 +116,7 @@
     float : right;
     opacity : 0;
     animation: button-in 500ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards; 
+    @media(max-width: 1023px){
+        bottom : 0.5rem;
+    }
 }

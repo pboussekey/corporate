@@ -1,7 +1,5 @@
 @import "./assets/less/rules.less";
 
-
-
 html{
     height : 100%;
     width : 100%;
@@ -18,6 +16,7 @@ html{
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
 }
+
 html *{
     box-sizing: inherit;
 }
@@ -47,7 +46,6 @@ body{
     }
    
 }
-
 
 .small-text{
     font-weight: 300;
@@ -79,7 +77,6 @@ h1{
     }
 }
 
-
 button{    
     background-color: @clr-blue;
     border-radius: 2px;
@@ -92,15 +89,7 @@ button{
     font-weight: bold;
     font-size: 1.6rem;
     text-align: center;
-    cursor : pointer;
-    .arrow{
-        margin: -1px 0 0 2rem;
-        float : right;
-        font-family: cursive;
-        font-size: 1.5rem;
-        transition : margin 50ms ease-in; 
-        
-    }
+    cursor : pointer; 
     &:hover{
         background : #1EBAB7;
         box-shadow: inset 0px 1px 2px 0px rgba(217,217,217,1);
@@ -109,6 +98,27 @@ button{
         }
         
     }
+    &.white{
+        background-color: #FFF;
+        color: @clr-blue;
+        border: 1px solid @clr-blue;   
+        &:hover{
+            box-shadow: inset 0px 1px 2px 0px @clr-blue;
+            .arrow{
+                margin: -1px 0.3rem 0 1.7rem;
+            }
+
+        }     
+    }
+    .arrow{
+        margin: -1px 0 0 2rem;
+        float : right;
+        font-family: cursive;
+        font-size: 1.5rem;
+        transition : margin 50ms ease-in; 
+        
+    }
+   
     @media(max-width : 1023px){
         width : 100%;
     }
@@ -123,18 +133,17 @@ button{
         margin-left : auto;
         margin-right : auto;
     }
-  
 }
 
 .mobile{
-    display : none;
+    display : none !important;
 }
 
 @media(max-width : 1023px){
     .desktop{
-        display : none;
+        display : none !important;
     }
     .mobile{
-        display : block;
+        display : block !important;
     }
 }
