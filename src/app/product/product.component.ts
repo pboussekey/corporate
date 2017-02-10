@@ -12,6 +12,8 @@ import { Circle } from 'app/shared/planetarium/planetarium.component';
 export class ProductComponent implements OnInit{
     center : number[] = [0,375];
     height : number = 800;
+    timeout : any;
+    productIndex : number = 0;
     circles : Circle[];
     circles_large : Circle[] = [
         { opacity: 0.9, radius: 80, shadow : "-5px 5px 40px 0px rgba(0,0,0,0.06)"  },
@@ -33,8 +35,15 @@ export class ProductComponent implements OnInit{
         this.height = width >= 1023 ? 800 : 600;
         this.center =  [width / 2, this.height / 2];
     }
-    ngOnInit(){
-       this.onResize();
+    changeProductNumber(index : number){
+        if(this.timeout){
+            clearTimeout(this.timeout);
+        }
+        this.productIndex =  index >= 0 ? index : (this.productIndex + 1) % 4;
+        this.timeout = setTimeout(this.changeProductNumber.bind(this), 10000);
     }
- 
+    ngOnInit(){
+        this.onResize();
+        this.timeout = setTimeout(this.changeProductNumber.bind(this), 10000);
+    }
 }

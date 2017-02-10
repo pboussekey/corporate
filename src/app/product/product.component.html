@@ -10,7 +10,7 @@
 <div class="desktop columns" id="all-in-one">
     <div class="column" app-fade-in [delay]="2000">
         <div app-h2>All-in-one platform</div>
-        <div  class="column-block gray">
+        <div  class="column-block" [ngClass]="{ gray : productIndex === 0 }" (click)="changeProductNumber(0)">
             <b>Learning Management System</b>
             <p>
                 We are committed to being on the cutting edge of
@@ -18,21 +18,21 @@
                 L.M.S enables to distribute online, blended courses over the internet as well as 
                 to augment on-campus teaching in a brick and mortar environment.</p>
         </div>
-        <div  class="column-block">
+        <div  class="column-block" [ngClass]="{ gray : productIndex === 1 }" (click)="changeProductNumber(1)">
             <b>Social networking tools</b>
             <p>
                 Our disruptive technology allows to create a connected, engaged and 
                 collaborative learning experience for students and faculty across the world.
             </p>
         </div>
-        <div  class="column-block">
+        <div  class="column-block" [ngClass]="{ gray : productIndex === 2 }" (click)="changeProductNumber(2)">
             <b>Videoconferencing system</b>
             <p>
                Our all-in-one platform make it easy to launch one-on- one, group calls or live classes without 
                needing to open another app or share invite links.
             </p>
         </div>
-        <div  class="column-block">
+        <div  class="column-block" [ngClass]="{ gray : productIndex === 3 }" (click)="changeProductNumber(3)">
             <b>Data collection</b>
             <p>
                We use the latest forward-looking algorithms in human-technology 
@@ -41,7 +41,10 @@
         </div>
     </div>
     <div class="column" app-fade-in [delay]="2000">
-        <div id="product"></div>
+        <div class="product" id="product-1" *ngIf="productIndex === 0" ></div>
+        <div class="product" id="product-2" *ngIf="productIndex === 1" ></div>
+        <div class="product" id="product-3" *ngIf="productIndex === 2" ></div>
+        <div class="product" id="product-4" *ngIf="productIndex === 3" ></div>
     </div>
 </div>
 

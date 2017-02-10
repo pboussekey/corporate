@@ -28,12 +28,8 @@ export class FadeInDirective implements AfterViewInit {
         this.scroll = Observable.fromEvent(window, 'scroll').debounceTime(100).subscribe((event) => {
             this.onScroll();
         });
-    }
-   
+    }   
   
-    @HostBinding('class.hide') get isHide() {
-        return !this.show;
-    }
     @HostBinding('class.show') get isShown() {
         return this.show;
     }
