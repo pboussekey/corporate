@@ -1956,7 +1956,6 @@ body {
   width: 100%;
   max-width: 110rem;
   margin: 0 auto;
-  overflow: hidden;
 }
 @media (max-width: 1100px) {
   .content {
