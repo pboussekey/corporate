@@ -1,5 +1,10 @@
 @import "../../assets/less/rules.less";
 
+@keyframes circle {
+    0% { opacity : 0; margin-right:-40rem; margin-top : -40rem; }
+    100% { opacity : 1; margin-right : 0; margin-top : 0;  }
+}
+
 :host /deep/ [app-planetarium] > #animation-layout{
     background-image: radial-gradient(circle farthest-side at 100% 0 , rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 95%, rgba(255, 255, 255, 1) 100%);
 }
@@ -9,7 +14,9 @@
     right : 0;
     left : 0;
     height : 85rem;
-    animation : planetarium-in 4s;
+    /deep/ .circle{
+        animation : circle 2s 500ms forwards;
+    }
 }
 
  p{
