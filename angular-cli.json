@@ -19,6 +19,7 @@
       "mobile": false,
       "styles": [
         "assets/less/dropdown.less",
+        "assets/less/fade-in.less",
         "assets/less/icons.less",
         "assets/less/rules.less",      
         "styles.less"

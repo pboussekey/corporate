@@ -8,7 +8,7 @@
     
 </div>
 <div class="desktop columns" id="all-in-one">
-    <div class="column">
+    <div class="column" app-fade-in [delay]="2000">
         <div app-h2>All-in-one platform</div>
         <div  class="column-block gray">
             <b>Learning Management System</b>
@@ -40,12 +40,12 @@
             </p>
         </div>
     </div>
-    <div class="column">
+    <div class="column" app-fade-in [delay]="2000">
         <div id="product"></div>
     </div>
 </div>
 
-<div class="columns mobile" id="all-in-one">
+<div class="columns mobile" id="all-in-one" app-fade-in>
     <div class="column">
         <div app-h2>All-in-one platform</div>
         
@@ -88,12 +88,9 @@
         </div>
        
     </div>
-    <div class="column">
-        
-    </div>
 </div>
 
-<div id="planetarium"  (window:resize)="onResize($event)">
+<div id="planetarium"  (window:resize)="onResize($event)" app-fade-in>
     <div app-planetarium 
          
         [circles]="circles" 
@@ -123,7 +120,7 @@
     </div>
 </div>
 <div class="columns">
-    <div class="column">
+    <div class="column" app-fade-in>
         <div app-h2 id="everywhere" >Everywhere. Anytime.</div>
         <div  class="column-block">
             <b><span class="icon icon-loop2"></span> Responsiveness & Sync</b>
@@ -139,13 +136,13 @@
             </p>
         </div>
     </div>
-    <div class="column">
+    <div class="column" app-fade-in>
         <div app-devices>
 
         </div>
     </div>
 </div>
-<div class="block" id="ready">
+<div class="block" id="ready" app-fade-in>
     <div app-h2>Ready to get started</div>
     <p>Create your account in seconds and start free trial 30 days.</p>
     <div class="buttons">

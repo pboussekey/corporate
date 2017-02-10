@@ -63,6 +63,22 @@
   height: auto;
   max-height: 1000px;
 }
+[app-fade-in] {
+  -webkit-transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in;
+  opacity: 0;
+}
+[app-fade-in] * {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+[app-fade-in].show {
+  opacity: 1;
+}
+[app-fade-in].show * {
+  -webkit-animation-play-state: running !important;
+          animation-play-state: running !important;
+}
 @font-face {
   font-family: 'IcoMoon';
   src: url(IcoMoon-Free.ttf) format('truetype');

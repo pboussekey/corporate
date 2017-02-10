@@ -4,7 +4,7 @@
      [size]="[0,800]"
      ></div>
 <h1>The Social Learning Environment<span class="blue"><b>*</b></span> for <span class="no-break">B-Schools.</span></h1>
-<div class="block">
+<div class="block" app-fade-in>
     <p>
         <span class="blue"><b>*</b></span><b>Engagement</b> online is at <u>the heart of our product design</u>.<br class='desktop'/> 
         This is why we have developped a technology combining a state-of-the-art <br class='desktop'/>
@@ -12,7 +12,7 @@
     </p>
     <button class="button" [routerLink]="['/product']">See Our Product<span class="chevron right"></span></button>
 </div>
-<div class="block citation-block">
+<div class="block citation-block" app-fade-in>
     <div class="portrait"></div>
     <div class="citation">
         <div class="quote">“</div>
@@ -26,10 +26,10 @@
 
     </div>
 </div>
-<div class="block small-text">
+<div class="block small-text" app-fade-in>
     THEY TRUST US
 </div>
-<div app-carousel  (window:resize)="onResize($event)" [time]="10000" >
+<div app-carousel app-fade-in  (window:resize)="onResize($event)" [time]="10000" >
     <div carousel-page *ngFor="let page of pages">
          <div class="schools">
             <div class="school" *ngFor="let school of page">

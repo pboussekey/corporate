@@ -17,6 +17,7 @@ import { WaveComponent } from './shared/wave/wave.component';
 import { AboutComponent } from './about/about.component';
 import { DevicesComponent, WindowComponent } from './shared/devices/devices.component';
 import { ProductComponent } from './product/product.component';
+import { FadeInDirective } from './shared/fade-in/fade-in.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ProductComponent } from './product/product.component';
     AboutComponent,
     DevicesComponent,
     ProductComponent,
-    WindowComponent
+    WindowComponent,
+    FadeInDirective
   ],
   imports: [
     BrowserModule,
