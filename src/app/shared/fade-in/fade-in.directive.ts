@@ -14,7 +14,7 @@ export class FadeInDirective implements AfterViewInit {
     onScroll(){
         const el = this._el.nativeElement;
         const rec = el.getBoundingClientRect();
-        if (rec.top <  window.innerHeight * 0.75){
+        if (rec.top <  window.innerHeight * 0.9){
             this.scroll.unsubscribe();
             setTimeout(function(){this.show = true;}.bind(this), this.delay);
         }

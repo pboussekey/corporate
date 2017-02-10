@@ -675,7 +675,7 @@ var FadeInDirective = (function () {
     FadeInDirective.prototype.onScroll = function () {
         var el = this._el.nativeElement;
         var rec = el.getBoundingClientRect();
-        if (rec.top < window.innerHeight * 0.75) {
+        if (rec.top < window.innerHeight * 0.9) {
             this.scroll.unsubscribe();
             setTimeout(function () { this.show = true; }.bind(this), this.delay);
         }
