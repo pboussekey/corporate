@@ -18,6 +18,7 @@ import { AboutComponent } from './about/about.component';
 import { DevicesComponent, WindowComponent } from './shared/devices/devices.component';
 import { ProductComponent } from './product/product.component';
 import { FadeInDirective } from './shared/fade-in/fade-in.directive';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FadeInDirective } from './shared/fade-in/fade-in.directive';
     DevicesComponent,
     ProductComponent,
     WindowComponent,
-    FadeInDirective
+    FadeInDirective,
+    FormComponent
   ],
   imports: [
     BrowserModule,

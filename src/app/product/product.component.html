@@ -93,7 +93,7 @@
     </div>
 </div>
 
-<div id="planetarium"  (window:resize)="onResize($event)" app-fade-in>
+<div id="planetarium"  (window:resize)="onResize($event)" app-fade-in [ratio]="0.6">
     <div app-planetarium 
          
         [circles]="circles" 
@@ -139,7 +139,7 @@
             </p>
         </div>
     </div>
-    <div class="column" app-fade-in>
+    <div class="column" app-fade-in [ratio]="0.6">
         <div app-devices>
 
         </div>

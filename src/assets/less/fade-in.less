@@ -1,12 +1,13 @@
 [app-fade-in]{
     transition: opacity 1s ease-in;
-    *{
+    &:not(.show) /deep/ *{
+        animation-name: none !important;
         animation-play-state: paused !important;        
     }
     opacity : 0;
     &.show{
         opacity : 1;
-        *{
+        *, /deep/ *{
             animation-play-state: running !important;        
         }
     }

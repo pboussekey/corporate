@@ -68,14 +68,17 @@
   transition: opacity 1s ease-in;
   opacity: 0;
 }
-[app-fade-in] * {
+[app-fade-in]:not(.show) /deep/ * {
+  -webkit-animation-name: none !important;
+          animation-name: none !important;
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
 }
 [app-fade-in].show {
   opacity: 1;
 }
-[app-fade-in].show * {
+[app-fade-in].show *,
+[app-fade-in].show /deep/ * {
   -webkit-animation-play-state: running !important;
           animation-play-state: running !important;
 }
