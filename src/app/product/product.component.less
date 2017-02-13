@@ -92,7 +92,7 @@
         }
     }
     [app-h2]  {
-        /deep/ h2{
+        @{deep} h2{
             margin : 0 ;
             @media(max-width : 1023px){
                 margin : 0 auto;
@@ -179,7 +179,7 @@
             margin : 2rem 0 4rem;
         }
     }
-    & /deep/ [app-planetarium]{
+    & @{deep} [app-planetarium]{
         .circle{
             opacity : 0;
         }

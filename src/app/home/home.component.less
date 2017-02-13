@@ -5,7 +5,7 @@
     100% { opacity : 1; margin-right : 0; margin-top : 0;  }
 }
 
-:host /deep/ [app-planetarium] > #animation-layout{
+:host @{deep} [app-planetarium] > #animation-layout{
     background-image: radial-gradient(circle farthest-side at 100% 0 , rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 350px, rgba(255, 255, 255, 0.2) 450px, rgba(255, 255, 255, 0.4) 95%, rgba(255, 255, 255, 1) 100%);
 }
 
@@ -14,7 +14,7 @@
     right : 0;
     left : 0;
     height : 85rem;
-    /deep/ .circle{
+    @{deep} .circle{
         margin-right:-40rem; 
         margin-top : -40rem;
         animation : circle 2s 500ms forwards;
@@ -128,7 +128,7 @@
     }
 }
 
-:host /deep/ .schools{
+:host @{deep} .schools{
     display: flex;
     flex-wrap : wrap;
     .school{
@@ -155,7 +155,7 @@
     
 }
 
-:host /deep/ .carousel-pagination{
+:host @{deep} .carousel-pagination{
     margin : 7.5rem auto 13rem auto !important;
     @media(max-width: 1023px){
         margin : 7.5rem auto !important;

@@ -10,7 +10,7 @@ const APP_ROUTES : Routes = [
     { path : 'product', component : ProductComponent },
     { path : 'pricing', component : PricingComponent },
     { path : 'about', component : AboutComponent },
-    { path : 'contact-us', component : FormComponent },
+    { path : 'contact-us', component : FormComponent }
 ];
 
 

@@ -35,15 +35,17 @@
         font-size: 1.5rem;
         padding : 1.5rem 2rem;
         outline : none;
-        &:focus{
+        &:focus, &:required, &:invalid {
+            box-shadow: 0 0 4px 0 rgba(0,0,0,0.22);
+        }
+        &:focus {
             background-color: #FFF;
             border: 1px solid #C3C3C3;
-            box-shadow: 0 0 4px 0 rgba(0,0,0,0.22);
         }
         &[type=password]{
             color: #8A8A8A;
-            margin : 0.5rem 0;
-            font-size: 4rem;
+            padding: 0.5rem 2rem;
+            font-size: 3rem;
         }
     }
     
