@@ -1,0 +1,23 @@
+<div app-wave></div>
+<div class="block" id="first-block">
+    <h1>Start your free 30-day trial.</h1>
+    <p>
+        No <b>credit card</b> required.
+    </p>
+    
+</div>
+<div app-h2 id="sign-up-now" app-fade-in [delay]='2000'>Sign Up Now</div>
+<form id="form">
+    <div class="form-block">
+        <label for="institution">Institution Name</label>
+        <input #institution name="institution" />
+    </div>
+    <div class="form-block">
+        <label for="email">Email Address</label>
+        <input #email name="email" />
+    </div>
+    <div class="form-block">
+        <label for="institution">Your Password</label>
+        <input #password name="password" />
+    </div>
+</form>

@@ -1,8 +1,8 @@
 [app-fade-in]{
     transition: opacity 1s ease-in;
-    &:not(.show) /deep/ *{
+    animation-play-state: paused ;   
+    &:not(.show) *{
         animation-name: none !important;
-        animation-play-state: paused !important;        
     }
     opacity : 0;
     &.show{
