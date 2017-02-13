@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="283px" height="388px" viewBox="0 0 283 388" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>iPad</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="253" height="358" rx="16.992"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.662468112   0 0 0 0 0.662468112   0 0 0 0 0.662468112  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <ellipse id="path-3" cx="126.5" cy="343.023331" rx="8.06833713" ry="8.06436042"></ellipse>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16.1366743" height="16.1287208" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Product" transform="translate(-1032.000000, -2177.000000)">
+            <g id="Group-9" transform="translate(145.000000, 2173.000000)">
+                <g id="iPad" transform="translate(902.000000, 17.000000)">
+                    <g id="Body" transform="translate(0.000000, -0.000000)">
+                        <g id="Rectangle-2">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use stroke="#CCCDCE" stroke-width="1" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <rect id="Rectangle-3" fill="#DEE3E6" x="15.2722096" y="31.1053902" width="222.455581" height="296.077233" rx="0.576"></rect>
+                        <use id="Oval-1" stroke="#CCD2D5" mask="url(#mask-4)" stroke-width="1.44" xlink:href="#path-3"></use>
+                        <g id="Group" transform="translate(124.194761, 13.248592)">
+                            <path d="M2.30523918,3.74416734 C1.51079613,3.74416734 0.864464692,3.09815447 0.864464692,2.30410298 C0.864464692,1.51005149 1.51079613,0.864038616 2.30523918,0.864038616 C3.09968223,0.864038616 3.74601367,1.51005149 3.74601367,2.30410298 C3.74601367,3.09815447 3.09968223,3.74416734 2.30523918,3.74416734" id="Fill-9" fill="#BAC1C4"></path>
+                            <path d="M2.30523918,0 C1.03406443,0 0,1.03355476 0,2.30410298 C0,3.57465119 1.03406443,4.60820595 2.30523918,4.60820595 C3.57641393,4.60820595 4.61047836,3.57465119 4.61047836,2.30410298 C4.61047836,1.03355476 3.57641393,0 2.30523918,0 M2.30523918,1.31663027 C2.85092223,1.31663027 3.29319883,1.75868889 3.29319883,2.30410298 C3.29319883,2.84951707 2.85092223,3.29157568 2.30523918,3.29157568 C1.75955613,3.29157568 1.31727953,2.84951707 1.31727953,2.30410298 C1.31727953,1.75868889 1.75955613,1.31663027 2.30523918,1.31663027" id="Fill-11" fill="#D0D8DB"></path>
+                        </g>
+                    </g>
+                    <g id="Screen" transform="translate(15.848519, 31.681416)" fill="#F2F2F2">
+                        <rect id="Mask" x="0" y="0" width="221.302961" height="294.925181" rx="0.576"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
