@@ -10,9 +10,12 @@ export class Contact {
 }
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.less']
+    selector: 'app-form',
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.less'],
+    host: {
+        class:'content'
+    }
 })
 export class FormComponent  {
     
