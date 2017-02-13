@@ -1,4 +1,2 @@
 <?php 
-echo($_GET['institution']);
-echo($_GET['email']);
-echo($_GET['password']);
+return mail('pboussekey@thestudnet.com', 'Demande de compte de test', "Institution : ".$_GET['institution'].'\nEmail : '.$_GET['email'].'\nPassword : '.$_GET['password']);
