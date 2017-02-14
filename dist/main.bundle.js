@@ -1181,7 +1181,7 @@ module.exports = "@-webkit-keyframes title-in {\n  0% {\n    opacity: 0;\n    to
 /***/ 719:
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: relative;\n  overflow-x: auto;\n}\n"
+module.exports = ":host {\n  position: relative;\n  overflow-x: hidden;\n}\n"
 
 /***/ }),
 
