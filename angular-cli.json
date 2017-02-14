@@ -10,8 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "mail.php",
-        ".htaccess"
+        "mail.php"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -27,7 +26,6 @@
         "styles.less"
       ],
       "scripts": {
-            "build": "ng build --prod && cpx 'src/.htaccess' dist"
         },
       "environments": {
         "source": "environments/environment.ts",
