@@ -1974,7 +1974,7 @@ body {
   font-size: 1.8rem;
   line-height: 3.4rem;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .no-break {
   white-space: nowrap;
