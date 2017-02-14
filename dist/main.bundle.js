@@ -78,7 +78,8 @@ var FormComponent = (function () {
     FormComponent.prototype.onSubmit = function (contact) {
         var body = JSON.stringify(contact);
         console.log(body);
-        this.http.post('mail.php', body).subscribe(function (data) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        this.http.post('mail.php', body, { headers: headers }).subscribe(function (data) {
             console.log(data.json());
         });
     };
@@ -91,7 +92,7 @@ var FormComponent = (function () {
                 class: 'content'
             }
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === 'function' && _a) || Object])
     ], FormComponent);
     return FormComponent;
     var _a;

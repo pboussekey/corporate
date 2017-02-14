@@ -23,7 +23,8 @@ export class FormComponent  {
     onSubmit(contact : Contact){
         const body = JSON.stringify(contact);
         console.log(body);
-        this.http.post('mail.php', body).subscribe(
+        var headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'});
+        this.http.post('mail.php', body, {  headers : headers }).subscribe(
             data => {
                 console.log(data.json());           
             }
