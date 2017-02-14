@@ -29,7 +29,7 @@
 <div class="block small-text" app-fade-in>
     THEY TRUST US
 </div>
-<div app-carousel app-fade-in  (window:resize)="onResize($event)" [ratio]="0.8" [time]="10000" >
+<div app-carousel app-fade-in  (window:resize)="onResize($event)" [ratio]="0.8" [time]="[30000, 10000]" >
     <div carousel-page *ngFor="let page of pages">
          <div class="schools">
             <div class="school" *ngFor="let school of page">

@@ -93,7 +93,7 @@
     </div>
 </div>
 
-<div id="planetarium"  (window:resize)="onResize($event)" app-fade-in [ratio]="0.6">
+<div id="planetarium"  (window:resize)="onResize($event)" app-fade-in [ratio]="0.8">
     <div app-planetarium 
          
         [circles]="circles" 
@@ -123,7 +123,7 @@
     </div>
 </div>
 <div class="columns">
-    <div class="column" app-fade-in>
+    <div class="column" app-fade-in [ratio]="0.8">
         <div app-h2 id="everywhere" >Everywhere. Anytime.</div>
         <div  class="column-block">
             <b><span class="icon icon-loop2"></span> Responsiveness & Sync</b>

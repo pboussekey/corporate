@@ -11,27 +11,20 @@ export class FadeInDirective implements AfterViewInit {
     private scroll;
     @Input() public delay : number;
     @Input() public ratio : number;
-    timeout : any;
+    
     onScroll(){
         const el = this._el.nativeElement;
         const rec = el.getBoundingClientRect();
         if (!this.show && rec.top <  window.innerHeight * this.ratio){
-            if (this.timeout){
-                clearTimeout(this.timeout);
-            }
-           this.timeout = setTimeout(function(){this.show = true;}.bind(this), this.delay);
+            this.scroll.unsubscribe();
+            setTimeout(function(){this.show = true;}.bind(this), this.delay);
         }
-        else if(this.show && rec.top >  window.innerHeight * this.ratio){
-            if (this.timeout){
-                clearTimeout(this.timeout);
-            }
-            this.timeout = setTimeout(function(){ this.show = false; }.bind(this), this.delay);
-        }
+       
     }    
     
     ngAfterViewInit(){
         if(this.ratio === undefined){
-            this.ratio = 0.8;
+            this.ratio = 0.9;
         }
         this.onScroll();
     }

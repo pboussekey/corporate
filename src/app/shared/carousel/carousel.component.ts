@@ -30,7 +30,7 @@ export class CarouselPage {
 export class CarouselComponent implements AfterContentInit{
     @ContentChildren(CarouselPage) pages :  QueryList<CarouselPage>;
     currentPage : number = 0; 
-    @Input() public time : number;
+    @Input() public time : any;
     public timeout : any;
     
     refreshPageShown(nextPage : number){
@@ -40,7 +40,11 @@ export class CarouselComponent implements AfterContentInit{
         }.bind(this));
     }
     
-    changePage(page : number){
+    getTime(page : number){
+        return this.time[page < this.time.length ? page : this.time.length - 1];
+    }
+    
+    changePage(page : number) {
         if(this.timeout){
             clearTimeout(this.timeout);
         }
@@ -48,7 +52,7 @@ export class CarouselComponent implements AfterContentInit{
         this.currentPage = page;
         this.timeout = setTimeout(function(){
             this.autoChangePage();
-        }.bind(this), this.time);
+        }.bind(this), this.getTime(this.currentPage));
     }
     
     autoChangePage(){
@@ -57,15 +61,15 @@ export class CarouselComponent implements AfterContentInit{
         this.currentPage = nextPage;
         this.timeout = setTimeout(function(){
             this.autoChangePage();
-        }.bind(this), this.time);
+        }.bind(this), this.getTime(this.currentPage));
        
     }
     
     ngAfterContentInit(){
-        this.time = this.time || 5000;
+        this.time = Array.isArray(this.time) ? this.time : (Number.isInteger(this.time) ? [this.time] : [5000]);
         this.timeout = setTimeout(function(){
             this.autoChangePage();
-        }.bind(this), this.time);
+        }.bind(this), this.getTime(0));
     }
    
 }
