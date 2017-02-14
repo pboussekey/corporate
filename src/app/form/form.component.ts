@@ -22,7 +22,8 @@ export class FormComponent  {
     constructor(private http :Http){}
     onSubmit(contact : Contact){
         const body = JSON.stringify(contact);
-        this.http.post('assets/mail.php', body).subscribe(
+        const headers = new Headers({'Content-type' : 'application/x-httpd-php'});
+        this.http.post('assets/mail.php', body, { headers : headers }).subscribe(
             data => {
                 console.log(data.json());           
             }
