@@ -78,7 +78,7 @@ var FormComponent = (function () {
     FormComponent.prototype.onSubmit = function (contact) {
         var body = JSON.stringify(contact);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-type': 'application/x-httpd-php' });
-        this.http.post('assets/mail.php', body, { headers: headers }).subscribe(function (data) {
+        this.http.post('mail.php', body, { headers: headers }).subscribe(function (data) {
             console.log(data.json());
         });
     };
