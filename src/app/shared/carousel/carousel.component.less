@@ -1,13 +1,22 @@
 @import "../../../assets/less/rules.less";
 
-@keyframes fade-in {
+@keyframes fade-in-from-right {
     0% { left : 100% }
     100% { left : 0}
 }
+@keyframes fade-in-from-left {
+    0% { left : -100% }
+    100% { left : 0}
+}
 
-@keyframes fade-out {
+@keyframes fade-out-to-left {
     0% { left : 0;  }
     100% { left : -100%; }
+}
+
+@keyframes fade-out-to-right {
+    0% { left : 0;  }
+    100% { left : 100%; }
 }
 
 :host{
@@ -29,14 +38,21 @@
     [carousel-page]{
         width : 100%;
         flex-shrink: 0;
-        &.shown{
+        &.shown.from-right{
             left : 0;
             position : relative; 
-            animation : fade-in 2000ms ease-in-out;
+            animation : fade-in-from-right 2000ms ease-in-out;
         }
-        &.previous{
-            animation : fade-out 2000ms ease-in-out;
-            
+        &.shown:not(.from-right){
+            left : 0;
+            position : relative; 
+            animation : fade-in-from-left 2000ms ease-in-out;
+        }
+        &.previous.to-left{
+            animation : fade-out-to-left 2000ms ease-in-out;
+        }
+        &.previous:not(.to-left){
+            animation : fade-out-to-right 2000ms ease-in-out;
         }
         &.hide{
             left : 100%;

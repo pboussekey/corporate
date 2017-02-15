@@ -19,6 +19,13 @@ import { DevicesComponent, WindowComponent } from './shared/devices/devices.comp
 import { ProductComponent } from './product/product.component';
 import { FadeInDirective } from './shared/fade-in/fade-in.directive';
 import { FormComponent } from './form/form.component';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  overrides = <any>{
+      'swipe': {velocity: 0.4, threshold: 20} // override default settings
+  }
+}
 
 @NgModule({
   declarations: [
@@ -46,7 +53,10 @@ import { FormComponent } from './form/form.component';
     HttpModule,
     Routing
   ],
-  providers: [],
+  providers: [{ 
+        provide: HAMMER_GESTURE_CONFIG, 
+        useClass: MyHammerConfig 
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

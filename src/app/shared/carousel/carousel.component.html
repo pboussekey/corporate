@@ -1,5 +1,5 @@
 <div class="carousel">
-    <div  class="carousel-content" >
+    <div  class="carousel-content" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)"  >
         <ng-content></ng-content>
         
     </div> 

@@ -18,6 +18,8 @@ export class CarouselPage {
         return this.shown === false;
     };
     @HostBinding('class.previous') previous : boolean;
+    @HostBinding('class.from-right') fromRight : boolean;
+    @HostBinding('class.to-left') toLeft : boolean;
 }
 
 @Component({
@@ -33,10 +35,14 @@ export class CarouselComponent implements AfterContentInit{
     @Input() public time : any;
     public timeout : any;
     
-    refreshPageShown(nextPage : number){
+    SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
+    
+    refreshPageShown(nextPage : number, auto : boolean = false){
         this.pages.forEach(function (page: CarouselPage, index : number){
             page.shown = nextPage === index;
             page.previous = this.currentPage === index;
+            page.toLeft = auto || index < nextPage;
+            page.fromRight = auto || index > this.currentPage;
         }.bind(this));
     }
     
@@ -55,9 +61,24 @@ export class CarouselComponent implements AfterContentInit{
         }.bind(this), this.getTime(this.currentPage));
     }
     
+    swipe(action: string = this.SWIPE_ACTION.RIGHT) {
+        
+        var nextPage;
+        
+        if (action === this.SWIPE_ACTION.RIGHT) {
+            nextPage = (this.currentPage - 1) % this.pages.length;
+        }
+
+        if (action === this.SWIPE_ACTION.LEFT) {
+            nextPage = (this.currentPage + 1) % this.pages.length;
+        }
+
+        this.changePage(nextPage);
+    }
+    
     autoChangePage(){
         var nextPage = (this.currentPage + 1) % this.pages.length;
-        this.refreshPageShown(nextPage);
+        this.refreshPageShown(nextPage, true);
         this.currentPage = nextPage;
         this.timeout = setTimeout(function(){
             this.autoChangePage();
