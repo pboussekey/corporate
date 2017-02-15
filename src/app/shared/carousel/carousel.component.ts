@@ -38,13 +38,13 @@ export class CarouselComponent implements AfterContentInit{
     
     SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
     
-    refreshPageShown(from : number,to : number, auto : boolean = false){
-       
+    refreshPageShown(from : number,to : number, toLeft : boolean = true){
+            console.log(from, to, to === (this.pages.length - 1));
             this.pages.forEach(function (page: CarouselPage, index : number){
                 page.shown = to === index;
                 page.previous = from === index;
-                page.toLeft = auto || index <= to;
-                page.fromRight = auto || index > from;
+                page.toLeft = toLeft;
+                page.fromRight = toLeft;
             }.bind(this));
        
     }
@@ -53,7 +53,7 @@ export class CarouselComponent implements AfterContentInit{
         return this.time[page < this.time.length ? page : this.time.length - 1];
     }
     
-    changePage(page : number) { 
+    changePage(page : number, toLeft : boolean = true) { 
         var now = new Date().getTime() + 1000;
         var delay = Math.max(0, (now - (this.lastChange || now)));
         if(delay > 1000){
@@ -66,7 +66,7 @@ export class CarouselComponent implements AfterContentInit{
             if(this.timeout){
                 clearTimeout(this.timeout);
             }
-            this.refreshPageShown(previousPage, page);
+            this.refreshPageShown(previousPage, page, toLeft);
             this.timeout = setTimeout(function(){
                 this.autoChangePage();
             }.bind(this), this.getTime(this.currentPage));
@@ -78,20 +78,22 @@ export class CarouselComponent implements AfterContentInit{
         var nextPage;
         
         if (action === this.SWIPE_ACTION.RIGHT) {
-            nextPage = (this.currentPage - 1) % this.pages.length;
+            nextPage = (this.currentPage - 1 + this.pages.length) % this.pages.length;
+            this.changePage(nextPage, false);
+            
         }
 
         if (action === this.SWIPE_ACTION.LEFT) {
             nextPage = (this.currentPage + 1) % this.pages.length;
+            this.changePage(nextPage);
         }
 
-        this.changePage(nextPage);
     }
     
     autoChangePage(){
         this.lastChange = new Date().getTime() + 1000;
         var nextPage = (this.currentPage + 1) % this.pages.length;
-        this.refreshPageShown(this.currentPage, nextPage, true);
+        this.refreshPageShown(this.currentPage, nextPage);
         this.currentPage = nextPage;
         this.timeout = setTimeout(function(){
             this.autoChangePage();

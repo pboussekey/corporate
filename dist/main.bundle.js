@@ -589,19 +589,21 @@ var CarouselComponent = (function () {
         this.currentPage = 0;
         this.SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
     }
-    CarouselComponent.prototype.refreshPageShown = function (from, to, auto) {
-        if (auto === void 0) { auto = false; }
+    CarouselComponent.prototype.refreshPageShown = function (from, to, toLeft) {
+        if (toLeft === void 0) { toLeft = true; }
+        console.log(from, to, to === (this.pages.length - 1));
         this.pages.forEach(function (page, index) {
             page.shown = to === index;
             page.previous = from === index;
-            page.toLeft = auto || index <= to;
-            page.fromRight = auto || index > from;
+            page.toLeft = toLeft;
+            page.fromRight = toLeft;
         }.bind(this));
     };
     CarouselComponent.prototype.getTime = function (page) {
         return this.time[page < this.time.length ? page : this.time.length - 1];
     };
-    CarouselComponent.prototype.changePage = function (page) {
+    CarouselComponent.prototype.changePage = function (page, toLeft) {
+        if (toLeft === void 0) { toLeft = true; }
         var now = new Date().getTime() + 1000;
         var delay = Math.max(0, (now - (this.lastChange || now)));
         if (delay > 1000) {
@@ -614,7 +616,7 @@ var CarouselComponent = (function () {
             if (this.timeout) {
                 clearTimeout(this.timeout);
             }
-            this.refreshPageShown(previousPage, page);
+            this.refreshPageShown(previousPage, page, toLeft);
             this.timeout = setTimeout(function () {
                 this.autoChangePage();
             }.bind(this), this.getTime(this.currentPage));
@@ -624,17 +626,18 @@ var CarouselComponent = (function () {
         if (action === void 0) { action = this.SWIPE_ACTION.RIGHT; }
         var nextPage;
         if (action === this.SWIPE_ACTION.RIGHT) {
-            nextPage = (this.currentPage - 1) % this.pages.length;
+            nextPage = (this.currentPage - 1 + this.pages.length) % this.pages.length;
+            this.changePage(nextPage, false);
         }
         if (action === this.SWIPE_ACTION.LEFT) {
             nextPage = (this.currentPage + 1) % this.pages.length;
+            this.changePage(nextPage);
         }
-        this.changePage(nextPage);
     };
     CarouselComponent.prototype.autoChangePage = function () {
         this.lastChange = new Date().getTime() + 1000;
         var nextPage = (this.currentPage + 1) % this.pages.length;
-        this.refreshPageShown(this.currentPage, nextPage, true);
+        this.refreshPageShown(this.currentPage, nextPage);
         this.currentPage = nextPage;
         this.timeout = setTimeout(function () {
             this.autoChangePage();
