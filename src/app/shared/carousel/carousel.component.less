@@ -38,6 +38,9 @@
     [carousel-page]{
         width : 100%;
         flex-shrink: 0;
+        &.hide *{
+            animation : none !important;
+        }
         &.shown.from-right{
             left : 0;
             position : relative; 

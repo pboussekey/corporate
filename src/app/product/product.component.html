@@ -41,9 +41,15 @@
         </div>
     </div>
     <div class="column" app-fade-in  [delay]='1500'>
-        <div class="product" id="product-1" *ngIf="productIndex === 0" ></div>
-        <div class="product" id="product-2" *ngIf="productIndex === 1" ></div>
-        <div class="product" id="product-3" *ngIf="productIndex === 2" ></div>
+        <img src="assets/images/product-1-1.svg" class="product" id="product-1-1" *ngIf="productIndex === 0"/>
+        <img src="assets/images/product-1-2.svg" class="product" id="product-1-2" *ngIf="productIndex === 0"/>
+        <div class="product" id="product-2-1" *ngIf="productIndex === 1"></div>
+        <img class="product" id="product-2-2" src="assets/images/product-2-2.svg" *ngIf="productIndex === 1" />
+        <div class="product" id="product-3-1" *ngIf="productIndex === 2" ></div>
+        <div class="product" id="product-3-2" *ngIf="productIndex === 2" ></div>
+        <img class="product" id="product-3-3" src="assets/images/product-3-3.svg" *ngIf="productIndex === 2" />
+        <img class="product" id="product-3-4" src="assets/images/product-3-4.svg" *ngIf="productIndex === 2" />
+        <img class="product" id="product-3-5" src="assets/images/product-3-5.svg" *ngIf="productIndex === 2" />
         <div class="product" id="product-4" *ngIf="productIndex === 3" ></div>
     </div>
 </div>
@@ -61,7 +67,9 @@
                     innovation in higher education. Our state-of-the-art
                     L.M.S enables to distribute online, blended courses over the internet as well as 
                     to augment on-campus teaching in a brick and mortar environment.</p>
-                <div class="product" id="product-1" ></div>
+                <div class="carousel-image">
+                    <img src="assets/images/product-1-1.svg" class="product" id="product-mobile-1-1"/>
+                </div>
             </div>
             
             <div  carousel-page class="column-block">
@@ -70,7 +78,10 @@
                     Our disruptive technology allows to create a connected, engaged and 
                     collaborative learning experience for students and faculty across the world.
                 </p>
-                <div class="product" id="product-2" ></div>
+                <div class="carousel-image">
+                    <div class="product" id="product-mobile-2-1"></div>
+                    <img class="product" id="product-mobile-2-2" src="assets/images/product-2-2.svg" />
+                </div>
             </div>
             <div  carousel-page class="column-block">
                 <b>Videoconferencing system</b>
@@ -78,7 +89,13 @@
                    Our all-in-one platform make it easy to launch one-on- one, group calls or live classes without 
                    needing to open another app or share invite links.
                 </p>
-                <div class="product" id="product-3" ></div>
+                <div class="carousel-image">
+                    <div class="product" id="product-mobile-3-1"></div>
+                    <div class="product" id="product-mobile-3-2"></div>
+                    <img class="product" id="product-mobile-3-3" src="assets/images/product-3-3.svg"/>
+                    <img class="product" id="product-mobile-3-4" src="assets/images/product-3-4.svg"/>
+                    <img class="product" id="product-mobile-3-5" src="assets/images/product-3-5.svg"/>
+                </div>
             </div>
             <div  carousel-page class="column-block">
                 <b>Data collection</b>
@@ -86,7 +103,9 @@
                    We use the latest forward-looking algorithms in human-technology 
                    tracking to measure Assurance of Learning and online engagement.
                 </p>
-                <div class="product" id="product-4" ></div>
+                <div class="carousel-image">
+                    <div class="product" id="product-mobile-4" ></div>
+                </div>
             </div>
         </div>
        
