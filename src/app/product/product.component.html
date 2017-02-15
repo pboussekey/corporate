@@ -8,7 +8,7 @@
     
 </div>
 <div class="desktop columns" id="all-in-one">
-    <div class="column" app-fade-in [delay]="2000">
+    <div class="column" app-fade-in [delay]='1500'>
         <div app-h2>All-in-one platform</div>
         <div  class="column-block" [ngClass]="{ gray : productIndex === 0 }" (click)="changeProductNumber(0)">
             <b>Learning Management System</b>
@@ -40,7 +40,7 @@
             </p>
         </div>
     </div>
-    <div class="column" app-fade-in [delay]="2000">
+    <div class="column" app-fade-in  [delay]='1500'>
         <div class="product" id="product-1" *ngIf="productIndex === 0" ></div>
         <div class="product" id="product-2" *ngIf="productIndex === 1" ></div>
         <div class="product" id="product-3" *ngIf="productIndex === 2" ></div>
@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<div class="columns mobile" id="all-in-one" app-fade-in>
+<div class="columns mobile" id="all-in-one" app-fade-in [delay]='1500'>
     <div class="column">
         <div app-h2>All-in-one platform</div>
         
@@ -123,7 +123,7 @@
     </div>
 </div>
 <div class="columns">
-    <div class="column" app-fade-in [ratio]="0.8">
+    <div class="column" app-fade-in [ratio]="0.9">
         <div app-h2 id="everywhere" >Everywhere. Anytime.</div>
         <div  class="column-block">
             <b><span class="icon icon-loop2"></span> Responsiveness & Sync</b>

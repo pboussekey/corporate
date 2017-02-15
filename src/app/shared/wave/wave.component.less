@@ -2,11 +2,8 @@
 
 @keyframes wave-in {
     0% { top : 0; opacity : 0; }
-    100% { top : 37rem; opacity : 1; }
-}
-
-@keyframes wave-in-mobile {
-    0% { top : 0; opacity : 0; }
+    80% { top : 38rem; opacity : 1; }
+    90% { top : 36.5rem; opacity : 1; }
     100% { top : 37rem; opacity : 1; }
 }
 
@@ -42,31 +39,31 @@
     position : absolute; 
     fill : @clr-lightblue;
     opacity : 0;
-    animation : background-in 1000ms 450ms cubic-bezier(0.6, 0.4, 0.6, 1.10)  forwards;
+    animation : background-in 1000ms 150ms cubic-bezier(0.6, 0.4, 0.6, 1.10)  forwards;
 }
 
 .wave-1{
     fill : @clr-lightblue2;
-    animation : wave-in 1250ms 600ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
+    animation : wave-in 1250ms 300ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
 }
 .wave-2{
     fill : @clr-lightblue3;
-    animation : wave-in 1150ms 600ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
+    animation : wave-in 1150ms 300ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
 }
 .wave-3{
     fill : @clr-lightblue4;
-    animation : wave-in 1050ms 600ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
+    animation : wave-in 1050ms 300ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
 }
 
 .wave-1-mobile{
     fill : @clr-lightblue2;
-    animation : wave-in-mobile 1250ms 600ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
+    animation : wave-in 1250ms 300ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
 }
 .wave-2-mobile{
     fill : @clr-lightblue3;
-    animation : wave-in-mobile 1150ms 600ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
+    animation : wave-in 1150ms 300ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
 }
 .wave-3-mobile{
     fill : @clr-lightblue4;
-    animation : wave-in-mobile 1050ms 600ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
+    animation : wave-in 1050ms 300ms cubic-bezier(0.6, 0.4, 0.6, 1.10) forwards;
 }
