@@ -2039,7 +2039,6 @@ button {
 }
 button:hover {
   background: #1EBAB7;
-  box-shadow: inset 0px 1px 2px 0px #d9d9d9;
 }
 button:hover .chevron {
   margin: -1px 0.3rem 0 1.7rem;
@@ -2049,14 +2048,10 @@ button.white {
   color: #0DAFAC;
   border: 1px solid #0DAFAC;
 }
-button.white:hover {
-  box-shadow: inset 0px 1px 2px 0px #0DAFAC;
-}
-button.white:hover .arrow {
-  margin: -1px 0.3rem 0 1.7rem;
-}
 button .chevron {
   margin: -1px 0 0 2rem;
+  -webkit-transition: margin 100ms;
+  transition: margin 100ms;
 }
 @media (max-width: 1023px) {
   button {
