@@ -39,7 +39,6 @@ export class CarouselComponent implements AfterContentInit{
     SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
     
     refreshPageShown(from : number,to : number, toLeft : boolean = true){
-            console.log(from, to, to === (this.pages.length - 1));
             this.pages.forEach(function (page: CarouselPage, index : number){
                 page.shown = to === index;
                 page.previous = from === index;

@@ -2,8 +2,7 @@
 <div class="block" id="first-block">
     <h1>Higher Education in the 21st-Century.</h1>
     <p>
-       The power of <b>networked education</b>, everywhere and anytime, on a single<br/>
-        Social Learning Environment.
+        <b>Twic</b>, the power of <b>networked education</b> on a single Social Learning Environment... everywhere and anytime.
     </p>
     
 </div>
@@ -41,16 +40,10 @@
         </div>
     </div>
     <div class="column" app-fade-in  [delay]='1500'>
-        <img src="assets/images/product-1-1.svg" class="product" id="product-1-1" *ngIf="productIndex === 0"/>
-        <img src="assets/images/product-1-2.svg" class="product" id="product-1-2" *ngIf="productIndex === 0"/>
-        <div class="product" id="product-2-1" *ngIf="productIndex === 1"></div>
-        <img class="product" id="product-2-2" src="assets/images/product-2-2.svg" *ngIf="productIndex === 1" />
-        <div class="product" id="product-3-1" *ngIf="productIndex === 2" ></div>
-        <div class="product" id="product-3-2" *ngIf="productIndex === 2" ></div>
-        <img class="product" id="product-3-3" src="assets/images/product-3-3.svg" *ngIf="productIndex === 2" />
-        <img class="product" id="product-3-4" src="assets/images/product-3-4.svg" *ngIf="productIndex === 2" />
-        <img class="product" id="product-3-5" src="assets/images/product-3-5.svg" *ngIf="productIndex === 2" />
-        <div class="product" id="product-4" *ngIf="productIndex === 3" ></div>
+        <div class="product" id="product-1" *ngIf="productIndex === 0"></div>
+        <div class="product" id="product-2" *ngIf="productIndex === 1"></div>
+        <div class="product" id="product-3" *ngIf="productIndex === 2"></div>
+        <div class="product" id="product-4" *ngIf="productIndex === 3"></div>
     </div>
 </div>
 
@@ -68,7 +61,7 @@
                     L.M.S enables to distribute online, blended courses over the internet as well as 
                     to augment on-campus teaching in a brick and mortar environment.</p>
                 <div class="carousel-image">
-                    <img src="assets/images/product-1-1.svg" class="product" id="product-mobile-1-1"/>
+                    <div class="product" id="product-1" ></div>
                 </div>
             </div>
             
@@ -79,8 +72,7 @@
                     collaborative learning experience for students and faculty across the world.
                 </p>
                 <div class="carousel-image">
-                    <div class="product" id="product-mobile-2-1"></div>
-                    <img class="product" id="product-mobile-2-2" src="assets/images/product-2-2.svg" />
+                    <div class="product" id="product-2" ></div>
                 </div>
             </div>
             <div  carousel-page class="column-block">
@@ -90,21 +82,18 @@
                    needing to open another app or share invite links.
                 </p>
                 <div class="carousel-image">
-                    <div class="product" id="product-mobile-3-1"></div>
-                    <div class="product" id="product-mobile-3-2"></div>
-                    <img class="product" id="product-mobile-3-3" src="assets/images/product-3-3.svg"/>
-                    <img class="product" id="product-mobile-3-4" src="assets/images/product-3-4.svg"/>
-                    <img class="product" id="product-mobile-3-5" src="assets/images/product-3-5.svg"/>
+                    <div class="product" id="product-3" ></div>
                 </div>
             </div>
             <div  carousel-page class="column-block">
                 <b>Data collection</b>
                 <p>
-                   We use the latest forward-looking algorithms in human-technology 
-                   tracking to measure Assurance of Learning and online engagement.
+                  We use the latest forward-looking techniques in 
+                  human-computer interaction, and sophisticated algorithms 
+                  to measure online engagement.
                 </p>
                 <div class="carousel-image">
-                    <div class="product" id="product-mobile-4" ></div>
+                    <div class="product" id="product-4" ></div>
                 </div>
             </div>
         </div>
@@ -147,14 +136,15 @@
         <div  class="column-block">
             <b><span class="icon icon-loop2"></span> Responsiveness & Sync</b>
             <p>
-              Whether Twic is used on a mobile, tablet or desktop, and whatever content 
-              is created, all connected devices will stay in synchronization.
+              Whether Twic is used on a mobile, tablet or desktop, and whatever 
+              content is created, all connected devices will stay in synchronization.
             </p>
         </div>
         <div  class="column-block">
             <b><span class="icon icon-bullhorn"></span>Notifications</b>
             <p>
-                Students and faculty can have customized notifications pop up on their devices to keep them up- to-date.
+                Students and faculty can receive real-time notifications pop 
+                up on their devices to keep them up- to-date.
             </p>
         </div>
     </div>
@@ -166,13 +156,13 @@
 </div>
 <div class="block" id="ready" app-fade-in>
     <div app-h2>Ready to get started</div>
-    <p>Create your account in seconds and start free trial 30 days.</p>
+    <p>Create your account in seconds and start your free 30-day trial.</p>
     <div class="buttons">
         <button class="button" id="create-account" [routerLink]="['/contact-us']">
             Create Account
         </button>
         <button class="button white" [routerLink]="['/pricing']">
-            Our pricing plan
+            Our Pricing Plan
         </button>
     </div>
 </div>

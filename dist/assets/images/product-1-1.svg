@@ -4,6 +4,7 @@
     <title>Group 34</title>
     <desc>Created with Sketch.</desc>
     <defs>
+        <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);</style>
         <rect id="path-1" x="0" y="114" width="887" height="210" rx="2"></rect>
         <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="887" height="210" fill="white">
             <use xlink:href="#path-1"></use>

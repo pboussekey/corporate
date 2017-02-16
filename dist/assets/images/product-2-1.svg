@@ -4,6 +4,7 @@
     <title>Course - Volet Show Details GROUP ASSIGNMENT EDITOR + Chat</title>
     <desc>Created with Sketch.</desc>
     <defs>
+        <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);</style>
         <path d="M0,1.99876427 C0,0.894877246 0.89167396,5.68434189e-14 1.99420436,5.68434189e-14 L945.005796,5.68434189e-14 C946.107164,5.68434189e-14 947,0.889747032 947,1.99876427 L947,514.001236 C947,515.105123 946.105196,516 945.004023,516 L476.375763,516 L1.99488341,516 C0.893139724,516 0,515.110253 0,514.001236 L0,1.99876427 Z" id="path-1"></path>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
             <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>

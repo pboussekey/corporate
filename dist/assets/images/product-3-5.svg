@@ -4,6 +4,7 @@
     <title>Group 41</title>
     <desc>Created with Sketch.</desc>
     <defs>
+        <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);</style>
         <pattern id="pattern-1" patternUnits="objectBoundingBox" x="0%" width="100%" height="100%">
             <use xlink:href="#image-2"></use>
         </pattern>

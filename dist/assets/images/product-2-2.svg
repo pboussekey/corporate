@@ -4,6 +4,7 @@
     <title>Group 46</title>
     <desc>Created with Sketch.</desc>
     <defs>
+        <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);</style>
         <rect id="path-1" x="0" y="0" width="303" height="383" rx="2"></rect>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
