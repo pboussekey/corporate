@@ -10,7 +10,8 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "mail.php"
+        "mail.php",
+        "robots.txt"
       ],
       "index": "index.html",
       "main": "main.ts",
