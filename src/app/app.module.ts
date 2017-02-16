@@ -20,10 +20,11 @@ import { ProductComponent } from './product/product.component';
 import { FadeInDirective } from './shared/fade-in/fade-in.directive';
 import { FormComponent } from './form/form.component';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import * as Hammer from "hammerjs"
 
 export class MyHammerConfig extends HammerGestureConfig  {
   overrides = <any>{
-      'swipe': {velocity: 0.4, threshold: 20} // override default settings
+      'swipe': {velocity: 0.4, threshold: 20, direction : Hammer.DIRECTION_HORIZONTAL } // override default settings
   }
 }
 
