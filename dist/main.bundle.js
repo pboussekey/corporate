@@ -77,7 +77,7 @@ var FormComponent = (function () {
     }
     FormComponent.prototype.onSubmit = function (contact) {
         var body = JSON.stringify(contact);
-        console.log(body);
+        this.process = true;
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
         this.http.post('mail.php', contact, { headers: headers }).subscribe(function (data) {
             console.log(data.json());
@@ -90,7 +90,13 @@ var FormComponent = (function () {
             styles: [__webpack_require__(723)],
             host: {
                 class: 'content'
-            }
+            },
+            animations: [
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* trigger */])("form", [
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* state */])("normal", __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* style */])({ opacity: 1 })),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* transition */])("* => void", __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* animate */])(500, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* style */])({ opacity: 0 })))
+                ])
+            ]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === 'function' && _a) || Object])
     ], FormComponent);
@@ -656,7 +662,7 @@ var CarouselComponent = (function () {
     };
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* ContentChildren */])(CarouselPage), 
-        __metadata('design:type', (typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* QueryList */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* QueryList */]) === 'function' && _a) || Object)
+        __metadata('design:type', (typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* QueryList */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* QueryList */]) === 'function' && _a) || Object)
     ], CarouselComponent.prototype, "pages", void 0);
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Input */])(), 
@@ -1131,10 +1137,10 @@ var PlanetariumComponent = (function () {
             template: __webpack_require__(747),
             styles: [__webpack_require__(733)],
             animations: [
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* trigger */])("particle", [
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* state */])("normal", __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* style */])({ opacity: 1 })),
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* transition */])("void => *", [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* style */])({ width: 0, height: 0 }), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* animate */])(500)]),
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* transition */])("* => void", __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* animate */])(500, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* style */])({ opacity: 0 })))
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* trigger */])("particle", [
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* state */])("normal", __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* style */])({ opacity: 1 })),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* transition */])("void => *", [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* style */])({ width: 0, height: 0 }), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* animate */])(500)]),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* transition */])("* => void", __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* animate */])(500, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* style */])({ opacity: 0 })))
                 ])
             ]
         }), 
@@ -1264,7 +1270,7 @@ module.exports = ":host {\n  position: relative;\n  overflow-x: hidden;\n}\n"
 /***/ 723:
 /***/ (function(module, exports) {
 
-module.exports = "#first-block {\n  -webkit-animation: title-in 250ms linear;\n          animation: title-in 250ms linear;\n  -webkit-animation-delay: 1200ms;\n          animation-delay: 1200ms;\n  -webkit-animation-fill-mode: forwards;\n          animation-fill-mode: forwards;\n  opacity: 0;\n  position: relative;\n  top: -4rem;\n}\n#sign-up-now {\n  padding-top: 17rem;\n}\n@media (max-width: 479px) {\n  #sign-up-now {\n    margin: 0;\n  }\n}\n.form-block {\n  text-align: left;\n  max-width: 50rem;\n}\n.form-block label {\n  font-size: 1.4rem;\n  font-weight: 600;\n  line-height: 1.9rem;\n  color: #3C3F48;\n  display: block;\n  margin: 2rem 0 1.5rem;\n}\n.form-block input,\n.form-block input:required,\n.form-block input:invalid,\n.form-block input:valid,\n.form-block input:-webkit-autofill {\n  border-radius: 2px;\n  height: 5rem;\n  width: 100%;\n  background-color: #F7F7F7 !important;\n  border: 1px solid #D7D7D7;\n  font-size: 1.5rem;\n  padding: 1.5rem 2rem;\n  outline: none;\n}\n.form-block input:focus,\n.form-block input:required:focus,\n.form-block input:invalid:focus,\n.form-block input:valid:focus,\n.form-block input:-webkit-autofill:focus {\n  background-color: #FFF !important;\n  border: 1px solid #C3C3C3;\n  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.22);\n}\n.form-block input[type=password],\n.form-block input:required[type=password],\n.form-block input:invalid[type=password],\n.form-block input:valid[type=password],\n.form-block input:-webkit-autofill[type=password] {\n  color: #8A8A8A;\n  padding: 0.5rem 2rem;\n  font-size: 3rem;\n}\nbutton {\n  margin: 5rem 0 25rem;\n  width: 100%;\n  max-width: 50rem;\n}\n"
+module.exports = "@-webkit-keyframes sign-up-in {\n  0% {\n    opacity: 0;\n    padding-top: 10rem;\n  }\n  100% {\n    opacity: 1;\n    padding-top: 8rem;\n  }\n}\n@keyframes sign-up-in {\n  0% {\n    opacity: 0;\n    padding-top: 10rem;\n  }\n  100% {\n    opacity: 1;\n    padding-top: 8rem;\n  }\n}\n#first-block {\n  -webkit-animation: title-in 250ms linear;\n          animation: title-in 250ms linear;\n  -webkit-animation-delay: 1200ms;\n          animation-delay: 1200ms;\n  -webkit-animation-fill-mode: forwards;\n          animation-fill-mode: forwards;\n  opacity: 0;\n  position: relative;\n  top: -4rem;\n}\n#sign-up-now {\n  padding-top: 17rem;\n}\n@media (max-width: 479px) {\n  #sign-up-now {\n    margin: 0;\n  }\n}\nform {\n  width: 100%;\n}\n.form-block {\n  text-align: left;\n  max-width: 50rem;\n}\n.form-block label {\n  font-size: 1.4rem;\n  font-weight: 600;\n  line-height: 1.9rem;\n  color: #3C3F48;\n  display: block;\n  margin: 2rem 0 1.5rem;\n}\n.form-block input,\n.form-block input:required,\n.form-block input:invalid,\n.form-block input:valid,\n.form-block input:-webkit-autofill {\n  border-radius: 2px;\n  height: 5rem;\n  width: 100%;\n  background-color: #F7F7F7 !important;\n  border: 1px solid #D7D7D7;\n  font-size: 1.5rem;\n  padding: 1.5rem 2rem;\n  outline: none;\n}\n.form-block input:focus,\n.form-block input:required:focus,\n.form-block input:invalid:focus,\n.form-block input:valid:focus,\n.form-block input:-webkit-autofill:focus {\n  background-color: #FFF !important;\n  border: 1px solid #C3C3C3;\n  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.22);\n}\n.form-block input[type=password],\n.form-block input:required[type=password],\n.form-block input:invalid[type=password],\n.form-block input:valid[type=password],\n.form-block input:-webkit-autofill[type=password] {\n  color: #8A8A8A;\n  padding: 0.5rem 2rem;\n  font-size: 3rem;\n}\nbutton {\n  margin: 5rem 0 25rem;\n  width: 100%;\n  max-width: 50rem;\n}\n.processed-block {\n  height: 768px;\n  padding-top: 2rem;\n  -webkit-animation: sign-up-in 2500ms ease-in-out forwards;\n          animation: sign-up-in 2500ms ease-in-out forwards;\n  opacity: 0;\n}\n"
 
 /***/ }),
 
@@ -1362,7 +1368,7 @@ module.exports = "<header app-header></header>\n<router-outlet></router-outlet>\
 /***/ 737:
 /***/ (function(module, exports) {
 
-module.exports = "<div app-wave></div>\n<div class=\"block\" id=\"first-block\">\n    <h1>Start your free 30-day trial.</h1>\n    <p>\n        No <b>credit card</b> required.\n    </p>\n    \n</div>\n<div app-h2 id=\"sign-up-now\" app-fade-in [delay]='2000'>Sign Up Now</div>\n<form id=\"form\" class=\"block\" app-fade-in [delay]='2000' (ngSubmit)=\"onSubmit(f.value)\" #f=\"ngForm\">\n    <div class=\"form-block\">\n        <label for=\"firstName\">First Name</label>\n        <input #firstName name=\"firstName\" ngModel required />\n    </div>\n    <div class=\"form-block\">\n        <label for=\"lastName\">Last Name</label>\n        <input #lastName name=\"lastName\" ngModel required />\n    </div>\n    <div class=\"form-block\">\n        <label for=\"institution\">Institution Name</label>\n        <input #institution name=\"institution\" ngModel required />\n    </div>\n    <div class=\"form-block\">\n        <label for=\"email\">Email Address</label>\n        <input #email name=\"email\" type=\"email\" ngModel required/>\n    </div>\n    <button class=\"button\" type=\"submit\">Create your Account</button>\n</form>"
+module.exports = "<div app-wave></div>\n<div class=\"block\" id=\"first-block\">\n    <h1>Start your free 30-day trial.</h1>\n    <p>\n        No <b>credit card</b> required.\n    </p>\n    \n</div>\n<div app-h2 id=\"sign-up-now\" app-fade-in [delay]='2000'>{{ !process ? \"Sign Up Now\" : \"Sign up done!\" }}</div>\n<form id=\"form\" class=\"block\" [@form]=\"normal\"\n      *ngIf=\"!process\" app-fade-in [delay]='2000' (ngSubmit)=\"onSubmit(f.value)\" #f=\"ngForm\">\n    <div class=\"form-block\">\n        <label for=\"firstName\">First Name</label>\n        <input #firstName name=\"firstName\" ngModel required />\n    </div>\n    <div class=\"form-block\">\n        <label for=\"lastName\">Last Name</label>\n        <input #lastName name=\"lastName\" ngModel required />\n    </div>\n    <div class=\"form-block\">\n        <label for=\"institution\">Institution Name</label>\n        <input #institution name=\"institution\" ngModel required />\n    </div>\n    <div class=\"form-block\">\n        <label for=\"email\">Email Address</label>\n        <input #email name=\"email\" type=\"email\" ngModel required/>\n    </div>\n    <button class=\"button\" type=\"submit\">Create your Account</button>\n</form>\n<div class=\"block processed-block\" *ngIf=\"process\" [ngClass]=\"{ animate : process }\">\n    <img src=\"assets/images/tick.svg\"/>\n    <p>\n        You will be contacted soon!\n    </p>\n</div>"
 
 /***/ }),
 

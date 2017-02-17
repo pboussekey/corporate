@@ -1,3 +1,8 @@
+@keyframes sign-up-in {
+    0% { opacity : 0; padding-top: 10rem; }
+    100% { opacity : 1; padding-top : 8rem;  }
+}
+
 #first-block{
     animation:  title-in 250ms linear;
     animation-delay: 1200ms;
@@ -14,7 +19,9 @@
     }
 }
 
-
+form{
+    width : 100%;
+}
 .form-block{
     text-align: left;
     max-width : 50rem;
@@ -52,4 +59,10 @@ button{
     margin: 5rem 0 25rem;
     width : 100%;
     max-width : 50rem;
+}
+.processed-block{
+    height : 768px;
+    padding-top: 2rem;
+    animation:  sign-up-in 2500ms ease-in-out forwards;
+    opacity : 0;
 }

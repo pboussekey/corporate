@@ -237,7 +237,7 @@ exports.Observable = Observable;
 /* unused harmony reexport NgModuleRef */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["U"]; });
 /* unused harmony reexport getModuleFactory */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_5", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_5"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_10", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_10"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["V"]; });
 /* unused harmony reexport SystemJsNgModuleLoaderConfig */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["z"]; });
@@ -267,14 +267,14 @@ exports.Observable = Observable;
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_27", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_29"]; });
 /* unused harmony reexport AnimationSequenceMetadata */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_28", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_30"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_10", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_6"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_9", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_5"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_37", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_35"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_36", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_36"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_8", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_7"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_7", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_8"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_7", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_6"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_6", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_7"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_35", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_37"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_9", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_9"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_6", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_10"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_8", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_8"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_5", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_9"]; });
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -4551,7 +4551,7 @@ var Identifiers = (function () {
     Identifiers.QueryList = {
         name: 'QueryList',
         moduleUrl: assetUrl('core', 'linker/query_list'),
-        runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* QueryList */]
+        runtime: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* QueryList */]
     };
     Identifiers.TemplateRef = {
         name: 'TemplateRef',
@@ -36033,11 +36033,11 @@ var StaticReflector = (function () {
         this._registerDecoratorOrConstructor(this.findDeclaration(diMetadata, 'Self'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_3" /* Self */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(diMetadata, 'SkipSelf'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* SkipSelf */]);
         this._registerDecoratorOrConstructor(this.findDeclaration(diMetadata, 'Optional'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Optional */]);
-        this._registerFunction(this.findDeclaration(animationMetadata, 'trigger'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* trigger */]);
-        this._registerFunction(this.findDeclaration(animationMetadata, 'state'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* state */]);
-        this._registerFunction(this.findDeclaration(animationMetadata, 'transition'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* transition */]);
-        this._registerFunction(this.findDeclaration(animationMetadata, 'style'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* style */]);
-        this._registerFunction(this.findDeclaration(animationMetadata, 'animate'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* animate */]);
+        this._registerFunction(this.findDeclaration(animationMetadata, 'trigger'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* trigger */]);
+        this._registerFunction(this.findDeclaration(animationMetadata, 'state'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* state */]);
+        this._registerFunction(this.findDeclaration(animationMetadata, 'transition'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* transition */]);
+        this._registerFunction(this.findDeclaration(animationMetadata, 'style'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* style */]);
+        this._registerFunction(this.findDeclaration(animationMetadata, 'animate'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* animate */]);
         this._registerFunction(this.findDeclaration(animationMetadata, 'keyframes'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_35" /* keyframes */]);
         this._registerFunction(this.findDeclaration(animationMetadata, 'sequence'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_36" /* sequence */]);
         this._registerFunction(this.findDeclaration(animationMetadata, 'group'), __WEBPACK_IMPORTED_MODULE_0__angular_core__["_37" /* group */]);
@@ -79461,7 +79461,7 @@ function ApplicationModule_tsickle_Closure_declarations() {
 /* unused harmony reexport NgModuleRef */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return __WEBPACK_IMPORTED_MODULE_9__linker__["e"]; });
 /* unused harmony reexport getModuleFactory */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_5", function() { return __WEBPACK_IMPORTED_MODULE_9__linker__["h"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_10", function() { return __WEBPACK_IMPORTED_MODULE_9__linker__["h"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return __WEBPACK_IMPORTED_MODULE_9__linker__["f"]; });
 /* unused harmony reexport SystemJsNgModuleLoaderConfig */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return __WEBPACK_IMPORTED_MODULE_9__linker__["a"]; });
@@ -79521,14 +79521,14 @@ function ApplicationModule_tsickle_Closure_declarations() {
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_29", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["l"]; });
 /* unused harmony reexport AnimationSequenceMetadata */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_30", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["m"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_6", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_5", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_35", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["n"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_36", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["o"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_7", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["c"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_8", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["d"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_6", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["c"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_7", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["d"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_37", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["p"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_9", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["e"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_10", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["f"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_8", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["e"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "_9", function() { return __WEBPACK_IMPORTED_MODULE_21__animation_metadata__["f"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__animation_animation_transition_event__ = __webpack_require__(309);
 /* unused harmony reexport AnimationTransitionEvent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__animation_animation_player__ = __webpack_require__(207);

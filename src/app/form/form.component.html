@@ -6,8 +6,9 @@
     </p>
     
 </div>
-<div app-h2 id="sign-up-now" app-fade-in [delay]='2000'>Sign Up Now</div>
-<form id="form" class="block" app-fade-in [delay]='2000' (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+<div app-h2 id="sign-up-now" app-fade-in [delay]='2000'>{{ !process ? "Sign Up Now" : "Sign up done!" }}</div>
+<form id="form" class="block" [@form]="normal"
+      *ngIf="!process" app-fade-in [delay]='2000' (ngSubmit)="onSubmit(f.value)" #f="ngForm">
     <div class="form-block">
         <label for="firstName">First Name</label>
         <input #firstName name="firstName" ngModel required />
@@ -26,3 +27,9 @@
     </div>
     <button class="button" type="submit">Create your Account</button>
 </form>
+<div class="block processed-block" *ngIf="process" [ngClass]="{ animate : process }">
+    <img src="assets/images/tick.svg"/>
+    <p>
+        You will be contacted soon!
+    </p>
+</div>
