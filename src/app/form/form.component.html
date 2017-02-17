@@ -9,16 +9,20 @@
 <div app-h2 id="sign-up-now" app-fade-in [delay]='2000'>Sign Up Now</div>
 <form id="form" class="block" app-fade-in [delay]='2000' (ngSubmit)="onSubmit(f.value)" #f="ngForm">
     <div class="form-block">
+        <label for="firstName">First Name</label>
+        <input #firstName name="firstName" ngModel required />
+    </div>
+    <div class="form-block">
+        <label for="lastName">Last Name</label>
+        <input #lastName name="lastName" ngModel required />
+    </div>
+    <div class="form-block">
         <label for="institution">Institution Name</label>
         <input #institution name="institution" ngModel required />
     </div>
     <div class="form-block">
         <label for="email">Email Address</label>
         <input #email name="email" type="email" ngModel required/>
-    </div>
-    <div class="form-block">
-        <label for="institution">Your Password</label>
-        <input #password name="password" type="password" ngModel required />
     </div>
     <button class="button" type="submit">Create your Account</button>
 </form>

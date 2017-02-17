@@ -62,11 +62,16 @@
     bottom : 32rem;
     left : 0;
     right : 0;
-    height : 60rem;
-    background-image: url("assets/images/monaco-ville.jpg");
-    background-position: 50% 0%;
-    background-size: cover;
-    width : 100%;
+    top : 0;
+    #background{
+        background-image: url("assets/images/monaco-ville.jpg");
+        background-position: 50% 0%;
+        background-size: cover;
+        width : 100%;
+        position : absolute;
+        bottom : 0;
+        height : 60rem;
+    }
     z-index: -2;
     
     @media(max-width : 1023px){ 

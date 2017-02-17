@@ -12,7 +12,8 @@
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-            <img class="menu-logo" src="assets/images/Logo-white.svg"/>
+            <img class="menu-logo" *ngIf="!isActive('/')"  [routerLink]="['/']"  src="assets/images/Logo-white.svg"/>
+            <img class="menu-logo" *ngIf="isActive('/')" (click)="reload()"   src="assets/images/Logo-white.svg"/>
         </div>
         <div [routerLink]="['/product']">Product</div>
         <div [routerLink]="['/pricing']">Pricing</div>
@@ -23,7 +24,8 @@
 <div class="header-menu-content" *ngIf="menuOpen">
     
 </div>
-<img class="header-logo"  [routerLink]="['']" src="assets/images/Logo.svg"/>
+<img class="header-logo" *ngIf="!isActive('/')"  [routerLink]="['/']"  src="assets/images/Logo.svg"/>
+<img class="header-logo" *ngIf="isActive('/')" (click)="reload()"   src="assets/images/Logo.svg"/>
 <ul class="header-menu desktop">
     <li  [routerLink]="['/product']" routerLinkActive="current">Product</li>
     <li  [routerLink]="['/pricing']" routerLinkActive="current">Pricing</li>

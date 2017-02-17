@@ -128,11 +128,26 @@ button{
     display : none !important;
 }
 
+
+.current-route{
+    display : none;
+    &.show{
+        display : block;
+    }
+}
+.other-route{
+    display : block;
+    &.hide{
+        display : none;
+    }
+
+}
+
 @media(max-width : 1023px){
     .desktop{
         display : none !important;
     }
-    .mobile{
+    .mobile:not(.hide){
         display : block !important;
     }
 }

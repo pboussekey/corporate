@@ -3,10 +3,11 @@ import { Http, Headers, Response }from "@angular/http"
 import 'rxjs/Rx';
 
 
-export class Contact {    
+export class Contact {   
+    firstName : string; 
+    lastName : string; 
     institution : string;
     email : string;
-    password : string;
 }
 
 @Component({
