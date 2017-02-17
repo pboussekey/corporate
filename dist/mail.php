@@ -6,4 +6,4 @@ return mail('pboussekey@thestudnet.com',
             "\r\nFirst name : ".strip_tags(trim($_POST['firstName'])).
             "\r\nLast name : ".strip_tags(trim($_POST['lastName'])).
             "\r\nInstitution : ".strip_tags(trim($_POST['institution'])).
-            "\r\nEmail : ".strip_tags( trim($_POST['email']));
+            "\r\nEmail : ".strip_tags( trim($_POST['email'])));
