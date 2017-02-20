@@ -12,12 +12,12 @@ export class FadeInDirective implements AfterViewInit {
     @Input() public delay : number;
     @Input() public ratio : number;
     
-    onScroll(){
+    onScroll(first : boolean){
         const el = this._el.nativeElement;
         const rec = el.getBoundingClientRect();
         if (!this.show && rec.top <  window.innerHeight * this.ratio){
             this.scroll.unsubscribe();
-            setTimeout(function(){this.show = true;}.bind(this), this.delay);
+            setTimeout(function(){this.show = true;}.bind(this), first ? this.delay : 0);
         }
        
     }    
@@ -26,12 +26,12 @@ export class FadeInDirective implements AfterViewInit {
         if(this.ratio === undefined){
             this.ratio = 0.9;
         }
-        this.onScroll();
+        this.onScroll(true);
     }
     
     constructor(private _el:ElementRef, public renderer: Renderer) {
         this.scroll = Observable.fromEvent(window, 'scroll').debounceTime(100).subscribe((event) => {
-            this.onScroll();
+            this.onScroll(false);
         });
     }   
   
