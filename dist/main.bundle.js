@@ -453,6 +453,9 @@ var MyHammerConfig = (function (_super) {
     __extends(MyHammerConfig, _super);
     function MyHammerConfig() {
         _super.apply(this, arguments);
+        this.overrides = {
+            'swipe': { velocity: 0.4, threshold: 20 } // override default settings
+        };
     }
     MyHammerConfig.prototype.buildHammer = function (element) {
         var mc = new __WEBPACK_IMPORTED_MODULE_20_hammerjs__(element, {

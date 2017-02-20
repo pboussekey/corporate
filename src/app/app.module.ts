@@ -23,15 +23,18 @@ import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-br
 import * as Hammer from "hammerjs"
 
 export class MyHammerConfig extends HammerGestureConfig  {
-  buildHammer(element: HTMLElement) {
-    let mc = new Hammer(element, {
-        touchAction: "auto",
-        recognizers: [
-            [Hammer.Swipe,{ direction: Hammer.DIRECTION_HORIZONTAL }]
-        ]
-    });
-    return mc;
-  }
+    buildHammer(element: HTMLElement) {
+      let mc = new Hammer(element, {
+          touchAction: "auto",
+          recognizers: [
+              [Hammer.Swipe,{ direction: Hammer.DIRECTION_HORIZONTAL }]
+          ]
+      });
+      return mc;
+    }
+    overrides = <any>{
+        'swipe': {velocity: 0.4, threshold: 20} // override default settings
+    }
 }
 
 @NgModule({
