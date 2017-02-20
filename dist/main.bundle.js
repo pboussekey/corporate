@@ -459,7 +459,6 @@ var MyHammerConfig = (function (_super) {
     }
     MyHammerConfig.prototype.buildHammer = function (element) {
         var mc = new __WEBPACK_IMPORTED_MODULE_20_hammerjs__(element, {
-            touchAction: "auto",
             recognizers: [
                 [__WEBPACK_IMPORTED_MODULE_20_hammerjs__["Swipe"], { direction: __WEBPACK_IMPORTED_MODULE_20_hammerjs__["DIRECTION_HORIZONTAL"] }]
             ]

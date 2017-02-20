@@ -25,7 +25,6 @@ import * as Hammer from "hammerjs"
 export class MyHammerConfig extends HammerGestureConfig  {
     buildHammer(element: HTMLElement) {
       let mc = new Hammer(element, {
-          touchAction: "auto",
           recognizers: [
               [Hammer.Swipe,{ direction: Hammer.DIRECTION_HORIZONTAL }]
           ]
