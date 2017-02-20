@@ -25,7 +25,7 @@ import * as Hammer from "hammerjs"
 export class MyHammerConfig extends HammerGestureConfig  {
   buildHammer(element: HTMLElement) {
     let mc = new Hammer(element, {
-      touchAction: "auto",
+      touchAction: "auto"
     });
     return mc;
   }
