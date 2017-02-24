@@ -372,7 +372,17 @@ var AppComponent = (function (_super) {
     __extends(AppComponent, _super);
     function AppComponent(location, router) {
         _super.call(this, location, router);
+        this.trackRouter(location, router);
     }
+    AppComponent.prototype.trackRouter = function (location, router) {
+        var _this = this;
+        router.events.filter(function (event) { return event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["NavigationEnd"]; })
+            .subscribe(function (value) {
+            var url = location.path();
+            _this.trackUrlChange(url, location);
+            document.body.scrollTop = 0;
+        });
+    };
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: '[app-root]',

@@ -11,8 +11,20 @@ import {Location} from '@angular/common';
 
 
 export class AppComponent extends Angulartics2 {
-    constructor(location : Location, router: Router) {
+    
+    constructor(location: Location, router: Router) {
         super(location, router);
+        this.trackRouter(location, router);
     }
+
+    trackRouter(location: Location, router: Router) {
+        router.events.filter(event => event instanceof NavigationEnd)
+            .subscribe((value: NavigationEnd) => {
+            let url = location.path();
+            this.trackUrlChange(url, location);
+            document.body.scrollTop = 0;
+        });
+    }
+   
 
 }
