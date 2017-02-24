@@ -371,17 +371,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppComponent = (function (_super) {
     __extends(AppComponent, _super);
     function AppComponent(location, router) {
-        var _this = this;
         _super.call(this, location, router);
-        router.events
-            .filter(function (event) { return event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["NavigationEnd"]; })
-            .subscribe(function (event) {
-            if (!_this.settings.developerMode) {
-                console.log(event.urlAfterRedirects, location);
-                _this.trackUrlChange(event.urlAfterRedirects, location);
-            }
-            document.body.scrollTop = 0;
-        });
     }
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({

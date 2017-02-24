@@ -13,16 +13,6 @@ import {Location} from '@angular/common';
 export class AppComponent extends Angulartics2 {
     constructor(location : Location, router: Router) {
         super(location, router);
-         router.events
-            .filter(event => event instanceof NavigationEnd)
-            .subscribe((event: NavigationEnd) => {
-              if (!this.settings.developerMode) {
-                  console.log(event.urlAfterRedirects, location)
-                this.trackUrlChange(event.urlAfterRedirects, location);
-              }
-            document.body.scrollTop = 0;
-          });
-       
     }
 
 }
