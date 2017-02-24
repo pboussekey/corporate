@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { Angulartics2, Angulartics2GoogleAnalytics } from 'angulartics2';
+import { Angulartics2 } from 'angulartics2';
+import {Location} from '@angular/common';
 
 @Component({
   selector: '[app-root]',
@@ -9,16 +10,19 @@ import { Angulartics2, Angulartics2GoogleAnalytics } from 'angulartics2';
 })
 
 
-export class AppComponent implements OnInit {
-    constructor(private router: Router,private angulartics2 : Angulartics2) { }
-
-    ngOnInit() {
-        this.router.events.subscribe((evt) => {
-            if (!(evt instanceof NavigationEnd)) {
-                return;
-            }
-            this.angulartics2.eventTrack.next({ action: 'pageview', properties: { category: 'navigation', label : evt.url }});
+export class AppComponent extends Angulartics2 {
+    constructor(location : Location, router: Router) {
+        super(location, router);
+         router.events
+            .filter(event => event instanceof NavigationEnd)
+            .subscribe((event: NavigationEnd) => {
+              if (!this.settings.developerMode) {
+                  console.log(event.urlAfterRedirects, location)
+                this.trackUrlChange(event.urlAfterRedirects, location);
+              }
             document.body.scrollTop = 0;
-        });
+          });
+       
     }
+
 }
