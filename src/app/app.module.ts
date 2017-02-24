@@ -21,6 +21,7 @@ import { FadeInDirective } from './shared/fade-in/fade-in.directive';
 import { FormComponent } from './form/form.component';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import * as Hammer from "hammerjs"
+import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
 export class MyHammerConfig extends HammerGestureConfig  {
     buildHammer(element: HTMLElement) {
@@ -60,7 +61,8 @@ export class MyHammerConfig extends HammerGestureConfig  {
     BrowserModule,
     FormsModule,
     HttpModule,
-    Routing
+    Routing,
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
   ],
   providers: [{ 
         provide: HAMMER_GESTURE_CONFIG, 
