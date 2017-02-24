@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { Angulartics2 } from 'angulartics2';
-import {Location} from '@angular/common';
+import {  Angulartics2GoogleAnalytics } from 'angulartics2';
 
 @Component({
   selector: '[app-root]',
@@ -10,21 +9,15 @@ import {Location} from '@angular/common';
 })
 
 
-export class AppComponent extends Angulartics2 {
-    
-    constructor(location: Location, router: Router) {
-        super(location, router);
-        this.trackRouter(location, router);
-    }
+export class AppComponent implements OnInit {
+    constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics, private router: Router) { }
 
-    trackRouter(location: Location, router: Router) {
-        router.events.filter(event => event instanceof NavigationEnd)
-            .subscribe((value: NavigationEnd) => {
-            let url = location.path();
-            this.trackUrlChange(url, location);
+    ngOnInit() {
+        this.router.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
             document.body.scrollTop = 0;
         });
     }
-   
-
 }
