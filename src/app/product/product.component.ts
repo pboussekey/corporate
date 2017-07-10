@@ -40,10 +40,10 @@ export class ProductComponent implements OnInit{
             clearTimeout(this.timeout);
         }
         this.productIndex =  index >= 0 ? index : (this.productIndex + 1) % 4;
-        this.timeout = setTimeout(this.changeProductNumber.bind(this), 10000);
+        this.timeout = setTimeout(this.changeProductNumber.bind(this), 1000000);
     }
     ngOnInit(){
         this.onResize();
-        this.timeout = setTimeout(this.changeProductNumber.bind(this), 10000);
+        this.timeout = setTimeout(this.changeProductNumber.bind(this), 1000000);
     }
 }

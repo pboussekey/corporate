@@ -18,7 +18,7 @@
                 to augment on-campus teaching in a brick and mortar environment.</p>
         </div>
         <div  class="column-block" [ngClass]="{ gray : productIndex === 1 }" (click)="changeProductNumber(1)">
-            <b>Social networking tools</b>
+            <b>Social networking features</b>
             <p>
                 Our disruptive technology allows to create a connected, engaged and 
                 collaborative learning experience for students and faculty across the world.
@@ -72,7 +72,7 @@
                     collaborative learning experience for students and faculty across the world.
                 </p>
                 <div class="carousel-image">
-                    <img src="assets/images/lms_screen_editor.jpg" class="product"/>
+                    <img src="assets/images/lms_social.jpg" id="product-2" class="product"/>
                 </div>
             </div>
             <div  carousel-page class="column-block">
@@ -115,15 +115,17 @@
         <div class="planetarium-block" id="share-collaborate">
             <b>Share & Collaborate</b>
             <p>
-                Our collaborative learning environment based on community of practice, group projects, 
-                peer evaluation and class discussions enables the proven best 
-                practices for student and faculty engagement.
+                Our collaborative learning environment based on online interactions, community of interest, group projects, 
+                peer relationships and class discussions enables the proven best practices for student and faculty engagement.
+
+
+
             </p>
         </div>
         <div class="planetarium-block" id="network">
             <b>Network</b>
             <p>
-                Whether B-schools have a single, multi-campus, joint degree or alliance model strategy, 
+                Whether B-Schools have opted for a single, multi-campus or a cross-institutional partnership (dual, joint degrees or alliances) strategy, 
                 we believe that networking-based education allows for resources to be 
                 distributed more efficiently.
             </p>
@@ -156,7 +158,7 @@
 </div>
 <div class="block" id="ready" app-fade-in>
     <div app-h2>Ready to get started</div>
-    <p>Create your account in seconds and start your free 30-day trial.</p>
+    <p>Create your account in seconds and start your free trial.</p>
     <div class="buttons">
         <button class="button" id="create-account" [routerLink]="['/contact-us']">
             Create Account
