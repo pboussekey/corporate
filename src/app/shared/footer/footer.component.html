@@ -9,7 +9,6 @@
         <div class="dropdown-content">
             <div [routerLink]="['/product']">Product</div>
             <div [routerLink]="['/pricing']">Pricing</div>
-            <a target="_blank" href="http://help.twic.community">Support</a>
             <div *ngIf="isActive('/about')" (click)="reload()">About</div>
             <div *ngIf="!isActive('/about')" [routerLink]="['/about']">About</div>
             <a target="_blank" href="https://itunes.apple.com/fr/app/twic-the-world-is-a-campus/id1165444530?l=en&mt=8">Download App IOS</a>
@@ -38,7 +37,6 @@
         <ul>
             <li [routerLink]="['/product']">Product</li>
             <li [routerLink]="['/pricing']">Pricing</li>
-            <li> <a target="_blank" href="http://help.twic.community">Support</a></li>
         </ul>
     </div>
     <div class="footer-column desktop">
