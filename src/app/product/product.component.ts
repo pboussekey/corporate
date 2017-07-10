@@ -44,6 +44,6 @@ export class ProductComponent implements OnInit{
     }
     ngOnInit(){
         this.onResize();
-        this.timeout = setTimeout(this.changeProductNumber.bind(this), 1000000);
+        this.timeout = setTimeout(this.changeProductNumber.bind(this), 10000);
     }
 }
