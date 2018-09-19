@@ -11,7 +11,7 @@
         "assets",
         "favicon.ico",
         "mail.php",
-        "robots.txt"
+        ".htaccess"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -23,7 +23,7 @@
         "assets/less/dropdown.less",
         "assets/less/fade-in.less",
         "assets/less/icons.less",
-        "assets/less/rules.less",      
+        "assets/less/rules.less",
         "styles.less"
       ],
       "scripts": [
